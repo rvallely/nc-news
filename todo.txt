@@ -1,0 +1,14 @@
+* do basic styling of elements
+  - remove purple and underline
+  - sizing
+  - spacing
+  - font 
+  - colors
+  - decide where Nav should be on each page
+* in map of articles each element should be <ul> and then <li with a key!> and needs to return relevant info as only returning a title atm
+* dynamically creating title and content for each topic page
+* sort_by and order drop downs
+* Date.now()
+* User icon and logged in as
+* Start thinking about the intereactive User elements like writing comments and voting
+* create profile

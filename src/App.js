@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/articles' element={<Articles />}></Route>
-          <Route path='/articles/topic/:topic_slug' element={<TopicArticles />}></Route>
+          <Route path='/topics/:topic_slug' element={<Articles />}></Route>
           <Route path='/articles/:article_id' element={<SingleArticle />}></Route>
           <Route path='/user' element={<User />}></Route>
         </Routes>
