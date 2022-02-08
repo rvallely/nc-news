@@ -9,7 +9,6 @@ const Articles = () => {
     const { topic_slug } = useParams();
 
     useEffect(() => {
-       // console.log(topic_slug, '<<< params')
         getArticles(topic_slug).then((articlesFromAPI) => {
             setArticles(articlesFromAPI);
         });
@@ -19,9 +18,20 @@ const Articles = () => {
         <div>
             <Nav />
             <h1>Articles</h1>
-            {articles.map((article) => {
-                return <p>{article.title}</p>
-        })}
+            <ul>
+              {articles.map((article) => {
+                console.log(article, '<<< article')
+                return (
+                    <li className='article_list_item' key={article.article_id}> 
+                        <h3>{article.title}</h3>
+                        <h4>{article.author}</h4>
+                        <p>{article.comment_count}</p>      
+                        <p>{article.created_at}</p>
+                        <p>{article.votes}</p>              
+                    </li>
+                )
+            })}
+            </ul>
         </div>
     )
 }

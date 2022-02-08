@@ -14,12 +14,12 @@ const Nav = () => {
 
     return (
         <nav className='Nav'>
-            <Link key='home' to='/'>Home</Link>
-            <Link key='articles' to='/articles'>All articles</Link>
+            <Link className='Nav_item' key='home' to='/'>Home</Link>
+            <Link className='Nav_item' key='articles' to='/articles'>All articles</Link>
             {topics.map((topic) => {
-                return <Link key ={topic.slug} to={`/topics/${topic.slug}`}>{topic.slug}</Link>
+                return <Link className='Nav_item' key ={topic.slug} to={`/topics/${topic.slug}`}>{topic.slug}</Link>
             })}
-            <Link key='user' to='/user'>User</Link>
+            <Link className='Nav_item' key='user' to='/user'>User</Link>
         </nav>
     )
 }
