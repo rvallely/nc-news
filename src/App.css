@@ -10,7 +10,7 @@
 
 .Header {
   border:solid;
-  border-width: 1px;
+  border-width: 0px;
   margin-top:15px;
   margin-bottom:15px;
   flex: 1;
@@ -21,7 +21,7 @@
 
 .Date {
   border:solid;
-  border-width:1px;
+  border-width:0px;
   margin-top:7px;
   margin-bottom: 60px;
   text-align:right;
