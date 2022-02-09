@@ -15,11 +15,11 @@ const Nav = () => {
 
     return (
         <nav className='Nav'>
-            <Link className='Nav_item' key='home' to='/'>Home</Link>
+            <Link className='Nav-item' key='home' to='/'>Home</Link>
             {topics.map((topic) => {
-                return <Link className='Nav_item' key ={topic.slug} to={`/topics/${topic.slug}`}>{capitaliseFirstLetter(topic.slug)}</Link>
+                return <Link className='Nav-item' key ={topic.slug} to={`/topics/${topic.slug}`}>{capitaliseFirstLetter(topic.slug)}</Link>
             })}
-            <Link className='Nav_item' key='user' to='/user'>User</Link>
+            <Link className='Nav-item' key='user' to='/user'>User</Link>
         </nav>
     )
 }

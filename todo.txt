@@ -12,3 +12,6 @@
 * should loading last longer, so a little smoother transition?
 * Make redirect msg prettier, maybe add appropriate img.
 * just link title article? 
+
+* tidy up css naming (all lowercase and hyphen)
+* classes and ids - check names are easy to follow
