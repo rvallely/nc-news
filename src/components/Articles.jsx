@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { getArticles } from '../utils/api';
+import Header from './Header';
+import Date from './Date';
 import Nav from './Nav';
 import { useParams } from 'react-router-dom';
 import formatCreatedAt from '../utils/formatCreatedAt';
@@ -8,17 +10,22 @@ import formatCreatedAt from '../utils/formatCreatedAt';
 const Articles = () => {
     const [articles, setArticles] = useState([]);
     const { topic_slug } = useParams();
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         getArticles(topic_slug).then((articlesFromAPI) => {
             setArticles(articlesFromAPI);
+            setIsLoading(false);
         });
     }, [topic_slug]);
 
-    return (
+    return isLoading ? <p>loading ...</p> : (
         <div>
+            <div className='header-date'>
+              <Header />  
+              <Date />
+            </div>
             <Nav />
-            <h1 id='header'>Articles</h1>
             <ul>
               {articles.map((article) => {
                 console.log(article, '<<< article')

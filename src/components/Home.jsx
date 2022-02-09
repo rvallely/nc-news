@@ -7,11 +7,6 @@ import Articles from './Articles';
 const Home = () => {
     return (
         <>
-          <div className='header-date'>
-            
-            <Header />  
-            <Date />
-          </div>
           <Articles />
         </>
     )
