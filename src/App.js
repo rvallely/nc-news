@@ -8,6 +8,7 @@ import TopicArticles from './components/TopicArticles';
 import SingleArticle from './components/SingleArticle';
 import User from './components/User';
 import Redirect from '../src/components/Redirect';
+import Comments from './components/Comments';
 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -21,6 +22,7 @@ function App() {
           <Route path='/articles' element={<Articles />}></Route>
           <Route path='/topics/:topic_slug' element={<Articles />}></Route>
           <Route path='/articles/:article_id' element={<SingleArticle />}></Route>
+          <Route path='/articles/:article_id/comments' element={<Comments />}></Route>
           <Route path='/user' element={<User />}></Route>
           <Route path='*' element={<Redirect />}></Route>
         </Routes>

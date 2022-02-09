@@ -31,9 +31,10 @@ const Articles = () => {
               {articles.map((article) => {
                 console.log(article, '<<< article')
                 return (
-                    <Link key={article.article_id} to={`/articles/${article.article_id}`}>
                     <li className='article_list_item' key={article.article_id}> 
-                        <h3 id='article_title'>{article.title}</h3>
+                        <Link className='Link' key={article.article_id} to={`/articles/${article.article_id}`}>
+                            <h3 id='article_title'>{article.title}</h3>
+                        </Link>
                         <h4 id='article_author'>{article.author}</h4>
                         {/* <img src='https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953' alt = 'avatar'/> */}
                         <p id='article_comment_count'>{article.comment_count} comments</p>      
@@ -44,7 +45,6 @@ const Articles = () => {
                         <p id='article_votes'>{article.votes} &#128077;</p> 
                         {/* <button type='submit'><p>&#128077;</p></button>              */}
                     </li>
-                    </Link>
                 );
             })}
             </ul>

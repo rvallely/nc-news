@@ -27,3 +27,10 @@ export const getSingleArticle = (article_id) => {
     });
 }
 
+export const getComments = (article_id) => {
+    console.log(article_id, '<<< id in comments')
+    return newsAPI.get(`/articles/${article_id}/comments`).then((data) => {
+        console.log(data.data, '<<< comment data')
+        return data.data.comments;
+    })
+}
