@@ -14,14 +14,11 @@ const SingleArticle = () => {
     const [singleArticle, setSingleArticle] = useState({});
     const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    console.log(article_id, '<<< params')
 
     useEffect(() => {
         getSingleArticle(article_id).then((articleFromAPI) => {   
-            console.log(articleFromAPI);
             setSingleArticle(articleFromAPI);
             getComments(article_id).then((commentsFromAPI) => {
-                console.log(commentsFromAPI);
                 setComments(commentsFromAPI);
                 setIsLoading(false);
             })
@@ -30,6 +27,7 @@ const SingleArticle = () => {
 
     const changeCommentVisibility = () => {
         const comments = document.getElementById('comments');
+        console.log(comments.style.visibility)
         if (comments.style.visibility === 'hidden') {
             comments.style.visibility = 'visible';
         } else {
@@ -44,7 +42,7 @@ const SingleArticle = () => {
               <Date />
             </div>
             <Nav />
-            <div>
+            <div id = 'single-article'>
                 <h2>{singleArticle.title}</h2>
                 <p>{singleArticle.body}</p>
                 <p>{singleArticle.author}</p> // link to user's page
@@ -54,10 +52,8 @@ const SingleArticle = () => {
                             <p id='article-time'>{formatCreatedAt(singleArticle.created_at)[1]}</p>
                         </p>
                 <p>{singleArticle.topic}</p>  // link to filter by topic
-                <button onClick={changeCommentVisibility}><p>{singleArticle.comment_count} comments</p></button>
-                // link to comments
-                <p>{singleArticle.article_id} id</p>
-                <div id='comments'>
+                <button className='link' onClick={changeCommentVisibility}><p>{singleArticle.comment_count} comments</p></button>
+                <div id='comments' >
                 {comments.map((comment) => {
                     return (
                         <div id='single-comment' key={comment.comment_id}>
@@ -73,7 +69,7 @@ const SingleArticle = () => {
                 })}
                 </div>    
             </div>
-            <p>single article</p>
+            <p id='bottom'>single article</p>
         </div>)
 }
 

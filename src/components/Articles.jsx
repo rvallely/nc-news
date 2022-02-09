@@ -29,15 +29,15 @@ const Articles = () => {
             <Nav />
             <ul className='article-list'>
               {articles.map((article) => {
-                console.log(article, '<<< article')
+
                 return (
                     <li className='article-list-item' key={article.article_id}> 
-                        <Link className='Link' key={article.article_id} to={`/articles/${article.article_id}`}>
+                        <Link className='link' key={article.article_id} to={`/articles/${article.article_id}`}>
                             <h3 id='article-title'>{article.title}</h3>
                         </Link>
                         <h4 id='article-author'>{article.author}</h4>
                         {/* <img src='https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953' alt = 'avatar'/> */}
-                        <p id='article-comment_count'>{article.comment_count} comments</p>      
+                        <a className = 'link' href={`/articles/${article.article_id}#bottom`}><p id='article-comment_count'>{article.comment_count} comments</p></a>    
                         <p id='article-created_at'>
                             <p id='article-date'>{formatCreatedAt(article.created_at)[0]}</p>
                             <p id='article-time'>{formatCreatedAt(article.created_at)[1]}</p>
@@ -48,6 +48,7 @@ const Articles = () => {
                 );
             })}
             </ul>
+            
         </div>
     )
 }

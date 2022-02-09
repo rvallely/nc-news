@@ -21,16 +21,13 @@ export const getArticles = (topic_slug) => {
 }
 
 export const getSingleArticle = (article_id) => {
-    console.log(article_id, '<<< id in utils')
     return newsAPI.get(`/articles/${article_id}`).then((data) => {
         return data.data.article;
     });
 }
 
 export const getComments = (article_id) => {
-    console.log(article_id, '<<< id in comments')
     return newsAPI.get(`/articles/${article_id}/comments`).then((data) => {
-        console.log(data.data, '<<< comment data')
         return data.data.comments;
     })
 }
