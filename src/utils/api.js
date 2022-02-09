@@ -20,3 +20,10 @@ export const getArticles = (topic_slug) => {
     });
 }
 
+export const getSingleArticle = (article_id) => {
+    console.log(article_id, '<<< id in utils')
+    return newsAPI.get(`/articles/${article_id}`).then((data) => {
+        return data.data.article;
+    });
+}
+

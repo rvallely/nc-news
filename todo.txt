@@ -1,7 +1,8 @@
 * do basic styling of elements
-  - sizing
-  - spacing
+  - sizing -----> saving till decided whether to add img to articles
 * title link to article should article have a sentence or two from article? need the ability to vote on actual article
+* 11 comments takes to article page and comments?
+* each article could do with a picture
 
 * User icon and logged in as
 * Start thinking about the intereactive User elements like writing comments and voting
@@ -10,3 +11,5 @@
 * sort_by and order drop downs
 * get time?
 * should loading last longer, so a little smoother transition?
+* Make redirect msg prettier, maybe add appropriate img.
+* just link title article? 

@@ -28,9 +28,6 @@
   margin-right: 15px;
   flex: 0.5;
   font-size: x-small;
-  
-  
-
 }
 
 .Nav {
@@ -49,8 +46,20 @@
   color:black;
 }
 
-.article_list_item {
-  color: black;
+.article_list {
+  border:solid;
+  border-width: 1px;
+  border-color:black;
+  text-align: center;
   list-style-type: none;
-  vertical-align: middle;
+  padding-left: 0;
+  padding-right: 0;  
+}
+
+.article_list_item {
+  border: solid;
+  border-width: 1px;
+  border-color:black;
+  text-align: center;
+  color: black; 
 }

@@ -7,6 +7,7 @@ import Articles from './components/Articles';
 import TopicArticles from './components/TopicArticles';
 import SingleArticle from './components/SingleArticle';
 import User from './components/User';
+import Redirect from '../src/components/Redirect';
 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -21,6 +22,7 @@ function App() {
           <Route path='/topics/:topic_slug' element={<Articles />}></Route>
           <Route path='/articles/:article_id' element={<SingleArticle />}></Route>
           <Route path='/user' element={<User />}></Route>
+          <Route path='*' element={<Redirect />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
