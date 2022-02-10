@@ -75,3 +75,8 @@
   text-decoration:underline;
 }
 
+#comments {
+  visibility:hidden;
+  border:solid;
+  border-width:1px;
+}
