@@ -6,7 +6,9 @@ import Date from './Date';
 import Nav from './Nav';
 import { useParams } from 'react-router-dom';
 import formatCreatedAt from '../utils/formatCreatedAt';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
+import SingleArticle from './SingleArticle';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Articles = () => {
     const [articles, setArticles] = useState([]);
@@ -35,9 +37,10 @@ const Articles = () => {
                         <Link className='link' key={article.article_id} to={`/articles/${article.article_id}`}>
                             <h3 id='article-title'>{article.title}</h3>
                         </Link>
+                        {/* <a href='#bottom'>Click here to see the content below.</a> */}
                         <h4 id='article-author'>{article.author}</h4>
                         {/* <img src='https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953' alt = 'avatar'/> */}
-                        <a className = 'link' href={`/articles/${article.article_id}#bottom`}><p id='article-comment_count'>{article.comment_count} comments</p></a>    
+                        <Link to={`/articles/${article.article_id}#show-comments`}>{article.comment_count} comments</Link> 
                         <p id='article-created_at'>
                             <p id='article-date'>{formatCreatedAt(article.created_at)[0]}</p>
                             <p id='article-time'>{formatCreatedAt(article.created_at)[1]}</p>

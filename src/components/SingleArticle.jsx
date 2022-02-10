@@ -42,6 +42,7 @@ const SingleArticle = () => {
               <Date />
             </div>
             <Nav />
+            {/* <a href='#bottom'>Click here to see the content below.</a> */}
             <div id = 'single-article'>
                 <h2>{singleArticle.title}</h2>
                 <p>{singleArticle.body}</p>
@@ -52,7 +53,7 @@ const SingleArticle = () => {
                             <p id='article-time'>{formatCreatedAt(singleArticle.created_at)[1]}</p>
                         </p>
                 <p>{singleArticle.topic}</p>  // link to filter by topic
-                <button className='link' onClick={changeCommentVisibility}><p>{singleArticle.comment_count} comments</p></button>
+                <button id='show-comments'className='link' onClick={changeCommentVisibility}><p>{singleArticle.comment_count} comments</p></button>
                 <div id='comments' >
                 {comments.map((comment) => {
                     return (
@@ -69,7 +70,7 @@ const SingleArticle = () => {
                 })}
                 </div>    
             </div>
-            <p id='bottom'>single article</p>
+            <a id='bottom'>single article</a>
         </div>)
 }
 
