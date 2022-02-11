@@ -6,21 +6,22 @@ import Date from './Date';
 import Nav from './Nav';
 import { useParams } from 'react-router-dom';
 import formatCreatedAt from '../utils/formatCreatedAt';
-//import { Link } from 'react-router-dom';
-import SingleArticle from './SingleArticle';
+// import { Link } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
+import SortBy from './SortBy';
 
 const Articles = () => {
     const [articles, setArticles] = useState([]);
     const { topic_slug } = useParams();
     const [isLoading, setIsLoading] = useState(true);
+    const [sortBy, setSortBy] = useState('');
 
     useEffect(() => {
-        getArticles(topic_slug).then((articlesFromAPI) => {
+        getArticles(topic_slug, sortBy).then((articlesFromAPI) => {
             setArticles(articlesFromAPI);
             setIsLoading(false);
         });
-    }, [topic_slug]);
+    }, [topic_slug, sortBy]);
 
     return isLoading ? <p>loading ...</p> : (
         <div>
@@ -29,7 +30,10 @@ const Articles = () => {
               <Date />
             </div>
             <Nav />
+            <SortBy setSortBy={setSortBy}/>
             <ul className='article-list'>
+                {/* {console.log(articles, '<<< articles')} */}
+                {/* {const sortedArticles = [...articles].sort((a, b) => a.comment_count-b.comment_count)} */}
               {articles.map((article) => {
 
                 return (
@@ -40,7 +44,7 @@ const Articles = () => {
                         {/* <a href='#bottom'>Click here to see the content below.</a> */}
                         <h4 id='article-author'>{article.author}</h4>
                         {/* <img src='https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953' alt = 'avatar'/> */}
-                        <Link to={`/articles/${article.article_id}#show-comments`}>{article.comment_count} comments</Link> 
+                        <Link className = 'link' to={`/articles/${article.article_id}#show-comments`}>{article.comment_count} comments</Link> 
                         <p id='article-created_at'>
                             <p id='article-date'>{formatCreatedAt(article.created_at)[0]}</p>
                             <p id='article-time'>{formatCreatedAt(article.created_at)[1]}</p>

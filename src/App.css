@@ -80,3 +80,7 @@
   border:solid;
   border-width:1px;
 }
+
+#drop-down-placeholder {
+  font-weight: bolder;
+}

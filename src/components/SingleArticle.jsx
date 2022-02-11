@@ -70,7 +70,6 @@ const SingleArticle = () => {
                 })}
                 </div>    
             </div>
-            <a id='bottom'>single article</a>
         </div>)
 }
 
