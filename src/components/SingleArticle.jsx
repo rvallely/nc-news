@@ -46,7 +46,6 @@ const SingleArticle = () => {
             <Nav />
             {/* <a href='#bottom'>Click here to see the content below.</a> */}
             <div id = 'single-article'>
-                {console.log(singleArticle, ' <<< single art')}
                 <h2>{singleArticle.title}</h2>
                 <p>{singleArticle.body}</p>
                 <p>{singleArticle.author}</p>

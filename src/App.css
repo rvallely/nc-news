@@ -84,3 +84,40 @@
 #drop-down-placeholder {
   font-weight: bolder;
 }
+
+#user-username {
+  position: absolute;
+  right: 15px;
+  top:20px;
+  font-size: x-small;
+}
+
+#user-avatar-url {
+  border:solid;
+  border-width: 0px;
+  height: 30px;
+  border-radius: 30%;
+  position: absolute;
+  right: 15px;
+  top:45px;
+}
+
+#user-display {
+  /* border:solid;
+  border-width: 0px;
+  position: absolute;
+  right: 1px;
+  top:20px;
+  margin-top:7px; */
+  
+  
+  padding: 0px;
+  
+}
+
+/* margin-top:7px;
+margin-bottom: 60px;
+text-align:right;
+margin-right: 15px;
+flex: 0.5;
+font-size: x-small; */

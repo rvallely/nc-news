@@ -5,10 +5,8 @@ import Nav from './Nav';
 import Articles from './Articles';
 
 const Home = () => {
-    return (
-        
+    return (     
         <>
-          {console.log('home')}
           <Articles />
         </>
     )
