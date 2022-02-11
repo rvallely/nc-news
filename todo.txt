@@ -1,6 +1,7 @@
 
 * User icon and logged in as
-* Start thinking about the interactive User elements like writing comments and voting
+* post comment
+* delete comment 
 * create profile
 
 * get time?
@@ -10,7 +11,7 @@
   - for logging in as different user
 * isLoading on topics nav ... delay at times. All content (components) should appear instaneously
 * redraw component tree with new components
-* Header Nav Date can sit in app about route, (save repetition)
+* Header Nav Date can sit in app above route, (save repetition)
 
 Styling :
 
