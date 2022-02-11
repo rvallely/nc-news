@@ -41,7 +41,6 @@ const Articles = () => {
                         <Link className='link' key={article.article_id} to={`/articles/${article.article_id}`}>
                             <h3 id='article-title'>{article.title}</h3>
                         </Link>
-                        {/* <a href='#bottom'>Click here to see the content below.</a> */}
                         <h4 id='article-author'>{article.author}</h4>
                         {/* <img src='https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953' alt = 'avatar'/> */}
                         <Link className = 'link' to={`/articles/${article.article_id}#show-comments`}>{article.comment_count} comments</Link> 
@@ -50,7 +49,6 @@ const Articles = () => {
                             <p id='article-time'>{formatCreatedAt(article.created_at)[1]}</p>
                         </p>
                         <p id='article-votes'>{article.votes} &#128077;</p> 
-                        {/* <button type='submit'><p>&#128077;</p></button>              */}
                     </li>
                 );
             })}

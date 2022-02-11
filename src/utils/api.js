@@ -43,3 +43,9 @@ export const getComments = (article_id) => {
         return data.data.comments;
     });
 }
+
+export const patchArticle = (article_id) => {
+    return newsAPI.patch(`/articles/${article_id}`, {inc_votes: 1 }).then((data) => {
+        return data.data.updatedArticle;
+    });
+}

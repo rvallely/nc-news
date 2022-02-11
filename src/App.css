@@ -76,7 +76,7 @@
 }
 
 #comments {
-  visibility:hidden;
+  visibility:collapse;
   border:solid;
   border-width:1px;
 }

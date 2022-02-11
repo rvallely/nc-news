@@ -6,7 +6,9 @@ import Articles from './Articles';
 
 const Home = () => {
     return (
+        
         <>
+          {console.log('home')}
           <Articles />
         </>
     )

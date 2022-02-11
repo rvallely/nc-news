@@ -7,6 +7,7 @@ import Date from './Date';
 import Nav from './Nav';
 import formatCreatedAt from '../utils/formatCreatedAt';
 import { Link } from 'react-router-dom';
+import Votes from './Votes';
 // ADD IS LOADING TO THIS PAGE
 
 const SingleArticle = () => {
@@ -27,7 +28,8 @@ const SingleArticle = () => {
 
     const changeCommentVisibility = () => {
         const comments = document.getElementById('comments');
-        console.log(comments.style.visibility)
+        // console.log('hi')
+        // console.log(comments.style.visibility)
         if (comments.style.visibility === 'hidden') {
             comments.style.visibility = 'visible';
         } else {
@@ -44,10 +46,14 @@ const SingleArticle = () => {
             <Nav />
             {/* <a href='#bottom'>Click here to see the content below.</a> */}
             <div id = 'single-article'>
+                {console.log(singleArticle, ' <<< single art')}
                 <h2>{singleArticle.title}</h2>
                 <p>{singleArticle.body}</p>
-                <p>{singleArticle.author}</p> // link to user's page
-                <p>{singleArticle.votes}</p>  // button to add to votes
+                <p>{singleArticle.author}</p>
+                < div id='votes'>
+                    <p>{singleArticle.votes}</p>
+                    <Votes article_id={singleArticle.article_id} votes={singleArticle.votes}/>
+                </div> // link to user's page
                 <p id='article_created_at'>
                             <p id='article-date'>{formatCreatedAt(singleArticle.created_at)[0]}</p>
                             <p id='article-time'>{formatCreatedAt(singleArticle.created_at)[1]}</p>
@@ -61,10 +67,10 @@ const SingleArticle = () => {
                             <h4 id=''>{comment.author}</h4>
                             <p id=''>{comment.body}</p>
                             <p id='comment_created-at'>
-                                <p id='comment_date'>{formatCreatedAt(comment.created_at)[0]}</p>
-                                <p id='comment_time'>{formatCreatedAt(comment.created_at)[1]}</p>
+                                <p id='comment-date'>{formatCreatedAt(comment.created_at)[0]}</p>
+                                <p id='comment-time'>{formatCreatedAt(comment.created_at)[1]}</p>
                             </p>
-                            <h4 id=''>{comment.votes}</h4>
+                            <h4 id='comment-votes'>{comment.votes}</h4>
                         </div >
                     )
                 })}

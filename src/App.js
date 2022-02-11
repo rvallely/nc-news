@@ -10,7 +10,6 @@ import User from './components/User';
 import Redirect from '../src/components/Redirect';
 import Comments from './components/Comments';
 
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {

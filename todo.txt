@@ -1,17 +1,23 @@
 
+* User icon and logged in as
+* Start thinking about the interactive User elements like writing comments and voting
+* create profile
+
+* get time?
+* comments only opening after clicking twice
+
+* complete back end /users /users/:userid
+  - for logging in as different user
+* isLoading on topics nav ... delay at times. All content (components) should appear instaneously
+* redraw component tree with new components
+* Header Nav Date can sit in app about route, (save repetition)
+
+Styling :
+
+* should loading last longer, so a little smoother transition?
+* Make redirect msg prettier, maybe add appropriate img.
 * do basic styling of elements
   - sizing -----> saving till decided whether to add img to articles
 * each article could do with a picture
-
-* User icon and logged in as
-* Start thinking about the intereactive User elements like writing comments and voting
-* create profile
-
-* sort_by and order drop downs
-* get time?
-* should loading last longer, so a little smoother transition?
-* Make redirect msg prettier, maybe add appropriate img.
-* just link title article? 
-
 * tidy up css naming (all lowercase and hyphen)
 * classes and ids - check names are easy to follow

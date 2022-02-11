@@ -1,18 +1,13 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import { useState } from 'react';
-// import { getTopics } from '../utils/api';
-// import capitaliseFirstLetter from '../utils/capitaliseFirstLetter';
 
 const SortBy = (props) => {
     const [selection, setSelection] = useState('')
     const handleChange = (event) => {
-        //console.log('hi')
         setSelection(event.target.value)
     }
 
     const handleSubmit = (event) => {
-        //console.log('handling submit', selection)
         event.preventDefault();
         props.setSortBy(selection);
         setSelection('');
