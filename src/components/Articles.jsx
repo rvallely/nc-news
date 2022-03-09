@@ -28,8 +28,8 @@ const Articles = () => {
             {/* <div className='header-date'>
               <Header />  
               <Date />
-            </div>
-            <Nav /> */}
+            </div> */}
+            <Nav />
             <SortBy setSortBy={setSortBy}/>
             <ul className='article-list'>
                 {/* {console.log(articles, '<<< articles')} */}

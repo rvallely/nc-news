@@ -34,7 +34,7 @@ function App() {
               <Date />
          </div>
         <UserDisplay />
-        <Nav />
+        {/* <Nav /> */}
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/articles' element={<Articles />}></Route>

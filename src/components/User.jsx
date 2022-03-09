@@ -17,6 +17,7 @@ const User = () => {
               <Header />  
               <Date />
             </div> */}
+            <Nav />
             <h3>Welcome back {defaultUser.username}!</h3>
             <img 
                 src={defaultUser.avatar_url} 
