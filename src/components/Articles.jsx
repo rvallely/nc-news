@@ -45,10 +45,10 @@ const Articles = () => {
                         <h4 id='article-author'>{article.author}</h4>
                         {/* <img src='https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953' alt = 'avatar'/> */}
                         <Link className = 'link' to={`/articles/${article.article_id}#show-comments`}>{article.comment_count} comments</Link> 
-                        <p id='article-created_at'>
+                        <div id='article-created_at'>
                             <p id='article-date'>{formatCreatedAt(article.created_at)[0]}</p>
                             <p id='article-time'>{formatCreatedAt(article.created_at)[1]}</p>
-                        </p>
+                        </div>
                         <p id='article-votes'>{article.votes} &#128077;</p> 
                     </li>
                 );

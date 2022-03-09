@@ -8,14 +8,15 @@ const SortBy = (props) => {
         <div >
         <form className='dropdown'  >
                 <select 
+               
                     id='sort-by' 
-                    value={selection} 
+                    value={selection}
                     onChange={(e) => { 
                         setSelection(e.target.value);
                         e.preventDefault();
                         props.setSortBy(e.target.value);
                     }} > 
-                    <option id='drop-down-placeholder' value='' disabled selected>Sort by: Most Recent</option>
+                    <option disabled>Sort by: Most Recent</option>
                     <option value='sort_by=author order=ASC'>Author: a-z</option>
                     <option value='sort_by=author order=DESC'>Author:z-a</option>
                     <option value='sort_by=comment_count order=ASC'>Comments: least to most</option>
