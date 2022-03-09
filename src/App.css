@@ -12,32 +12,16 @@
   border:solid;
   border-width: 0px;
   margin-top:15px;
-  margin-bottom:0px;
-  padding:0%;
-  /* flex: 1; */
   text-align:left;
   margin-left: 15px;
   color: #EB0C15;
-  /* text-decoration: none; */
 }
 
 .Header-link {
   border: dashed;
-  border-width: 2px;
+  border-width: 0px;
   text-decoration: none;
   flex: 1;
-  /* padding-bottom: %; */
-  /* border:solid;
-  border-width: 3px;
-  margin-top:5px;
-  margin-bottom:5px;
-  padding:0%;
-  flex: 1;
-  text-align:left;
-  margin-left: 15px;
-  color: #EB0C15;
-  text-decoration: none; */
- 
 }
 
 .Date {
