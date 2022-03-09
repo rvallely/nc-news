@@ -44,8 +44,19 @@ export const getComments = (article_id) => {
     });
 }
 
-export const patchArticle = (article_id) => {
-    return newsAPI.patch(`/articles/${article_id}`, {inc_votes: 1 }).then((data) => {
-        return data.data.updatedArticle;
-    });
+export const patchArticle = (article_id, voteType) => {
+    console.log(voteType);
+    if (voteType === 'up') {
+        return newsAPI.patch(`/articles/${article_id}`, {inc_votes: 1 }).then((data) => {
+            return data.data.updatedArticle;
+        });
+    }
+    // } else {
+    //     return newsAPI.patch(`/articles/${article_id}`, {inc_votes: -1 }).then((data) => {
+    //         return data.data.updatedArticle;
+    //     });
+    // }
+    
+        
+
 }

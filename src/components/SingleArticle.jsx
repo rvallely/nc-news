@@ -9,7 +9,6 @@ import formatCreatedAt from '../utils/formatCreatedAt';
 import { Link } from 'react-router-dom';
 import Votes from './Votes';
 import capitaliseFirstLetter from '../utils/capitaliseFirstLetter';
-// ADD IS LOADING TO THIS PAGE
 
 const SingleArticle = () => {
     const { article_id } = useParams();
@@ -44,12 +43,11 @@ const SingleArticle = () => {
               <Date />
             </div>*/}
             <Nav /> 
-            {/* <a href='#bottom'>Click here to see the content below.</a> */}
             <div id = 'single-article'>
                 <h2>{singleArticle.title}</h2>
                 <p>{singleArticle.body}</p>
                 <p>{singleArticle.author}</p>
-                < div id='votes'>
+                <div id='votes'>
                     <p>{singleArticle.votes}</p>
                     <Votes article_id={singleArticle.article_id} votes={singleArticle.votes}/>
                 </div> // link to user's page
@@ -57,7 +55,7 @@ const SingleArticle = () => {
                             <p id='article-date'>{formatCreatedAt(singleArticle.created_at)[0]}</p>
                             <p id='article-time'>{formatCreatedAt(singleArticle.created_at)[1]}</p>
                 </div>
-                <p>{capitaliseFirstLetter(singleArticle.topic)}</p>  // link to filter by topic
+                <Link className='link' key ={singleArticle.topic} to={`/topics/${singleArticle.topic}`}><p>{capitaliseFirstLetter(singleArticle.topic)}</p></Link> 
                 <button id='show-comments'className='link' onClick={changeCommentVisibility}><p>{singleArticle.comment_count} comments</p></button>
                 <div id='comments' style={{visibility:'hidden'}}>
                 {comments.map((comment) => {
@@ -75,7 +73,8 @@ const SingleArticle = () => {
                 })}
                 </div>    
             </div>
-        </div>)
+        </div>
+    )
 }
 
 export default SingleArticle;
