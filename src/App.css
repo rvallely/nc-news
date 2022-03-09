@@ -81,7 +81,7 @@
 }
 
 #comments {
-  visibility:collapse;
+  /* visibility:collapse; */
   border:solid;
   border-width:1px;
 }

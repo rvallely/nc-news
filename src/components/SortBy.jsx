@@ -19,7 +19,7 @@ const SortBy = (props) => {
                     <option disabled>Sort by: Most Recent</option>
                     <option value='sort_by=created_at order=DESC'>Most Recent</option>
                     <option value='sort_by=author order=ASC'>Author</option>
-                    <option value='sort_by=comment_count order=ASC'>Most Comments</option>
+                    <option value='sort_by=comment_count order=DESC'>Most Comments</option>
                     <option value='sort_by=votes order=DESC'>Most Votes</option>
                     {/* <option value='sort_by=author order=DESC'>Author Descending</option> */}
                     {/* <option value='sort_by=comment_count order=DESC'>Comments: most to least</option> */} 
