@@ -39,11 +39,11 @@ const SingleArticle = () => {
 
     return isLoading ? <p>loading ...</p> : (
         <div id = 'single-article'>
-            <div className='header-date'>
+            {/* <div className='header-date'>
               <Header />  
               <Date />
             </div>
-            <Nav />
+            <Nav /> */}
             {/* <a href='#bottom'>Click here to see the content below.</a> */}
             <div id = 'single-article'>
                 <h2>{singleArticle.title}</h2>

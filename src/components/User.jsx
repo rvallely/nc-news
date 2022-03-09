@@ -13,11 +13,10 @@ const User = () => {
       }
     return (
         <div>
-            <div className='header-date'>
+            {/* <div className='header-date'>
               <Header />  
               <Date />
-            </div>
-            <Nav />
+            </div> */}
             <h3>Welcome back {defaultUser.username}!</h3>
             <img 
                 src={defaultUser.avatar_url} 

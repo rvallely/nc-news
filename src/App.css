@@ -97,6 +97,7 @@
   border-width: 0px;
   height: 30px;
   border-radius: 30%;
+  object-fit: cover;
   position: absolute;
   right: 15px;
   top:45px;
