@@ -18,7 +18,6 @@ const Articles = () => {
 
     useEffect(() => {
         getArticles(topic_slug, sortBy).then((articlesFromAPI) => {
-           // console.log('response >>> ', articlesFromAPI.forEach((art) => (console.log(typeof art.comment_count))))
             setArticles(articlesFromAPI);
             setIsLoading(false);
         });

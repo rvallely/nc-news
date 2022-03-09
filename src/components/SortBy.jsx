@@ -17,16 +17,15 @@ const SortBy = (props) => {
                         props.setSortBy(e.target.value);
                     }} > 
                     <option disabled>Sort by: Most Recent</option>
-                    <option value='sort_by=author order=ASC'>Author: a-z</option>
-                    <option value='sort_by=author order=DESC'>Author:z-a</option>
-                    <option value='sort_by=comment_count order=ASC'>Comments: least to most</option>
-                    <option value='sort_by=comment_count order=DESC'>Comments: most to least</option>
-                    <option value='sort_by=created_at order=DESC'>Date: most to least recent</option>
-                    <option value='sort_by=created_at order=ASC'>Date: least to most recent</option>
-                    <option value='sort_by=votes order=ASC'>Votes: least to most</option>
-                    <option value='sort_by=votes order=DESC'>Votes: most to least</option>
+                    <option value='sort_by=created_at order=DESC'>Most Recent</option>
+                    <option value='sort_by=author order=ASC'>Author</option>
+                    <option value='sort_by=comment_count order=ASC'>Most Comments</option>
+                    <option value='sort_by=votes order=DESC'>Most Votes</option>
+                    {/* <option value='sort_by=author order=DESC'>Author Descending</option> */}
+                    {/* <option value='sort_by=comment_count order=DESC'>Comments: most to least</option> */} 
+                    {/* <option value='sort_by=created_at order=ASC'>Date: least to most recent</option> */}
+                    {/* <option value='sort_by=votes order=ASC'>Votes: least to most</option> */}
                 </select>
-                {/* <button type='submit'><p>&#128640;</p></button>  */}
             </form>
         </div>
     )

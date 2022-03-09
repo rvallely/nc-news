@@ -11,12 +11,13 @@
 .Header {
   border:solid;
   border-width: 0px;
-  margin-top:15px;
-  margin-bottom:15px;
+  margin-top:5px;
+  margin-bottom:5px;
   flex: 1;
   text-align:left;
   margin-left: 15px;
   color: #EB0C15;
+  text-decoration: none;
 }
 
 .Date {
