@@ -5,7 +5,7 @@ const Votes = ({article_id, votes}) => {
     const [voteChange, setVoteChange] = useState(0);
     const addVote = () => {
         setVoteChange((currChange) => currChange + 1);
-        patchArticle(article_id, 'up').catch((err) => {
+        patchArticle(article_id).catch((err) => {
             setVoteChange((currChange) => currChange - 1)
         });
     }

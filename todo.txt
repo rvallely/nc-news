@@ -1,7 +1,9 @@
-
-* User icon and logged in as
+* Finish backend endpoints
 * post comment
 * delete comment 
+
+
+* User icon and logged in as
 * create profile
 
 * get time?

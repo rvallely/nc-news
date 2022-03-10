@@ -7,19 +7,16 @@ const PostCommentForm = () => {
     const user = useContext(UserContext);
     const { article_id } = useParams();
     console.log(article_id, user.loggedInUser);
-    return <div>
-            // username
-            // date and time posted
-            // add one to comment_count
-            // add votes property to the comment
-            // comment_body
+    return <div className='post-comment-form'>
+               <h2>Post your comment below:</h2>
                <form>
-                   <p>Logged in as: {user.loggedInUser.username}</p>
-                   <label>Write your comment below:</label>
-                   <input
-                       type='text'
+                   <label>Logged in as: {user.loggedInUser.username}</label>
+                   <label>Comment body:</label>
+                   <textarea
                        required>
-                    </input>
+                    </textarea>
+                    <br></br>
+                    <button>Post</button>
                </form>
     </div>
 }

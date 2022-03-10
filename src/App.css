@@ -126,3 +126,38 @@
   background-color: #EFEFEF;
   text-align:left;
 }
+
+.post-comment-form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.post-comment-form label {
+  text-align: center;
+  display: block;
+}
+.post-comment-form h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+.post-comment-form textarea {
+  font-size: large;
+  font-family: inherit;
+  width: 90%;
+  height: 300px;
+  align-items: center;
+  padding: 6px 10px;
+  margin: 10px 0; 
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.post-comment-form button {
+  font-size: x-large;
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
