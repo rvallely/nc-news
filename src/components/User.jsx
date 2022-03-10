@@ -26,6 +26,9 @@ const User = () => {
             <Link className='link' key={`${user.loggedInUser.username}_comments`} to='/user/comments'>
                             <h3>My Comments</h3>
             </Link>
+            <Link className='link' key={`${user.loggedInUser.username}_articles`} to='/user/articles'>
+                            <h3>My Articles</h3>
+            </Link>
 
         </div>
     )

@@ -17,6 +17,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import PostCommentForm from './components/PostCommentForm';
 import UserComments from './components/UserComments';
+import UserArticles from './components/UserArticles';
 
 
 
@@ -48,6 +49,7 @@ function App() {
           <Route path='/articles/:article_id/comments' element={<Comments />}></Route>
           <Route path='/user' element={<User />}></Route>
           <Route path='/user/comments' element={<UserComments />}></Route>
+          <Route path='/user/articles' element={<UserArticles />}></Route>
           <Route path='/articles/:article_id/post_comment' element={<PostCommentForm />}></Route>
           <Route path='*' element={<Redirect />}></Route>
         </Routes>
