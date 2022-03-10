@@ -24,7 +24,7 @@ const User = () => {
                 alt={user.loggedInUser.username}>
             </img>
             <Link className='link' key={`${user.loggedInUser.username}_comments`} to='/user/comments'>
-                            <h3>some comments</h3>
+                            <h3>My Comments</h3>
             </Link>
 
         </div>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const UserDisplay = () => {
     const userValues = useContext(UserContext);
-    //console.log(userValues);
+
 
     return (
         <Link className='link' key='user' to='/user'>

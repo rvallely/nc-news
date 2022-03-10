@@ -65,7 +65,7 @@ export const postComment = (article_id, comment_obj) => {
 export const getCommentsByUser = (username) => {
     return newsAPI.get(`/comments`).then((data) => {
         const userComments = data.data.comments.filter((comment) => comment.author === username);
-        
+
         userComments.sort(function(a, b) {
             if(a.created_at > b.created_at) {
                 return -1;
@@ -82,8 +82,8 @@ export const getCommentsByUser = (username) => {
 }
 
 export const deleteComment = (comment_id) => {
-    return newsAPI.post(`/comments/${comment_id}`).then((data) => {
-        return data.data.comment;
+    return newsAPI.delete(`/comments/${comment_id}`).then((data) => {
+        return data.data;
     });
 }
 
