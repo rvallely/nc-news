@@ -1,16 +1,16 @@
-import React from 'react';
+import React, {useContext   } from 'react';
+import { UserContext } from '../contexts/User';
 import Header from './Header';
 import Date from './Date';
 import Nav from './Nav';
+import UserComments from './UserComments';
+import { Link } from 'react-router-dom';
 
 const User = () => {
     // reimplement with data from the server when built and tested /users endpoint fully
-    const defaultUser = {
-        username: 'jessjelly',
-        name: 'Jess Jelly',
-        avatar_url:
-          'https://vignette.wikia.nocookie.net/mrmen/images/4/4f/MR_JELLY_4A.jpg/revision/latest?cb=20180104121141'
-      }
+
+      const user = useContext(UserContext);
+      
     return (
         <div>
             {/* <div className='header-date'>
@@ -18,12 +18,15 @@ const User = () => {
               <Date />
             </div> */}
             <Nav />
-            <h3>Welcome back {defaultUser.username}!</h3>
+            <h3>Welcome back {user.loggedInUser.username}!</h3>
             <img 
-                src={defaultUser.avatar_url} 
-                alt={defaultUser.username}>
+                src={user.loggedInUser.avatar_url} 
+                alt={user.loggedInUser.username}>
             </img>
-            
+            <Link className='link' key={`${user.loggedInUser.username}_comments`} to='/user/comments'>
+                            <h3>some comments</h3>
+            </Link>
+
         </div>
     )
    
