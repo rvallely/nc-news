@@ -161,3 +161,8 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+.user-comment {
+  border: solid;
+  border-width: 2px;
+}

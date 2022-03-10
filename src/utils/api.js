@@ -87,5 +87,21 @@ export const deleteComment = (comment_id) => {
     });
 }
 
+export const getTitles = (article_ids) => {
+    console.log(article_ids);
+    
+    // article_ids.map(function(article_id) {
+    //     let id = article_id
+    //     getSingleArticle(id).then((data) => console.log(data.title));
+  
+    // });
+}
+
+export const getTitle = (article_id) => {
+    getSingleArticle(article_id).then((data) => {
+        console.log(data.title);
+        return data.title;
+    });
+}
 
 
