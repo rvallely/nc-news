@@ -23,6 +23,7 @@ const User = () => {
                 src={defaultUser.avatar_url} 
                 alt={defaultUser.username}>
             </img>
+            
         </div>
     )
    

@@ -57,7 +57,13 @@ export const patchArticle = (article_id) => {
 }
 
 export const postComment = (article_id, comment_obj) => {
-    return newsAPI.post(`/api/articles/${article_id}/comments`, comment_obj).then((data) => {
+    return newsAPI.post(`/articles/${article_id}/comments`, comment_obj).then((data) => {
+        return data.data.comment;
+    });
+}
+
+export const deleteComment = (comment_id) => {
+    return newsAPI.post(`/comments/${comment_id}`).then((data) => {
         return data.data.comment;
     });
 }

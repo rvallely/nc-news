@@ -20,7 +20,7 @@ import PostCommentForm from './components/PostCommentForm';
 
 
 function App() {
-  console.log(UserContext.Provider);
+
   const [loggedInUser, setLoggedInUser] = useState({
       username: 'jessjelly',
       name: 'Jess Jelly',

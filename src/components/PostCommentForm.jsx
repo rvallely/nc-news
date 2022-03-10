@@ -1,22 +1,45 @@
-import { useLocation } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
-import { useContext } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useState, useContext } from 'react';
 import { UserContext } from '../contexts/User';
+import { postComment } from '../utils/api';
 
 const PostCommentForm = () => {
+    
+
     const user = useContext(UserContext);
+    const username = user.loggedInUser.username;
     const { article_id } = useParams();
-    console.log(article_id, user.loggedInUser);
+    const [ body, setBody ] = useState('');
+    const [ isPending, setIsPending ] = useState(false);
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const comment = { username, body };
+
+        setIsPending(true);
+
+        postComment(article_id, comment).then((postedCommentFromAPI) => {
+            setIsPending(false);
+            navigate(`/articles/${article_id}`);
+        });
+    }
+    // console.log(article_id, user.loggedInUser);
     return <div className='post-comment-form'>
                <h2>Post your comment below:</h2>
-               <form>
-                   <label>Logged in as: {user.loggedInUser.username}</label>
+               <form 
+                   onSubmit={handleSubmit}>
+                   <label>Logged in as: {username}</label>
                    <label>Comment body:</label>
                    <textarea
-                       required>
+                       required
+                       value={body}
+                       onChange={(e) => setBody(e.target.value)}>
                     </textarea>
                     <br></br>
-                    <button>Post</button>
+                    { !isPending && <button>Post</button>}
+                    { isPending && <button disabled>Posting comment ...</button>}
+                 
                </form>
     </div>
 }
