@@ -76,10 +76,6 @@
   background-color: white;
 }
 
-.link:hover {
-  text-decoration:underline;
-}
-
 #comments {
   /* visibility:collapse; */
   border:solid;
@@ -121,9 +117,12 @@
   
 }
 
-/* margin-top:7px;
-margin-bottom: 60px;
-text-align:right;
-margin-right: 15px;
-flex: 0.5;
-font-size: x-small; */
+.single-article-details {
+  border:solid;
+  border-width: 2px;
+  text-align: left;
+  border:solid;
+  border-width: 0cm;
+  background-color: #EFEFEF;
+  text-align:left;
+}

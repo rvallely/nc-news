@@ -15,8 +15,12 @@ import UserDisplay from './components/UserDisplay';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
+import PostCommentForm from './components/PostCommentForm';
+
+
 
 function App() {
+  console.log(UserContext.Provider);
   const [loggedInUser, setLoggedInUser] = useState({
       username: 'jessjelly',
       name: 'Jess Jelly',
@@ -27,7 +31,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
+    <UserContext.Provider value={{ loggedInUser }}>
       <div className="App">
         <div className='header-date'>
               <Header />  
@@ -42,6 +46,7 @@ function App() {
           <Route path='/articles/:article_id' element={<SingleArticle />}></Route>
           <Route path='/articles/:article_id/comments' element={<Comments />}></Route>
           <Route path='/user' element={<User />}></Route>
+          <Route path='/articles/:article_id/post_comment' element={<PostCommentForm />}></Route>
           <Route path='*' element={<Redirect />}></Route>
         </Routes>
       </div>
