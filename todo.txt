@@ -1,19 +1,7 @@
-* Finish backend endpoints
-* post comment
-* delete comment 
 
-
-* User icon and logged in as
 * create profile
 
-* get time?
-* comments only opening after clicking twice
-
-* complete back end /users /users/:userid
-  - for logging in as different user
-* isLoading on topics nav ... delay at times. All content (components) should appear instaneously
 * redraw component tree with new components
-* Header Nav Date can sit in app above route, (save repetition)
 
 Styling :
 

@@ -64,7 +64,7 @@ const SingleArticle = () => {
                         <p>Post a comment</p>
                 </Link>
                 </div>
-                <div id='comments' style={{visibility:'hidden'}}>
+                <div id='comments' style={{visibility:'visible'}}>
                 {comments.map((comment) => {
                     return (
                         <div id='single-comment' key={comment.comment_id}>

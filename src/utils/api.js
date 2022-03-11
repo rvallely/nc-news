@@ -63,7 +63,7 @@ export const postComment = (article_id, comment_obj) => {
 }
 
 export const getCommentsByUser = (username) => {
-    return newsAPI.get(`/comments`).then((data) => {
+    return newsAPI.get('/comments').then((data) => {
         const userComments = data.data.comments.filter((comment) => comment.author === username);
 
         userComments.sort(function(a, b) {
