@@ -19,31 +19,25 @@ const Articles = () => {
     const [articles, setArticles] = useState([]);
     const { topic_slug } = useParams();
     const [isLoading, setIsLoading] = useState(true);
-    const [sortBy, setSortBy] = useState('');
+    // const [sortBy, setSortBy] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
     const searchTopic = searchParams.get('topic')
     const searchSort_by = searchParams.get('sort_by')
     const searchOrder = searchParams.get('order')
-
+//    console.log('The state is ', sortBy)
     let topic = '';
-    if (topic_slug) {
-        topic = topic_slug;
-    }
     if (searchTopic) {
         topic = searchTopic;
     }
-    let sort_by = '';
 
+    let sort_by = '';
     if (searchSort_by && !searchOrder) {
-        // console.log('Theres a search sort_by')
         sort_by = `sort_by=${searchSort_by}`;
     } 
     if (searchSort_by && searchOrder) {
-        // console.log('Theres a search sort_by')
         sort_by = `sort_by=${searchSort_by} order=${searchOrder}`;
-    } else {
-        sort_by = sortBy;
     }
+  
     useEffect(() => {
         getArticles(topic, sort_by).then((articlesFromAPI) => {
             setArticles(articlesFromAPI);
@@ -53,8 +47,8 @@ const Articles = () => {
 
     return isLoading ? <p>loading ...</p> : (
         <div>
-            <Nav />
-            <SortBy setSortBy={setSortBy}/>
+            <Nav /*setSortBy={setSortBy}*//>
+            <SortBy /*setSortBy={setSortBy}*//>
             
             <ul className='article-list'>
               {articles.map((article) => {

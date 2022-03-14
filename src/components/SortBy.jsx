@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 
 const SortBy = (props) => {
+    // const [sortBy, setSortBy] = useState('');
     const [selection, setSelection] = useState('')
  
     const [searchParams, setSearchParams] = useSearchParams();
@@ -33,7 +34,7 @@ const SortBy = (props) => {
                         } else {
                             navigate(`${location.pathname}?topic=${topic}&${formatQ}`)   
                         }
-                        props.setSortBy(e.target.value);
+                        //props.setSortBy(e.target.value);
                     }} > 
                     <option disabled>Sort by: Most Recent</option>
                     <option value='sort_by=created_at order=DESC'>Most Recent</option>

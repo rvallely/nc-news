@@ -12,7 +12,7 @@ export const getTopics = () => {
 
 export const getArticles = (topic_slug, sort_by) => {
     //sort_by=comment_count order=DESC
-    // console.log('sort_by ', sort_by)
+    // console.log('topic_slug ', topic_slug, ' sort_by ', sort_by)
     let path = '/articles';
     if (topic_slug || sort_by) {
         path += '?'
