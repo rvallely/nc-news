@@ -63,7 +63,8 @@ const Articles = () => {
         if (error) {
             console.log('Error')
             console.log(Object.keys(error.err))
-            return <Error message={error.err.response.data.msg} />;
+            console.log(error.err.response.status)
+            return <Error message={error.err.response.data.msg} status={error.err.response.status} />;
         }
         else if (!error) {
             return (
