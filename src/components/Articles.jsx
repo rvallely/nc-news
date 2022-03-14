@@ -10,6 +10,8 @@ import { HashLink as Link } from 'react-router-hash-link';
 import SortBy from './SortBy';
 import Queries from './Queries';
 import { useSearchParams } from 'react-router-dom'
+import { toBeChecked } from '@testing-library/jest-dom/dist/matchers';
+import Error from './Error';
 
 
 
@@ -24,6 +26,8 @@ const Articles = () => {
     const searchTopic = searchParams.get('topic')
     const searchSort_by = searchParams.get('sort_by')
     const searchOrder = searchParams.get('order')
+
+    const [error, setError] = useState(null);
 //    console.log('The state is ', sortBy)
     let topic = '';
     if (searchTopic) {
@@ -39,13 +43,30 @@ const Articles = () => {
     }
   
     useEffect(() => {
+        
         getArticles(topic, sort_by).then((articlesFromAPI) => {
             setArticles(articlesFromAPI);
+            setIsLoading(false);
+        })
+        .catch((err) => {
+            console.log('ERROR ')
+            setError({ err });
             setIsLoading(false);
         });
     }, [topic, sort_by]);
 
-    return isLoading ? <p>loading ...</p> : (
+    if (isLoading) {
+        console.log('loading')
+        return <p> loading ...</p>
+    }
+    else {
+        if (error) {
+            console.log('Error')
+            console.log(Object.keys(error.err))
+            return <Error message={error.err.response.data.msg} />;
+        }
+        else if (!error) {
+            return (
         <div>
             <Nav /*setSortBy={setSortBy}*//>
             <SortBy /*setSortBy={setSortBy}*//>
@@ -71,6 +92,8 @@ const Articles = () => {
             
         </div>
     )
+        }   
+    }
 }
 
 export default Articles;
