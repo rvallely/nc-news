@@ -7,8 +7,8 @@ import Nav from './Nav';
 import { Link } from 'react-router-dom';
 
 const UserComments = () => {
-    const { loggedInUser } = useContext(UserContext);
-    const username = loggedInUser.username;
+    const user = useContext(UserContext);
+    const username = user.username;
     const [ userComments, setUserComments ] = useState([]);
     const [ titles, setTitles ] = useState([])
     const [ isPending, setIsPending ] = useState(false);

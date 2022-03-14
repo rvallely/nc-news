@@ -9,15 +9,35 @@ import formatCreatedAt from '../utils/formatCreatedAt';
 // import { Link } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
 import SortBy from './SortBy';
+import Queries from './Queries';
+import { useSearchParams } from 'react-router-dom'
+
+
+
 
 const Articles = () => {
+
     const [articles, setArticles] = useState([]);
     const { topic_slug } = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const [sortBy, setSortBy] = useState('');
-
+    const [searchParams, setSearchParams] = useSearchParams();
+    const searchTopic = searchParams.get('topic')
+    const searchSort_by = searchParams.get('sort_by')
+    const searchOrder = searchParams.get('order')
+    console.log('topic is', searchTopic)
+    console.log('sort_by is', searchSort_by)
+    console.log('order is', searchOrder)
+    console.log('The topic slug is ', topic_slug)
+    let topic = '';
+    if (topic_slug) {
+        topic = topic_slug;
+    }
+    if (searchTopic) {
+        topic = searchTopic;
+    }
     useEffect(() => {
-        getArticles(topic_slug, sortBy).then((articlesFromAPI) => {
+        getArticles(topic, sortBy).then((articlesFromAPI) => {
             setArticles(articlesFromAPI);
             setIsLoading(false);
         });
@@ -30,7 +50,12 @@ const Articles = () => {
               <Date />
             </div> */}
             <Nav />
+            <Queries />
+            {/* <p style={{margin: '70px', border: 'solid', borderWidth: '2px'}}>{JSON.stringify(location, null, 2)}</p>
+            {console.log('The location: ', location)} */}
             <SortBy setSortBy={setSortBy}/>
+            
+            {/* <p>{location.articles}</p> */}
             <ul className='article-list'>
                 {/* {console.log(articles, '<<< articles')} */}
                 {/* {const sortedArticles = [...articles].sort((a, b) => a.comment_count-b.comment_count)} */}

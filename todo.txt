@@ -1,8 +1,8 @@
+* be able to login as a user and have user area etc. change accordingly
+* get a message user_not_found is user not on database
 
-* create profile
 
 * redraw component tree with new components
-
 Styling :
 
 * should loading last longer, so a little smoother transition?

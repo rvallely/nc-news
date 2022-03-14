@@ -19,7 +19,7 @@ const Nav = () => {
 
     return (
         <nav className='Nav'>
-            <Link className='Nav-item' key='home' to='/'>Home</Link>
+            <Link className='Nav-item' key='home' to='/articles'>Home</Link>
             {topics.map((topic) => {
                 return <Link className='Nav-item' key ={topic.slug} to={`/topics/${topic.slug}`}>{capitaliseFirstLetter(topic.slug)}</Link>
             })}

@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Date from './components/Date';
 import Nav from './components/Nav';
-import Home from './components/Home';
+
 import Articles from './components/Articles';
 import TopicArticles from './components/TopicArticles';
 import SingleArticle from './components/SingleArticle';
@@ -12,17 +12,15 @@ import Redirect from '../src/components/Redirect';
 import Comments from './components/Comments';
 import { UserContext } from './contexts/User';
 import UserDisplay from './components/UserDisplay';
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
 import PostCommentForm from './components/PostCommentForm';
 import UserComments from './components/UserComments';
 import UserArticles from './components/UserArticles';
 
 
-
 function App() {
-
+  console.log(UserContext)
   const [loggedInUser, setLoggedInUser] = useState({
       username: 'jessjelly',
       name: 'Jess Jelly',
@@ -33,7 +31,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <UserContext.Provider value={{ loggedInUser }}>
+    <UserContext.Provider value={loggedInUser}>
       <div className="App">
         <div className='header-date'>
               <Header />  
@@ -42,11 +40,16 @@ function App() {
         <UserDisplay />
         {/* <Nav /> */}
         <Routes>
-          <Route path='/' element={<Home />}></Route>
+          {/* <Link to='/articles?q=react'>Article_query</Link> */}
+        
           <Route path='/articles' element={<Articles />}></Route>
-          <Route path='/topics/:topic_slug' element={<Articles />}></Route>
+          
+
           <Route path='/articles/:article_id' element={<SingleArticle />}></Route>
           <Route path='/articles/:article_id/comments' element={<Comments />}></Route>
+
+          <Route path='/topics/:topic_slug' element={<Articles />}></Route>
+         
           <Route path='/user' element={<User />}></Route>
           <Route path='/user/comments' element={<UserComments />}></Route>
           <Route path='/user/articles' element={<UserArticles />}></Route>

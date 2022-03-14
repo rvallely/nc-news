@@ -10,7 +10,7 @@ const User = () => {
     // reimplement with data from the server when built and tested /users endpoint fully
 
       const user = useContext(UserContext);
-      
+  
     return (
         <div>
             {/* <div className='header-date'>
@@ -18,15 +18,15 @@ const User = () => {
               <Date />
             </div> */}
             <Nav />
-            <h3>Welcome back {user.loggedInUser.username}!</h3>
+            <h3>Welcome back {user.username}!</h3>
             <img 
-                src={user.loggedInUser.avatar_url} 
-                alt={user.loggedInUser.username}>
+                src={user.avatar_url} 
+                alt={user.username}>
             </img>
-            <Link className='link' key={`${user.loggedInUser.username}_comments`} to='/user/comments'>
+            <Link className='link' key={`${user.username}_comments`} to='/user/comments'>
                             <h3>My Comments</h3>
             </Link>
-            <Link className='link' key={`${user.loggedInUser.username}_articles`} to='/user/articles'>
+            <Link className='link' key={`${user.username}_articles`} to='/user/articles'>
                             <h3>My Articles</h3>
             </Link>
 
