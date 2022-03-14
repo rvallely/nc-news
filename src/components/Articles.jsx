@@ -28,10 +28,10 @@ const Articles = () => {
 
     // console.log('The sort by in state is ', sortBy)
     // console.log('the topic in state is ', topic)
-    let topic = '';
-    if (searchTopic) {
-         topic=searchTopic;
-    }
+    // let topic = '';
+    // if (searchTopic) {
+    //      topic=searchTopic;
+    // }
     let sort_by = '';
     if (searchSort_by && !searchOrder) {
         sort_by = `sort_by=${searchSort_by}`;
@@ -44,22 +44,23 @@ const Articles = () => {
 
     useEffect(() => {
 
-        getArticles(topic, sortBy).then((articlesFromAPI) => {
+        getArticles(searchTopic, sortBy).then((articlesFromAPI) => {
             setArticles(articlesFromAPI);
             setIsLoading(false);
+            setError(null);
         })
         .catch((err) => {
             setError({ err });
             setIsLoading(false);
         });
-    }, [topic, sortBy, searchSort_by, searchOrder, searchTopic]);
+    }, [sortBy, searchSort_by, searchOrder, searchTopic]);
 
     if (isLoading) {
         return <p> loading ...</p>
     }
     else {
         if (error) {
-            return <Error message={error.err.response.data.msg} status={error.err.response.status} />;
+            return <Error message={error.err.response.data.msg} status={error.err.response.status} setError={setError}/>;
         }
         else if (!error) {
             return (

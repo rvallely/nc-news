@@ -48,8 +48,8 @@ function App() {
           <Route path='/articles/:article_id' element={<SingleArticle />}></Route>
           <Route path='/articles/:article_id/comments' element={<Comments />}></Route>
 
-          <Route path='/topics/:topic_slug' element={<Articles />}></Route>
-         
+          {/* <Route path='/topics/:topic_slug' element={<Articles />}></Route>
+          */}
           <Route path='/user' element={<User />}></Route>
           <Route path='/user/comments' element={<UserComments />}></Route>
           <Route path='/user/articles' element={<UserArticles />}></Route>

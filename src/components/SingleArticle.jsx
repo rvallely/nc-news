@@ -10,12 +10,14 @@ import { Link } from 'react-router-dom';
 import Votes from './Votes';
 import capitaliseFirstLetter from '../utils/capitaliseFirstLetter';
 import PostCommentForm from './PostCommentForm';
+import Error from './Error';
 
 const SingleArticle = () => {
     const { article_id } = useParams();
     const [singleArticle, setSingleArticle] = useState({});
     const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         getSingleArticle(article_id).then((articleFromAPI) => {   
@@ -24,6 +26,9 @@ const SingleArticle = () => {
                 setComments(commentsFromAPI);
                 setIsLoading(false);
             })
+        }).catch((err) => {
+            setError({ err });
+            setIsLoading(false);
         })
     }, [article_id]);
 
@@ -37,7 +42,15 @@ const SingleArticle = () => {
         }
     }
 
-    return isLoading ? <p>loading ...</p> : (
+    if (isLoading) {
+        return <p> loading ...</p>
+    }
+    else {
+        if (error) {
+            return <Error message={error.err.response.data.msg} status={error.err.response.status} />;
+        }
+        else if (!error) {
+            return (
         <div id = 'single-article'>
             {/* <div className='header-date'>
               <Header />  
@@ -81,7 +94,9 @@ const SingleArticle = () => {
                 </div>    
             </div>
         </div>
-    )
+            )
+        }
+    }
 }
 
 export default SingleArticle;
