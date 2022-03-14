@@ -11,6 +11,8 @@ export const getTopics = () => {
 }
 
 export const getArticles = (topic_slug, sort_by) => {
+    //sort_by=comment_count order=DESC
+    // console.log('sort_by ', sort_by)
     let path = '/articles';
     if (topic_slug || sort_by) {
         path += '?'
@@ -27,6 +29,7 @@ export const getArticles = (topic_slug, sort_by) => {
             path += sort_by;
         }
     }
+    // console.log('The path is ', path)
     return newsAPI.get(path).then((data) => {
         return data.data.articles;
     });

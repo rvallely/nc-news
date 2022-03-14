@@ -1,11 +1,23 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useParams, useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 
 const SortBy = (props) => {
     const [selection, setSelection] = useState('')
+ 
+    const [searchParams, setSearchParams] = useSearchParams();
+    const searchTopic = searchParams.get('topic')
+
+    let navigate = useNavigate();
+    const location = useLocation()
+
+    let topic=undefined;
+    if (searchTopic) {
+       topic = searchTopic;
+    }
 
     return (
-        <div >
+        <div >            
         <form className='dropdown'  >
                 <select 
                
@@ -14,6 +26,13 @@ const SortBy = (props) => {
                     onChange={(e) => { 
                         setSelection(e.target.value);
                         e.preventDefault();
+                        const formatQ = e.target.value.split(' ').join('&');
+
+                        if (topic === undefined) {
+                            navigate(`${location.pathname}?${formatQ}`)   
+                        } else {
+                            navigate(`${location.pathname}?topic=${topic}&${formatQ}`)   
+                        }
                         props.setSortBy(e.target.value);
                     }} > 
                     <option disabled>Sort by: Most Recent</option>

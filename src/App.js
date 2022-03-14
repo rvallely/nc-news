@@ -20,7 +20,7 @@ import UserArticles from './components/UserArticles';
 
 
 function App() {
-  console.log(UserContext)
+  // console.log(UserContext)
   const [loggedInUser, setLoggedInUser] = useState({
       username: 'jessjelly',
       name: 'Jess Jelly',
