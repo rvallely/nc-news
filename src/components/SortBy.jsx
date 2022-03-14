@@ -1,14 +1,11 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { useParams, useSearchParams, useNavigate, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 
 const SortBy = (props) => {
-    // const [sortBy, setSortBy] = useState('');
-    const [selection, setSelection] = useState('')
- 
     const [searchParams, setSearchParams] = useSearchParams();
     const searchTopic = searchParams.get('topic')
-
+    const [input, setInput] = useState('');
+    
     let navigate = useNavigate();
     const location = useLocation()
 
@@ -23,10 +20,11 @@ const SortBy = (props) => {
                 <select 
                
                     id='sort-by' 
-                    value={selection}
+                    value={input}
                     onChange={(e) => { 
-                        setSelection(e.target.value);
-                        e.preventDefault();
+                       setInput(e.target.value);
+                    //    console.log(e.target.value);
+                        // e.preventDefault();
                         const formatQ = e.target.value.split(' ').join('&');
 
                         if (topic === undefined) {
@@ -34,8 +32,11 @@ const SortBy = (props) => {
                         } else {
                             navigate(`${location.pathname}?topic=${topic}&${formatQ}`)   
                         }
-                        //props.setSortBy(e.target.value);
-                    }} > 
+                        //console.log('The input is ', input)
+                        props.setSortBy(e.target.value);
+                        // setInput('');
+                        // console.log('The input is ', input)
+                    }}> 
                     <option disabled>Sort by: Most Recent</option>
                     <option value='sort_by=created_at order=DESC'>Most Recent</option>
                     <option value='sort_by=author order=ASC'>Author</option>

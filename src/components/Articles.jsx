@@ -1,16 +1,12 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { getArticles } from '../utils/api';
-import Header from './Header';
-import Date from './Date';
 import Nav from './Nav';
 import { useParams } from 'react-router-dom';
 import formatCreatedAt from '../utils/formatCreatedAt';
 import { HashLink as Link } from 'react-router-hash-link';
 import SortBy from './SortBy';
-import Queries from './Queries';
 import { useSearchParams } from 'react-router-dom'
-import { toBeChecked } from '@testing-library/jest-dom/dist/matchers';
 import Error from './Error';
 
 
@@ -19,58 +15,57 @@ import Error from './Error';
 const Articles = () => {
 
     const [articles, setArticles] = useState([]);
-    const { topic_slug } = useParams();
     const [isLoading, setIsLoading] = useState(true);
-    // const [sortBy, setSortBy] = useState('');
+    // const [topic, setTopic] = useState('');
+    const [sortBy, setSortBy] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
+    
     const searchTopic = searchParams.get('topic')
     const searchSort_by = searchParams.get('sort_by')
     const searchOrder = searchParams.get('order')
 
     const [error, setError] = useState(null);
-//    console.log('The state is ', sortBy)
+
+    // console.log('The sort by in state is ', sortBy)
+    // console.log('the topic in state is ', topic)
     let topic = '';
     if (searchTopic) {
-        topic = searchTopic;
+         topic=searchTopic;
     }
-
     let sort_by = '';
     if (searchSort_by && !searchOrder) {
         sort_by = `sort_by=${searchSort_by}`;
+   
     } 
     if (searchSort_by && searchOrder) {
         sort_by = `sort_by=${searchSort_by} order=${searchOrder}`;
-    }
-  
-    useEffect(() => {
         
-        getArticles(topic, sort_by).then((articlesFromAPI) => {
+    }
+
+    useEffect(() => {
+
+        getArticles(topic, sortBy).then((articlesFromAPI) => {
             setArticles(articlesFromAPI);
             setIsLoading(false);
         })
         .catch((err) => {
-            console.log('ERROR ')
             setError({ err });
             setIsLoading(false);
         });
-    }, [topic, sort_by]);
+    }, [topic, sortBy, searchSort_by, searchOrder, searchTopic]);
 
     if (isLoading) {
-        console.log('loading')
         return <p> loading ...</p>
     }
     else {
         if (error) {
-            console.log('Error')
-            console.log(Object.keys(error.err))
-            console.log(error.err.response.status)
             return <Error message={error.err.response.data.msg} status={error.err.response.status} />;
         }
         else if (!error) {
             return (
         <div>
-            <Nav /*setSortBy={setSortBy}*//>
-            <SortBy /*setSortBy={setSortBy}*//>
+            <Nav /*setTopic={setTopic}*//>
+            <SortBy setSortBy={setSortBy}/>
             
             <ul className='article-list'>
               {articles.map((article) => {

@@ -15,7 +15,7 @@ const Nav = (props) => {
             setTopics(topicsFromAPI);
         });
     }, []);
-    // console.log(props)
+    // console.log('The props: ', props.setTopic)
     
     return (
         <nav className='Nav'>
@@ -23,12 +23,13 @@ const Nav = (props) => {
             {topics.map((topic) => {
                 // return <Link className='Nav-item' key ={topic.slug} to={`/topics/${topic.slug}`}>{capitaliseFirstLetter(topic.slug)}</Link>
                 // onClick={() => props.setSortBy('sort_by=created_at order=DESC')}
-                return <Link className='Nav-item' key ={topic.slug} to={`/articles?topic=${topic.slug}`} >{capitaliseFirstLetter(topic.slug)}</Link>
+                return <Link className='Nav-item' key ={topic.slug} to={`/articles?topic=${topic.slug}`} /*onClick={()=> props.setTopic(topic.slug)}*/>{capitaliseFirstLetter(topic.slug)}</Link>
             })}
             <Link className='Nav-item' key='user' to='/user'>User</Link>
             {/* < div>
                 <p>Logged in as: {userValues.loggedInUser.username}</p>
                 <img src={userValues.loggedInUser.avatar_url} alt={userValues.loggedInUser.username}></img>
+                onClick={() => alert("boo")}
             </div> */}
         </nav>
     )
