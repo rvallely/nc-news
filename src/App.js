@@ -7,6 +7,7 @@ import Articles from './components/Articles';
 import Comments from './components/Comments';
 import Date from './components/Date';
 import Header from './components/Header';
+import Login from './components/Login';
 import PostCommentForm from './components/PostCommentForm';
 import Redirect from '../src/components/Redirect';
 import SingleArticle from './components/SingleArticle';
@@ -37,6 +38,7 @@ function App() {
          </div>
         <UserDisplay />
         <Routes>
+        <Route path='/' element={<Login />}></Route>
           <Route path='/articles' element={<Articles />}></Route>
           
 

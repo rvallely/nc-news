@@ -80,6 +80,30 @@
   text-decoration:underline;
 }
 
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.login-form label {
+  text-align: center;
+  display: block;
+}
+.login-form h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+.login-form button {
+  font-size: x-large;
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 #comments {
   /* visibility:collapse; */
   border:solid;
