@@ -1,4 +1,5 @@
 * vote on comments
+* get user articles
 * get styling cleaner across app (don't forget error styling)
 * login component
 * README.mds

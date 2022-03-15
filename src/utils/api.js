@@ -105,3 +105,27 @@ export const patchComment = (comment_id) => {
     });
 }
 
+export const getArticlesByUser = (username) => {
+    return newsAPI.get('/articles').then((data) => {
+        const userArticles = data.data.articles.filter((article) => article.author === username);
+
+        userArticles.sort(function(a, b) {
+            if(a.created_at > b.created_at) {
+                return -1;
+            }
+            if(a.created_at < b.created_at) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        });
+        return userArticles;
+    });
+}
+
+export const deleteArticle = (article_id) => {
+    return newsAPI.delete(`/articles/${article_id}`).then((data) => {
+        return data.data;
+    });
+}
