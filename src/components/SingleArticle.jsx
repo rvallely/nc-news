@@ -9,6 +9,9 @@ import ArticleVotes from './ArticleVotes';
 import capitaliseFirstLetter from '../utils/capitaliseFirstLetter';
 import Error from './Error';
 import CommentVotes from './CommentVotes';
+import Header from './Header';
+import Date from './Date';
+import UserDisplay from './UserDisplay';
 
 const SingleArticle = () => {
     const { article_id } = useParams();
@@ -45,12 +48,26 @@ const SingleArticle = () => {
     }
     else {
         if (error) {
-            return <Error message={error.err.response.data.msg} status={error.err.response.status} />;
+            return (
+                <div>
+                    <div className='header-date'>
+                        <Header />  
+                        <Date />
+                    </div>
+                    <UserDisplay /> 
+                    <Error message={error.err.response.data.msg} status={error.err.response.status} />
+                </div>
+            )  
         }
         else if (!error) {
             if (singleArticle.title === 'Article does not exist') {
                 return ( 
                     <div id = 'single-article'>
+                        <div className='header-date'>
+                            <Header />  
+                            <Date />
+                        </div>
+                        <UserDisplay /> 
                         <Nav /> 
                         <h2>{singleArticle.title}</h2>
                         <p className='single-article-body'>{singleArticle.body}</p>
@@ -59,6 +76,11 @@ const SingleArticle = () => {
             } else {
                 return (
                     <div id = 'single-article'>
+                        <div className='header-date'>
+                            <Header />  
+                            <Date />
+                        </div>
+                        <UserDisplay /> 
                         <Nav /> 
                         <div id = 'single-article'>
                             <h2>{singleArticle.title}</h2>

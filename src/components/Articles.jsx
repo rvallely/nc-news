@@ -8,6 +8,9 @@ import { HashLink as Link } from 'react-router-hash-link';
 import SortBy from './SortBy';
 import { useSearchParams } from 'react-router-dom'
 import Error from './Error';
+import Header from './Header';
+import Date from './Date';
+import UserDisplay from './UserDisplay';
 
 
 
@@ -60,11 +63,26 @@ const Articles = () => {
     }
     else {
         if (error) {
-            return <Error message={error.err.response.data.msg} status={error.err.response.status}/>;
+            return (
+                <div>
+                     <div className='header-date'>
+                        <Header />  
+                        <Date />
+                    </div>
+                    <UserDisplay /> 
+                    <Error message={error.err.response.data.msg} status={error.err.response.status}/>
+                </div>
+            )
+
         }
         else if (!error) {
             return (
         <div>
+            <div className='header-date'>
+              <Header />  
+              <Date />
+         </div>
+        <UserDisplay /> 
             <Nav />
             <SortBy setSortBy={setSortBy}/>
             

@@ -4,7 +4,9 @@ import { UserContext } from '../contexts/User';
 import Nav from './Nav';
 import { deleteArticleContent, getArticlesByUser, getTitle, getTitles } from '../utils/api';
 import formatCreatedAt from '../utils/formatCreatedAt';
-
+import Header from './Header';
+import Date from './Date';
+import UserDisplay from './UserDisplay';
 
 
 
@@ -42,6 +44,11 @@ const UserArticles = () => {
     return  isLoading ? <p>loading ...</p> : 
     ( 
         <div id='user-articles' key={`${username}-articles`}>
+            <div className='header-date'>
+              <Header />  
+              <Date />
+         </div>
+        <UserDisplay /> 
             <Nav />
             <div key={`${username}-articles`}>
                 <h2 key={`${username}`} >{username}'s articles</h2>

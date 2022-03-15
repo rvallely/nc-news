@@ -5,6 +5,9 @@ import { deleteComment, getCommentsByUser, getTitle, getTitles } from '../utils/
 import formatCreatedAt from '../utils/formatCreatedAt';
 import Nav from './Nav';
 import { Link } from 'react-router-dom';
+import Header from './Header';
+import Date from './Date';
+import UserDisplay from './UserDisplay';
 
 const UserComments = () => {
     const user = useContext(UserContext);
@@ -38,6 +41,11 @@ const UserComments = () => {
 
     return  isLoading ? <p>loading ...</p> : ( 
         <div id='user-comments' key={`${username}comments`}>
+            <div className='header-date'>
+              <Header />  
+              <Date />
+         </div>
+        <UserDisplay /> 
             <Nav />
     <div key={`${username}-comments`}>
                  <h2 key={`${username}title`} >{username}'s comments</h2>

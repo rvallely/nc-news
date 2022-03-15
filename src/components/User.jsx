@@ -5,12 +5,18 @@ import Date from './Date';
 import Nav from './Nav';
 import UserComments from './UserComments';
 import { Link } from 'react-router-dom';
+import UserDisplay from './UserDisplay';
 
 const User = () => {
       const user = useContext(UserContext);
   
     return (
         <div>
+            <div className='header-date'>
+              <Header />  
+              <Date />
+         </div>
+        <UserDisplay /> 
             <Nav />
             <h3>Welcome back {user.loggedInUser.username}!</h3>
             <img 
