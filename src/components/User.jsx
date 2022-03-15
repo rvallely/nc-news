@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import UserDisplay from './UserDisplay';
 
 const User = () => {
-      const user = useContext(UserContext);
+    const user = useContext(UserContext);
   
     return (
         <div>

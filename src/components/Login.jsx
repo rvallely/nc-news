@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, Link } from 'react-router-dom';
 import { UserContext } from '../contexts/User';
 import { getSingleUser } from '../utils/api';
 import Nav from "./Nav";
@@ -43,7 +43,8 @@ const Login = () => {
     }
 
     return (
-        <div className='login-form'>
+        <div>
+            <div className='login-form'>
             {/* <Nav /> */}
             <h2>Please log in below</h2>
             <form onSubmit={handleSubmit}>
@@ -67,7 +68,11 @@ const Login = () => {
             </form>
             <p>In state: {username}</p>
             <p>In state: {password}</p>
-        </div>)
+            </div>  
+            <Link className='.link' key='home' to='/articles'>Continue as guest</Link>
+        </div>
+        
+        )
 }
 
 export default Login;
