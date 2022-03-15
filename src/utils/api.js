@@ -107,7 +107,6 @@ export const getTitles = (article_ids) => {
 
 export const getTitle = (article_id) => {
     getSingleArticle(article_id).then((data) => {
-        console.log(data.title);
         return data.title;
     });
 }
@@ -140,5 +139,15 @@ export const getArticlesByUser = (username) => {
 export const deleteArticleContent = (article_id) => {
     return newsAPI.patch(`/articles/remove/${article_id}`).then((data) => {
         return data;
+    });
+}
+
+export const getSingleUser = (user) => {
+    const username = user.username;
+    //icellusedkars
+    console.log(username);
+    return newsAPI.get(`/users/${username}`).then((data) => {
+        console.log(data.data);
+        return data.data;
     });
 }
