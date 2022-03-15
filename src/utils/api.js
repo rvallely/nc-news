@@ -49,11 +49,6 @@ export const patchArticle = (article_id) => {
         return newsAPI.patch(`/articles/${article_id}`, {inc_votes: 1 }).then((data) => {
             return data.data.updatedArticle;
         });
-    // } else {
-    //     return newsAPI.patch(`/articles/${article_id}`, {inc_votes: -1 }).then((data) => {
-    //         return data.data.updatedArticle;
-    //     });
-    // }
 }
 
 export const postComment = (article_id, comment_obj) => {
@@ -104,4 +99,9 @@ export const getTitle = (article_id) => {
     });
 }
 
+export const patchComment = (comment_id) => {
+    return newsAPI.patch(`/comments/${comment_id}`, {inc_votes: 1 }).then((data) => {
+        return data.data.updatedComment;
+    });
+}
 

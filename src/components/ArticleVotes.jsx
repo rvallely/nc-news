@@ -1,7 +1,7 @@
 import { patchArticle } from '../utils/api';
 import { useState } from 'react';
 
-const Votes = ({article_id, votes}) => {
+const ArticleVotes = ({article_id, votes}) => {
     const [voteChange, setVoteChange] = useState(0);
     const addVote = () => {
         setVoteChange((currChange) => currChange + 1);
@@ -20,4 +20,4 @@ const Votes = ({article_id, votes}) => {
 
 }
 
-export default Votes;
+export default ArticleVotes;

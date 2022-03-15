@@ -60,12 +60,12 @@ const Articles = () => {
     }
     else {
         if (error) {
-            return <Error message={error.err.response.data.msg} status={error.err.response.status} setError={setError}/>;
+            return <Error message={error.err.response.data.msg} status={error.err.response.status}/>;
         }
         else if (!error) {
             return (
         <div>
-            <Nav /*setTopic={setTopic}*//>
+            <Nav />
             <SortBy setSortBy={setSortBy}/>
             
             <ul className='article-list'>

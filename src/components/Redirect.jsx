@@ -1,16 +1,9 @@
 import React from 'react';
-import Header from '../components/Header';
-import Date from '../components/Date';
 import Nav from '../components/Nav';
 
 const Redirect = () => {
     return (
         <div>
-            <div className='header-date'>
-              <Header />  
-              <Date />
-            </div>
-    
             <Nav />
             <h2>404: Not Found</h2>
             <h3 className= 'redirect-msg' >Whoops, looks like that page doesn't exist &#128579;</h3>
@@ -23,5 +16,4 @@ const Redirect = () => {
 
     )
 }
-/**return <h1 className ='Header' >NC News</h1>; */
 export default Redirect;

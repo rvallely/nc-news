@@ -2,15 +2,13 @@ import React, { useEffect }  from 'react';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { getSingleArticle, getComments } from '../utils/api';
-import Header from './Header';
-import Date from './Date';
 import Nav from './Nav';
 import formatCreatedAt from '../utils/formatCreatedAt';
 import { Link } from 'react-router-dom';
-import Votes from './Votes';
+import ArticleVotes from './ArticleVotes';
 import capitaliseFirstLetter from '../utils/capitaliseFirstLetter';
-import PostCommentForm from './PostCommentForm';
 import Error from './Error';
+import CommentVotes from './CommentVotes';
 
 const SingleArticle = () => {
     const { article_id } = useParams();
@@ -52,10 +50,6 @@ const SingleArticle = () => {
         else if (!error) {
             return (
         <div id = 'single-article'>
-            {/* <div className='header-date'>
-              <Header />  
-              <Date />
-            </div>*/}
             <Nav /> 
             <div id = 'single-article'>
                 <h2>{singleArticle.title}</h2>
@@ -63,8 +57,7 @@ const SingleArticle = () => {
                 <div className='single-article-details'>
                 <p>{singleArticle.author}</p>
                 <div id='votes'>
-                    {/* <p>{singleArticle.votes}</p> */}
-                    <Votes article_id={singleArticle.article_id} votes={singleArticle.votes}/>
+                    <ArticleVotes article_id={singleArticle.article_id} votes={singleArticle.votes}/>
                 </div> 
                 <div id='article_created_at'>
                             <p id='article-date'>{formatCreatedAt(singleArticle.created_at)[0]}</p>
@@ -87,7 +80,7 @@ const SingleArticle = () => {
                                 <p id='comment-date'>{formatCreatedAt(comment.created_at)[0]}</p>
                                 <p id='comment-time'>{formatCreatedAt(comment.created_at)[1]}</p>
                             </div>
-                            <h4 id='comment-votes'>{comment.votes}</h4>
+                            <CommentVotes comment_id={comment.comment_id} votes={comment.votes}/>
                         </div >
                     )
                 })}

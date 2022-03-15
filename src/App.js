@@ -1,18 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Date from './components/Date';
-import Nav from './components/Nav';
-
 import Articles from './components/Articles';
-import TopicArticles from './components/TopicArticles';
 import SingleArticle from './components/SingleArticle';
 import User from './components/User';
 import Redirect from '../src/components/Redirect';
 import Comments from './components/Comments';
 import { UserContext } from './contexts/User';
 import UserDisplay from './components/UserDisplay';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { useState } from 'react';
 import PostCommentForm from './components/PostCommentForm';
 import UserComments from './components/UserComments';
@@ -38,10 +34,7 @@ function App() {
               <Date />
          </div>
         <UserDisplay />
-        {/* <Nav /> */}
         <Routes>
-          {/* <Link to='/articles?q=react'>Article_query</Link> */}
-        
           <Route path='/articles' element={<Articles />}></Route>
           
 

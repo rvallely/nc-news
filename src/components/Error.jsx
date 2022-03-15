@@ -1,10 +1,6 @@
 import Nav from "./Nav"
 
-const Error = ({message, status, setError}) => {
-    console.log('The msg is: ', message)
-    console.log('The status is: ', status)
-    console.log(setError)
-    // setError(null);
+const Error = ({message, status}) => {
     return (
         <div>
             <Nav />
