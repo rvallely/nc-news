@@ -14,6 +14,7 @@ import User from './components/User';
 import UserDisplay from './components/UserDisplay';
 import UserComments from './components/UserComments';
 import UserArticles from './components/UserArticles';
+import UserFeedback from './components/UserFeedback';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
 
           {/* <Route path='/topics/:topic_slug' element={<Articles />}></Route>
           */}
+          <Route path='/user_feedback' element={<UserFeedback />}></Route>
           <Route path='/user' element={<User />}></Route>
           <Route path='/user/comments' element={<UserComments />}></Route>
           <Route path='/user/articles' element={<UserArticles />}></Route>

@@ -31,7 +31,7 @@ const UserComments = () => {
         setIsPending(true);
         deleteComment(id).then((data) => {
             setIsPending(false);
-            navigate('/user');
+            navigate('/user_feedback', {msg: 'comment deleted'});
         });
     }
     
