@@ -41,7 +41,7 @@ const UserArticles = () => {
 
     return  isLoading ? <p>loading ...</p> : 
     ( 
-        <div id='user-articles'>
+        <div id='user-articles' key={`${username}-articles`}>
             <Nav />
             <div key={`${username}-articles`}>
                 <h2 key={`${username}`} >{username}'s articles</h2>

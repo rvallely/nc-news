@@ -37,7 +37,7 @@ const UserComments = () => {
     
 
     return  isLoading ? <p>loading ...</p> : ( 
-        <div id='user-comments'>
+        <div id='user-comments' key={`${username}comments`}>
             <Nav />
     <div key={`${username}-comments`}>
                  <h2 key={`${username}title`} >{username}'s comments</h2>
@@ -45,11 +45,9 @@ const UserComments = () => {
                  {userComments.map(function(userComment) {
                      return (
                          <div className='user-comment' key={userComment.id}>
-                             {/* <h3>Some title</h3> */}
                              <Link className='link' key={userComment.article_id} to={`/articles/${userComment.article_id}`}>
-                            <h3 id='article-title'>Go to article</h3>
+                            <h3 id='article-title' key={`${userComment.id}-go-to-article`}>Go to article</h3>
                         </Link>
-                             {/* {console.log(userComment.article_id)} */}
                              <h4 className='user-comment-body' key={`${userComment.id}-body`} >{userComment.body}</h4>
                              <p className='user-comment-date' key={`${userComment.id}-date`}>{formatCreatedAt(userComment.created_at)[0]}</p>
                              <p className='user-comment-time' key={`${userComment.id}-time`}>{formatCreatedAt(userComment.created_at)[1]}</p>
