@@ -33,6 +33,12 @@ const UserArticles = () => {
         });
     }
 
+    const confirmRemoval = (userArticle) => {
+        if (window.confirm('Are you sure you want to delete this article?')) {
+            removeArticleContent(userArticle.article_id)
+        } 
+    }
+
     return  isLoading ? <p>loading ...</p> : 
     ( 
         <div id='user-articles'>
@@ -44,7 +50,6 @@ const UserArticles = () => {
                     if (userArticle.title !== 'Article does not exist') {
                         return (
                             <div className='user-article' key={userArticle.id}>
-                             {/* <h3>Some title</h3> */}
                                 <Link className='link' key={userArticle.article_id} to={`/articles/${userArticle.article_id}`}>
                                 <h3 id='article-title' className='title'>{userArticle.title}</h3>
                                 </Link>
@@ -54,7 +59,7 @@ const UserArticles = () => {
                                 <p className='user-article-votes' key={`${userArticle.id}-votes`}>{userArticle.votes} &#128077;</p>
                                 <button 
                                   key={`${username}-delete-article`}
-                                  onClick={() => removeArticleContent(userArticle.article_id)}>&#128465;</button> 
+                                  onClick={() => confirmRemoval(userArticle)}>&#128465;</button> 
                             </div>
                         )
                     }
