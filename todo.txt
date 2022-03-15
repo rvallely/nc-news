@@ -1,7 +1,14 @@
+* vote on comments
+* get styling cleaner across app (don't forget error styling)
+* login component
+* README.mds
+
+
+
+
+* most commented on or liked
 * be able to login as a user and have user area etc. change accordingly
 * get a message user_not_found is user not on database
-
-
 * redraw component tree with new components
 Styling :
 

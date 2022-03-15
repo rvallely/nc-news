@@ -1,16 +1,17 @@
 import './App.css';
-import Header from './components/Header';
-import Date from './components/Date';
+import { useState } from 'react';
+import { UserContext } from './contexts/User';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+
 import Articles from './components/Articles';
+import Comments from './components/Comments';
+import Date from './components/Date';
+import Header from './components/Header';
+import PostCommentForm from './components/PostCommentForm';
+import Redirect from '../src/components/Redirect';
 import SingleArticle from './components/SingleArticle';
 import User from './components/User';
-import Redirect from '../src/components/Redirect';
-import Comments from './components/Comments';
-import { UserContext } from './contexts/User';
 import UserDisplay from './components/UserDisplay';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import { useState } from 'react';
-import PostCommentForm from './components/PostCommentForm';
 import UserComments from './components/UserComments';
 import UserArticles from './components/UserArticles';
 
@@ -27,8 +28,8 @@ function App() {
 
   return (
     <BrowserRouter>
-    <UserContext.Provider value={loggedInUser}>
-      <div className="App">
+    <UserContext.Provider value={{loggedInUser, setLoggedInUser}}>
+      <div className='App'>
         <div className='header-date'>
               <Header />  
               <Date />

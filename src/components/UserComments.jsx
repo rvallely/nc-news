@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const UserComments = () => {
     const user = useContext(UserContext);
-    const username = user.username;
+    const username = user.loggedInUser.username;
     const [ userComments, setUserComments ] = useState([]);
     const [ titles, setTitles ] = useState([])
     const [ isPending, setIsPending ] = useState(false);

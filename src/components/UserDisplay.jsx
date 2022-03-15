@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 const UserDisplay = () => {
     const userValues = useContext(UserContext);
-    // console.log(userValues);
+    console.log(userValues.loggedInUser);
 
 
     return (
         <Link className='link' key='user' to='/user'>
             <div className = 'header-date' id='user-display'>
-                <p id='user-username'>{userValues.username}</p>
-                <img id='user-avatar-url' src={userValues.avatar_url} alt={userValues.username}></img>
+                <p id='user-username'>{userValues.loggedInUser.username}</p>
+                <img id='user-avatar-url' src={userValues.loggedInUser.avatar_url} alt={userValues.username}></img>
             </div>
         </Link>
     );   
