@@ -32,13 +32,14 @@ function App() {
     <BrowserRouter>
     <UserContext.Provider value={{loggedInUser, setLoggedInUser}}>
       <div className='App'>
-        <div className='header-date'>
+        {/* <div className='header-date'>
               <Header />  
               <Date />
          </div>
-        <UserDisplay />
+        <UserDisplay /> */}
+        {/* need to put in header date everywhere or find work around with guest user values */}
         <Routes>
-        <Route path='/' element={<Login />}></Route>
+          <Route path='/' element={<Login />}></Route>
           <Route path='/articles' element={<Articles />}></Route>
           
 

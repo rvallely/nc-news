@@ -148,6 +148,6 @@ export const getSingleUser = (user) => {
     console.log(username);
     return newsAPI.get(`/users/${username}`).then((data) => {
         console.log(data.data);
-        return data.data;
+        return data.data.user;
     });
 }

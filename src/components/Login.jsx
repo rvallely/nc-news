@@ -1,21 +1,32 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { UserContext } from '../contexts/User';
 import { getSingleUser } from '../utils/api';
 import Nav from "./Nav";
 
 const Login = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-
-    const handleSubmit = (e) => {
+    const { loggedInUser, setLoggedInUser } = useContext(UserContext)
+   // console.log('current user context is ', loggedInUser);
+   console.log('The user is ', loggedInUser);
+   const navigate = useNavigate(); 
+   
+   const handleSubmit = (e) => {
         e.preventDefault();
         const user = { username, password };
-        console.log(user)
+        // console.log(user)
         // check user is on the database
         // const use = user.username;
         // console.log(use);
         getSingleUser(user).then((user) => {
-            console.log(user);
+            // console.log('User in set context', user);
             // set user in context
+            setLoggedInUser(user)
+            console.log('The user is ', loggedInUser)
+            // navigate to articles
+            navigate('/articles');
+            
         })
         .catch((err) => {
             console.log(err);
