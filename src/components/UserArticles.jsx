@@ -25,7 +25,6 @@ const UserArticles = () => {
     }, [username]);
 
     const removeArticleContent = (article_id) => {
-        console.log(' in remove article')
         const id = article_id;
         setIsPending(true);
         deleteArticleContent(id).then((data) => {
@@ -64,6 +63,5 @@ const UserArticles = () => {
         </div>
     )
 }
-//removeArticle(userArticle.article_id)
 
 export default UserArticles;

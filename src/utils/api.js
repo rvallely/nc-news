@@ -138,10 +138,7 @@ export const getArticlesByUser = (username) => {
 }
 
 export const deleteArticleContent = (article_id) => {
-    console.log('in delete article')
     return newsAPI.patch(`/articles/remove/${article_id}`).then((data) => {
-        console.log('getting data')
-        console.log(data);
         return data;
     });
 }
