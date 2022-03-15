@@ -34,34 +34,34 @@ const UserArticles = () => {
         });
     }
 
-    return  isLoading ? <p>loading ...</p> : ( 
+    return  isLoading ? <p>loading ...</p> : 
+    ( 
         <div id='user-articles'>
             <Nav />
-    <div key={`${username}-articles`}>
-                 <h2 key={`${username}`} >{username}'s articles</h2>
+            <div key={`${username}-articles`}>
+                <h2 key={`${username}`} >{username}'s articles</h2>
                  
-                 {userArticles.map(function(userArticle) {
-                    //  console.log(userArticle)
-                     return (
-                         <div className='user-article' key={userArticle.id}>
+                {userArticles.map(function(userArticle) {
+                    if (userArticle.title !== 'Article does not exist') {
+                        return (
+                            <div className='user-article' key={userArticle.id}>
                              {/* <h3>Some title</h3> */}
-                             <Link className='link' key={userArticle.article_id} to={`/articles/${userArticle.article_id}`}>
-                            <h3 id='article-title' className='title'>{userArticle.title}</h3>
-                        </Link>
-                             {/* {console.log(userarticle.article_id)} */}
-                             <h4 className='user-article-body' key={`${userArticle.id}-body`} >{userArticle.body}</h4>
-                             <p className='user-article-date' key={`${userArticle.id}-date`}>{formatCreatedAt(userArticle.created_at)[0]}</p>
-                             <p className='user-article-time' key={`${userArticle.id}-time`}>{formatCreatedAt(userArticle.created_at)[1]}</p>
-                             <p className='user-article-votes' key={`${userArticle.id}-votes`}>{userArticle.votes} &#128077;</p>
-                             <button 
-                                 key={`${username}-delete-article`}
-                                 onClick={() => removeArticleContent(userArticle.article_id)}>&#128465;</button> 
-                         </div>
-                     )
-                 })
-                }
-              </div>
-              </div>
+                                <Link className='link' key={userArticle.article_id} to={`/articles/${userArticle.article_id}`}>
+                                <h3 id='article-title' className='title'>{userArticle.title}</h3>
+                                </Link>
+                                <h4 className='user-article-body' key={`${userArticle.id}-body`} >{userArticle.body}</h4>
+                                <p className='user-article-date' key={`${userArticle.id}-date`}>{formatCreatedAt(userArticle.created_at)[0]}</p>
+                                <p className='user-article-time' key={`${userArticle.id}-time`}>{formatCreatedAt(userArticle.created_at)[1]}</p>
+                                <p className='user-article-votes' key={`${userArticle.id}-votes`}>{userArticle.votes} &#128077;</p>
+                                <button 
+                                  key={`${username}-delete-article`}
+                                  onClick={() => removeArticleContent(userArticle.article_id)}>&#128465;</button> 
+                            </div>
+                        )
+                    }
+                })}
+            </div>
+        </div>
     )
 }
 //removeArticle(userArticle.article_id)
