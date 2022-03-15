@@ -137,8 +137,11 @@ export const getArticlesByUser = (username) => {
     });
 }
 
-export const deleteArticle = (article_id) => {
-    return newsAPI.delete(`/articles/${article_id}`).then((data) => {
-        return data.data;
+export const deleteArticleContent = (article_id) => {
+    console.log('in delete article')
+    return newsAPI.patch(`/articles/remove/${article_id}`).then((data) => {
+        console.log('getting data')
+        console.log(data);
+        return data;
     });
 }

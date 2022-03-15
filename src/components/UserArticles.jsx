@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../contexts/User';
 import Nav from './Nav';
-import { deleteArticle, getArticlesByUser, getTitle, getTitles } from '../utils/api';
+import { deleteArticleContent, getArticlesByUser, getTitle, getTitles } from '../utils/api';
 import formatCreatedAt from '../utils/formatCreatedAt';
 
 
@@ -24,16 +24,15 @@ const UserArticles = () => {
         });
     }, [username]);
 
-    // const removeArticle = (article_id) => {
-    //     console.log(' in remove article')
-    //     const id = article_id;
-    //     setIsPending(true);
-    //     deleteArticle(id).then((data) => {
-    //         setIsPending(false);
-    //         navigate('/user');
-    //     });
-    // }
-    
+    const removeArticleContent = (article_id) => {
+        console.log(' in remove article')
+        const id = article_id;
+        setIsPending(true);
+        deleteArticleContent(id).then((data) => {
+            setIsPending(false);
+            navigate('/user_feedback', {msg: 'comment deleted'});
+        });
+    }
 
     return  isLoading ? <p>loading ...</p> : ( 
         <div id='user-articles'>
@@ -42,7 +41,7 @@ const UserArticles = () => {
                  <h2 key={`${username}`} >{username}'s articles</h2>
                  
                  {userArticles.map(function(userArticle) {
-                     console.log(userArticle)
+                    //  console.log(userArticle)
                      return (
                          <div className='user-article' key={userArticle.id}>
                              {/* <h3>Some title</h3> */}
@@ -56,7 +55,7 @@ const UserArticles = () => {
                              <p className='user-article-votes' key={`${userArticle.id}-votes`}>{userArticle.votes} &#128077;</p>
                              <button 
                                  key={`${username}-delete-article`}
-                                 onClick={() => alert('cliked')}>&#128465;</button> 
+                                 onClick={() => removeArticleContent(userArticle.article_id)}>&#128465;</button> 
                          </div>
                      )
                  })
