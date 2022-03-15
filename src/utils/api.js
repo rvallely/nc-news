@@ -40,7 +40,20 @@ export const getSingleArticle = (article_id) => {
 
 export const getComments = (article_id) => {
     return newsAPI.get(`/articles/${article_id}/comments`).then((data) => {
-        return data.data.comments;
+        const comments = data.data.comments
+        comments.sort(function(a, b) {
+            if(a.created_at > b.created_at) {
+                return -1;
+            }
+            if(a.created_at < b.created_at) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        });
+        return comments;
+        
     });
 }
 

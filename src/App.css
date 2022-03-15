@@ -76,6 +76,10 @@
   background-color: white;
 }
 
+.link:hover {
+  text-decoration:underline;
+}
+
 #comments {
   /* visibility:collapse; */
   border:solid;

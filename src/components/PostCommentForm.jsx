@@ -8,7 +8,7 @@ const PostCommentForm = () => {
     
 
     const user = useContext(UserContext);
-    const username = user.username;
+    const username = user.loggedInUser.username;
     const { article_id } = useParams();
     const [ body, setBody ] = useState('');
     const [ isPending, setIsPending ] = useState(false);

@@ -20,22 +20,19 @@ const UserArticles = () => {
     useEffect(() => {
         getArticlesByUser(username).then((articlesFromAPI) => {
             setUserArticles(articlesFromAPI);
-            // const articles_article_ids = [];
-            // articlesFromAPI.forEach((article) => articles_article_ids.push(article.article_id));
-            // console.log(articles_article_ids);
-            // getTitles(articles_article_ids)
             setIsLoading(false);
         });
     }, [username]);
 
-    const removeArticle= (article_id) => {
-        const id = article_id;
-        setIsPending(true);
-        deleteArticle(id).then((data) => {
-            setIsPending(false);
-            navigate('/user');
-        });
-    }
+    // const removeArticle = (article_id) => {
+    //     console.log(' in remove article')
+    //     const id = article_id;
+    //     setIsPending(true);
+    //     deleteArticle(id).then((data) => {
+    //         setIsPending(false);
+    //         navigate('/user');
+    //     });
+    // }
     
 
     return  isLoading ? <p>loading ...</p> : ( 
@@ -45,11 +42,12 @@ const UserArticles = () => {
                  <h2 key={`${username}`} >{username}'s articles</h2>
                  
                  {userArticles.map(function(userArticle) {
+                     console.log(userArticle)
                      return (
                          <div className='user-article' key={userArticle.id}>
                              {/* <h3>Some title</h3> */}
                              <Link className='link' key={userArticle.article_id} to={`/articles/${userArticle.article_id}`}>
-                            <h3 id='article-title'>Go to article</h3>
+                            <h3 id='article-title' className='title'>{userArticle.title}</h3>
                         </Link>
                              {/* {console.log(userarticle.article_id)} */}
                              <h4 className='user-article-body' key={`${userArticle.id}-body`} >{userArticle.body}</h4>
@@ -58,7 +56,7 @@ const UserArticles = () => {
                              <p className='user-article-votes' key={`${userArticle.id}-votes`}>{userArticle.votes} &#128077;</p>
                              <button 
                                  key={`${username}-delete-article`}
-                                 onClick={() => removeArticle(userArticle.article_id)}>&#128465;</button>
+                                 onClick={() => alert('cliked')}>&#128465;</button> 
                          </div>
                      )
                  })
@@ -67,6 +65,6 @@ const UserArticles = () => {
               </div>
     )
 }
-
+//removeArticle(userArticle.article_id)
 
 export default UserArticles;
