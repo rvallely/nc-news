@@ -1,37 +1,28 @@
-import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useContext } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { UserContext } from '../contexts/User';
-import { postComment } from '../utils/api';
 import Nav from './Nav';
+import { postComment } from '../utils/api';
 
 const PostCommentForm = () => {
-    
-
     const user = useContext(UserContext);
- 
     const username = user.loggedInUser.username;
     const { article_id } = useParams();
     const [ body, setBody ] = useState('');
     const [ isPending, setIsPending ] = useState(false);
     const navigate = useNavigate();
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
-    console.log(loggedInUser)
-    if (loggedInUser.username === 'guest') {
-        console.log('guest')
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const comment = { username, body };
-
         setIsPending(true);
-
         postComment(article_id, comment).then((postedCommentFromAPI) => {
             setIsPending(false);
             navigate(`/articles/${article_id}`);
         });
     }
-    // console.log(article_id, user.loggedInUser);
+
     return <div className='post-comment-form'>
                <Nav />
                <h2>Post your comment below:</h2>
