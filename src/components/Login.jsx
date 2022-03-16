@@ -69,7 +69,7 @@ const Login = () => {
             <p>In state: {username}</p>
             <p>In state: {password}</p>
             </div>  
-            <Link className='.link' key='home' to='/articles'>Continue as guest</Link>
+            <Link className='link' key='home' to='/articles'>Continue as guest</Link>
         </div>
         
         )
