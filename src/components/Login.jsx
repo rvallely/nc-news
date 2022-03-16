@@ -41,7 +41,8 @@ const Login = () => {
 
     return (
         <div>
-            <Header />
+            <h1>Welcome to NC News!</h1>
+            <p>Please choose an option to continue</p>
             <div className='login-form'>
             <h2>Please log in below</h2>
             <form onSubmit={handleSubmit}>
