@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { UserContext } from '../contexts/User';
-import Date from './Date';
-import Header from './Header';
-import Nav from './Nav';
-import UserDisplay from './UserDisplay';
-import { deleteArticleContent, getArticlesByUser } from '../utils/api';
-import formatCreatedAt from '../utils/formatCreatedAt';
+import { UserContext } from '../../contexts/User';
+import Date from '../General/Date';
+import Header from '../General/Header';
+import Nav from '../General/Nav';
+import UserDisplay from '../General/UserDisplay';
+import { deleteArticleContent, getArticlesByUser } from '../../utils/api';
+import formatCreatedAt from '../../utils/formatCreatedAt';
 
 const UserArticles = () => {
     const user = useContext(UserContext);

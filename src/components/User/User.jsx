@@ -1,11 +1,11 @@
 import React, {useContext   } from 'react';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../contexts/User';
-import Date from './Date';
-import Header from './Header';
-import Logout from './Logout';
-import Nav from './Nav';
-import UserDisplay from './UserDisplay';
+import { UserContext } from '../../contexts/User';
+import Date from '../General/Date';
+import Header from '../General/Header';
+import Logout from '../General/Logout';
+import Nav from '../General/Nav';
+import UserDisplay from '../General/UserDisplay';
 
 
 const User = () => {

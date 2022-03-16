@@ -1,17 +1,17 @@
 import React, { useEffect, useState, useContext  }  from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { UserContext } from '../contexts/User';
+import { UserContext } from '../../contexts/User';
 import ArticleVotes from './ArticleVotes';
 import CommentVotes from './CommentVotes';
-import Date from './Date';
-import Error from './Error';
-import Header from './Header';
+import Date from '../General/Date';
+import Error from '../General/Error';
+import Header from '../General/Header';
 import PostCommentLink from './PostCommentLink';
-import Nav from './Nav';
-import UserDisplay from './UserDisplay';
-import capitaliseFirstLetter from '../utils/capitaliseFirstLetter';
-import formatCreatedAt from '../utils/formatCreatedAt';
-import { getSingleArticle, getComments } from '../utils/api';
+import Nav from '../General/Nav';
+import UserDisplay from '../General/UserDisplay';
+import capitaliseFirstLetter from '../../utils/capitaliseFirstLetter';
+import formatCreatedAt from '../../utils/formatCreatedAt';
+import { getSingleArticle, getComments } from '../../utils/api';
 
 
 

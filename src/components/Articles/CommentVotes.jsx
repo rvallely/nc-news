@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
-import { UserContext } from '../contexts/User';
-import { patchComment } from '../utils/api';
+import { UserContext } from '../../contexts/User';
+import { patchComment } from '../../utils/api';
 
 const CommentVotes = ({ comment_id, votes }) => {
     const [voteChange, setVoteChange] = useState(0);

@@ -3,19 +3,19 @@ import { useState } from 'react';
 import { UserContext } from './contexts/User';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
-import Articles from './components/Articles';
+import Articles from './components/Articles/Articles';
 
-import Date from './components/Date';
-import Header from './components/Header';
-import Login from './components/Login';
-import PostCommentForm from './components/PostCommentForm';
-import Redirect from '../src/components/Redirect';
-import SingleArticle from './components/SingleArticle';
-import User from './components/User';
-import UserDisplay from './components/UserDisplay';
-import UserComments from './components/UserComments';
-import UserArticles from './components/UserArticles';
-import UserFeedback from './components/UserFeedback';
+import Date from './components/General/Date';
+import Header from './components/General/Header';
+import Login from './components/General/Login';
+import PostCommentForm from './components/Articles/PostCommentForm';
+import Redirect from './components/General/Redirect';
+import SingleArticle from './components/Articles/SingleArticle';
+import User from './components/User/User';
+import UserDisplay from './components/General/UserDisplay';
+import UserComments from './components/User/UserComments';
+import UserArticles from './components/User/UserArticles';
+import UserFeedback from './components/User/UserFeedback';
 
 
 function App() {

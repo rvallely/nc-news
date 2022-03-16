@@ -1,7 +1,7 @@
-import Date from "./Date";
-import Header from "./Header";
-import Nav from "./Nav";
-import UserDisplay from "./UserDisplay";
+import Date from "../General/Date";
+import Header from "../General/Header";
+import Nav from "../General/Nav";
+import UserDisplay from "../General/UserDisplay";
 
 const UserFeedback = () => {
     return (

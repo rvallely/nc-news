@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { UserContext } from '../contexts/User';
-import { getSingleUser } from '../utils/api';
+import { UserContext } from '../../contexts/User';
+import { getSingleUser } from '../../utils/api';
 
 const Login = () => {
     const [username, setUsername] = useState('')

@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { UserContext } from '../contexts/User';
-import Date from './Date';
-import Header from './Header';
-import Nav from './Nav';
-import UserDisplay from './UserDisplay';
-import { deleteComment, getCommentsByUser } from '../utils/api';
-import formatCreatedAt from '../utils/formatCreatedAt';
+import { UserContext } from '../../contexts/User';
+import Date from '../General/Date';
+import Header from '../General/Header';
+import Nav from '../General/Nav';
+import UserDisplay from '../General/UserDisplay';
+import { deleteComment, getCommentsByUser } from '../../utils/api';
+import formatCreatedAt from '../../utils/formatCreatedAt';
 
 const UserComments = () => {
     const user = useContext(UserContext);

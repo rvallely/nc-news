@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
-import { UserContext } from '../contexts/User';
-import { patchArticle } from '../utils/api';
+import { UserContext } from '../../contexts/User';
+import { patchArticle } from '../../utils/api';
 
 const ArticleVotes = ({ article_id, votes }) => {
     const [voteChange, setVoteChange] = useState(0);

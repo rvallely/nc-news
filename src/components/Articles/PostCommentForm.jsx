@@ -1,11 +1,11 @@
 import { useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { UserContext } from '../contexts/User';
-import Date from './Date';
-import Header from './Header';
-import Nav from './Nav';
-import UserDisplay from './UserDisplay';
-import { postComment } from '../utils/api';
+import { UserContext } from '../../contexts/User';
+import Date from '../General/Date';
+import Header from '../General/Header';
+import Nav from '../General/Nav';
+import UserDisplay from '../General/UserDisplay';
+import { postComment } from '../../utils/api';
 
 const PostCommentForm = () => {
     const user = useContext(UserContext);

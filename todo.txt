@@ -1,13 +1,9 @@
 * invalid sort_by
 
-* get styling cleaner across app (don't forget error styling)
-
-* login component
-* be able to login as a user and have user area etc. change accordingly
-* get a message user_not_found is user not on database
-
 * README.mds
-
+* get styling cleaner across app (don't forget error styling)
+* tidy up css naming (all lowercase and hyphen)
+* classes and ids - check names are easy to follow
 
 
 
@@ -15,9 +11,6 @@
 
 * redraw component tree with new components
 
-Styling :
 
 * should loading last longer, so a little smoother transition?
 * Make redirect msg prettier, maybe add appropriate img.
-* tidy up css naming (all lowercase and hyphen)
-* classes and ids - check names are easy to follow

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import capitaliseFirstLetter from '../utils/capitaliseFirstLetter';
-import { getTopics } from '../utils/api';
+import capitaliseFirstLetter from '../../utils/capitaliseFirstLetter';
+import { getTopics } from '../../utils/api';
 
 const Nav = (props) => {
     const [topics, setTopics] = useState([]);

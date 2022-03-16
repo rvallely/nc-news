@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom'
-import Date from './Date';
-import Error from './Error';
-import Header from './Header';
-import Nav from './Nav';
+import Date from '../General/Date';
+import Error from '../General/Error';
+import Header from '../General/Header';
+import Nav from '../General/Nav';
 import SortBy from './SortBy';
-import UserDisplay from './UserDisplay';
-import formatCreatedAt from '../utils/formatCreatedAt';
-import { getArticles } from '../utils/api';
+import UserDisplay from '../General/UserDisplay';
+import formatCreatedAt from '../../utils/formatCreatedAt';
+import { getArticles } from '../../utils/api';
 
 const Articles = () => {
     const [articles, setArticles] = useState([]);
