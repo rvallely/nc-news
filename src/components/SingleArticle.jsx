@@ -21,7 +21,7 @@ const SingleArticle = () => {
     const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-    const { loggedInUser, setLoggedInUser } = useContext(UserContext)
+    const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
     useEffect(() => {
         getSingleArticle(article_id).then((articleFromAPI) => {   
@@ -40,7 +40,7 @@ const SingleArticle = () => {
         const comments = document.getElementById('comments');
         
         if (comments.style.visibility !== 'visible') {
-          comments.style.visibility = 'visible';
+            comments.style.visibility = 'visible';
         } else {
             comments.style.visibility = 'hidden';
         }
@@ -78,7 +78,7 @@ const SingleArticle = () => {
                 )
             } else {
                 return (
-                    <div id = 'single-article'>
+                    <div id ='single-article'>
                         <div className='header-date'>
                             <Header />  
                             <Date />
@@ -97,8 +97,12 @@ const SingleArticle = () => {
                                 <p id='article-date'>{formatCreatedAt(singleArticle.created_at)[0]}</p>
                                 <p id='article-time'>{formatCreatedAt(singleArticle.created_at)[1]}</p>
                             </div>
-                            <Link className='link' key ={singleArticle.topic} to={`/topics/${singleArticle.topic}`}><p>{capitaliseFirstLetter(singleArticle.topic)}</p></Link> 
-                            <button id='show-comments'className='link' onClick={changeCommentVisibility}><p>{singleArticle.comment_count} comments</p></button>
+                            <Link className='link' key ={singleArticle.topic} to={`/topics/${singleArticle.topic}`}>
+                                <p>{capitaliseFirstLetter(singleArticle.topic)}</p>
+                            </Link> 
+                            <button id='show-comments'className='link' onClick={changeCommentVisibility}>
+                                <p>{singleArticle.comment_count} comments</p>
+                            </button>
                             <PostCommentLink singleArticle={singleArticle}/>
                         </div>
                         <div id='comments' style={{visibility:'visible'}}>

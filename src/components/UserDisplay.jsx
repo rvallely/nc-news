@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { UserContext } from '../contexts/User';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../contexts/User';
 
 const UserDisplay = () => {
     const user = useContext(UserContext);

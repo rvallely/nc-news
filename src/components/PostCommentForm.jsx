@@ -1,7 +1,10 @@
 import { useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { UserContext } from '../contexts/User';
+import Date from './Date';
+import Header from './Header';
 import Nav from './Nav';
+import UserDisplay from './UserDisplay';
 import { postComment } from '../utils/api';
 
 const PostCommentForm = () => {
@@ -24,6 +27,11 @@ const PostCommentForm = () => {
 
     return (
         <div className='post-comment-form'>
+            <div className='header-date'>
+                    <Header />  
+                    <Date />
+                </div>
+            <UserDisplay />
             <Nav />
             <h2>Post your comment below:</h2>
             <form onSubmit={handleSubmit}>

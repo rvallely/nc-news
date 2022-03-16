@@ -9,33 +9,27 @@ const SortBy = (props) => {
     let navigate = useNavigate();
     const location = useLocation()
 
-    let topic=undefined;
+    let topic = undefined;
     if (searchTopic) {
        topic = searchTopic;
     }
 
     return (
         <div >            
-        <form className='dropdown'  >
+            <form className='dropdown'  >
                 <select 
-               
-                    id='sort-by' 
-                    value={input}
-                    onChange={(e) => { 
-                       setInput(e.target.value);
-                    //    console.log(e.target.value);
-                        // e.preventDefault();
+                  id='sort-by' 
+                  value={input}
+                  onChange={(e) => { 
+                    setInput(e.target.value);
                         const formatQ = e.target.value.split(' ').join('&');
 
                         if (topic === undefined) {
-                            navigate(`${location.pathname}?${formatQ}`)   
+                            navigate(`${location.pathname}?${formatQ}`);   
                         } else {
-                            navigate(`${location.pathname}?topic=${topic}&${formatQ}`)   
+                            navigate(`${location.pathname}?topic=${topic}&${formatQ}`);   
                         }
-                        //console.log('The input is ', input)
                         props.setSortBy(e.target.value);
-                        // setInput('');
-                        // console.log('The input is ', input)
                     }}> 
                     <option disabled>Sort by: Most Recent</option>
                     <option value='sort_by=created_at order=DESC'>Most Recent</option>

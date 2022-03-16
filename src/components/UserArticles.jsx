@@ -1,20 +1,17 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../contexts/User';
-import Nav from './Nav';
-import { deleteArticleContent, getArticlesByUser, getTitle, getTitles } from '../utils/api';
-import formatCreatedAt from '../utils/formatCreatedAt';
-import Header from './Header';
 import Date from './Date';
+import Header from './Header';
+import Nav from './Nav';
 import UserDisplay from './UserDisplay';
-
-
+import { deleteArticleContent, getArticlesByUser } from '../utils/api';
+import formatCreatedAt from '../utils/formatCreatedAt';
 
 const UserArticles = () => {
     const user = useContext(UserContext);
     const username = user.loggedInUser.username;
     const [ userArticles, setUserArticles ] = useState([]);
-    const [ titles, setTitles ] = useState([])
     const [ isPending, setIsPending ] = useState(false);
     const [ isLoading, setIsLoading ] = useState(true)
     const navigate = useNavigate();
@@ -37,17 +34,16 @@ const UserArticles = () => {
 
     const confirmRemoval = (userArticle) => {
         if (window.confirm('Are you sure you want to delete this article?')) {
-            removeArticleContent(userArticle.article_id)
+            removeArticleContent(userArticle.article_id);
         } 
     }
-
     return  isLoading ? <p>loading ...</p> : 
     ( 
         <div id='user-articles' key={`${username}-articles`}>
             <div className='header-date'>
               <Header />  
               <Date />
-         </div>
+        </div>
         <UserDisplay /> 
             <Nav />
             <div key={`${username}-articles`}>
