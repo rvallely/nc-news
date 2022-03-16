@@ -4,4 +4,4 @@ const formatCreatedAt = (created_at) => {
     return [date, time];
 }
 
-export default formatCreatedAt
+export default formatCreatedAt;
