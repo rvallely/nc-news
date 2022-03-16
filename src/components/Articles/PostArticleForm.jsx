@@ -7,6 +7,7 @@ import Nav from '../General/Nav';
 import UserDisplay from "../General/UserDisplay";
 import capitaliseFirstLetter from '../../utils/capitaliseFirstLetter';
 import { getTopics } from '../../utils/api';
+import { postArticle } from '../../utils/api';
 
 const PostArticleForm = () => {
     const user = useContext(UserContext);
@@ -28,12 +29,14 @@ const PostArticleForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const article = { username, title, body };
+        const newArticle = { author: username, title, body, topic };
+        console.log(newArticle);
         setIsPending(true);
-        // postComment(article_id, comment).then(() => {
-        //     setIsPending(false);
-        //     navigate(`/articles/${article_id}`);
-        // });
+        
+        postArticle(newArticle).then((postedArticle) => {
+            setIsPending(false);
+            navigate(`/articles/${postedArticle.article_id}`);
+        });
     }
     return (
         <div className='form'>
@@ -54,12 +57,13 @@ const PostArticleForm = () => {
             </input>
             <label>Topic:</label>
             <select
+              required
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
               >
                 {allTopics.map((topic) => {
                     return (
-                        <option value={capitaliseFirstLetter(topic.slug)}>{capitaliseFirstLetter(topic.slug)}</option>
+                        <option value={topic.slug}>{capitaliseFirstLetter(topic.slug)}</option>
                     )
                 })}
             </select>

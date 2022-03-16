@@ -131,3 +131,9 @@ export const getSingleUser = (user) => {
         return response.data.user;
     });
 }
+
+export const postArticle = (newArticle) => {
+    return newsAPI.post('/articles', newArticle).then((data) => {
+        return data.data.postedArticle;
+    });
+}
