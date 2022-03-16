@@ -9,7 +9,7 @@ import UserDisplay from './UserDisplay';
 
 const User = () => {
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
-    console.log(loggedInUser)
+
     if (loggedInUser.username === 'guest') {
         return (
             <div>

@@ -3,6 +3,7 @@ import { Navigate, useNavigate, Link } from 'react-router-dom';
 import { UserContext } from '../contexts/User';
 import { getSingleUser } from '../utils/api';
 import Nav from "./Nav";
+import Header from './Header';
 
 const Login = () => {
     const [username, setUsername] = useState('')
@@ -15,12 +16,11 @@ const Login = () => {
    const handleSubmit = (e) => {
         e.preventDefault();
         const user = { username, password };
-        // console.log(user)
-        // check user is on the database
-        // const use = user.username;
-        // console.log(use);
         getSingleUser(user).then((user) => {
-            // console.log('User in set context', user);
+            // if (true) check password is correct
+                // if (true) login
+                // if (false) alert('Password is incorrect')
+            // if (false) alert('Not a registered user')
             // set user in context
             setLoggedInUser(user)
             console.log('The user is ', loggedInUser)
@@ -36,16 +36,13 @@ const Login = () => {
         //.then((res) => {
         //     console.log(res);
         // })
-        // if (true) check password is correct
-            // if (true) login
-            // if (false) alert('Password is incorrect')
-        // if (false) alert('Not a registered user')
+       
     }
 
     return (
         <div>
+            <Header />
             <div className='login-form'>
-            {/* <Nav /> */}
             <h2>Please log in below</h2>
             <form onSubmit={handleSubmit}>
                 <label>Username:</label>
