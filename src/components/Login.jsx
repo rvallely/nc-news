@@ -7,52 +7,46 @@ import Error from './Error';
 import Header from './Header';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Toastify from 'toastify-js'
+import { injectStyle } from "react-toastify/dist/inject-style";
+import { toHaveErrorMessage } from '@testing-library/jest-dom/dist/matchers';
+
 
 const Login = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null);
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
-   // console.log('current user context is ', loggedInUser);
-  // console.log('The user is ', loggedInUser);
+ 
    const navigate = useNavigate(); 
 
-   const notify = () => toast("Wow so easy!");
-   
+//    let errors = [];
+//    function notify() {
+//     toast.dark("User not found, please try again.");
+//    }
    const handleSubmit = (e) => {
         e.preventDefault();
         const user = { username, password };
         getSingleUser(user).then((user) => {
+       
             // if (true) check password is correct
                 // if (true) login
                 // if (false) alert('Password is incorrect')
             // if (false) alert('Not a registered user')
             // set user in context
             setLoggedInUser(user)
+            setError(null);
             console.log('The user is ', loggedInUser)
             // navigate to articles
             navigate('/articles');
             
         })
         .catch((err) => {
-           // console.log(err.response.data)
-            setError(err);
-            //setIsLoading(false);
-        })
-       
-       
+            alert('Username is incorrect!')   
+            setUsername('');
+            setPassword('');
+        });
     }
-
-    if (error) {
-        notify();
-        console.log(Object.keys(error));
-        console.log(error.response.status)
-        console.log(error.response.data.msg)
-    //    return( <Error message={error.response.data.msg} status={error.response.status} />)
-    
-      
-          
-    } else {
 
     return (
         <div>
@@ -86,7 +80,7 @@ const Login = () => {
         </div>
         
         )
-    }
+    
 }
 
 export default Login;
