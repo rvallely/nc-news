@@ -6,6 +6,7 @@ import Nav from './Nav';
 import UserComments from './UserComments';
 import { Link } from 'react-router-dom';
 import UserDisplay from './UserDisplay';
+import Logout from './Logout';
 
 const User = () => {
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
@@ -43,6 +44,7 @@ const User = () => {
             <Link className='link' key={`${loggedInUser.username}_articles`} to='/user/articles'>
                             <h3>My Articles</h3>
             </Link>
+            <Logout />
 
         </div>
     )
