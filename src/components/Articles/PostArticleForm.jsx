@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../contexts/User';
 import Date from "../General/Date";
 import Error from '../General/Error';
@@ -13,7 +13,6 @@ import { postArticle } from '../../utils/api';
 const PostArticleForm = () => {
     const user = useContext(UserContext);
     const username = user.loggedInUser.username;
-    const { article_id } = useParams();
     const [ title, setTitle ] = useState('');
     const [ body, setBody ] = useState('');
     const [ topic, setTopic ] = useState('');
@@ -35,7 +34,6 @@ const PostArticleForm = () => {
         }
         if (topic !== '' ) {
             const newArticle = { author: username, title, body, topic };
-            console.log(newArticle);
             setIsPending(true);
             
             postArticle(newArticle).then((postedArticle) => {
@@ -43,13 +41,13 @@ const PostArticleForm = () => {
                 navigate(`/articles/${postedArticle.article_id}`);
             })
             .catch((err) => {
-
-                console.log('ERROR', err)
                 setError(err);
             });
         }
     }
-
+    if (error) {
+        return <Error message={error.response.data.msg} status={error.response.status}/>
+    }
     if (username === 'guest') {
         return <Error message={'Please log in to post an article'} status={400}/>
     } else {
@@ -91,9 +89,6 @@ const PostArticleForm = () => {
                 <br></br>
                 { !isPending && <button>Post</button>}
                 { isPending && <button disabled>Posting article ...</button>}
-                <p>{title}</p>
-                <p>{body}</p>
-                <p>{topic}</p>
             </form>
         </div>
         )
