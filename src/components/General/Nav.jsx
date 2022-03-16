@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import capitaliseFirstLetter from '../../utils/capitaliseFirstLetter';
 import { getTopics } from '../../utils/api';
 
-const Nav = (props) => {
+const Nav = () => {
     const [topics, setTopics] = useState([]);
     useEffect(() => {
         getTopics().then((topicsFromAPI) => {

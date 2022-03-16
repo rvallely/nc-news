@@ -26,7 +26,7 @@ const PostCommentForm = () => {
     }
 
     return (
-        <div className='post-comment-form'>
+        <div className='form'>
             <div className='header-date'>
                     <Header />  
                     <Date />

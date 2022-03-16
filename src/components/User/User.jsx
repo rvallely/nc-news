@@ -44,6 +44,9 @@ const User = () => {
                 <Link className='link' key={`${loggedInUser.username}_articles`} to='/user/articles'>
                     <h3>My Articles</h3>
                 </Link>
+                <Link className='link' key={`${loggedInUser.username}_post_article`} to='/user/post_article'>
+                    <h3>Post an article</h3>
+                </Link>
                 <Logout />
             </div>
         )
