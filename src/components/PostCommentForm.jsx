@@ -8,11 +8,17 @@ const PostCommentForm = () => {
     
 
     const user = useContext(UserContext);
+ 
     const username = user.loggedInUser.username;
     const { article_id } = useParams();
     const [ body, setBody ] = useState('');
     const [ isPending, setIsPending ] = useState(false);
     const navigate = useNavigate();
+    const { loggedInUser, setLoggedInUser } = useContext(UserContext)
+    console.log(loggedInUser)
+    if (loggedInUser.username === 'guest') {
+        console.log('guest')
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();

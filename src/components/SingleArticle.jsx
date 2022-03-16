@@ -1,6 +1,6 @@
 import React, { useEffect }  from 'react';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { getSingleArticle, getComments } from '../utils/api';
 import Nav from './Nav';
 import formatCreatedAt from '../utils/formatCreatedAt';
@@ -12,6 +12,7 @@ import CommentVotes from './CommentVotes';
 import Header from './Header';
 import Date from './Date';
 import UserDisplay from './UserDisplay';
+import { UserContext } from '../contexts/User';
 
 const SingleArticle = () => {
     const { article_id } = useParams();
@@ -19,6 +20,8 @@ const SingleArticle = () => {
     const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const { loggedInUser, setLoggedInUser } = useContext(UserContext)
+    console.log(loggedInUser)
 
     useEffect(() => {
         getSingleArticle(article_id).then((articleFromAPI) => {   
@@ -32,6 +35,13 @@ const SingleArticle = () => {
             setIsLoading(false);
         })
     }, [article_id]);
+
+    let link = '';
+    if (loggedInUser.username === 'guest') {
+        link = '/user'
+    } else {
+        link = `/articles/${singleArticle.article_id}/post_comment`;
+    }
 
     const changeCommentVisibility = () => {
         const comments = document.getElementById('comments');
@@ -96,7 +106,7 @@ const SingleArticle = () => {
                             </div>
                             <Link className='link' key ={singleArticle.topic} to={`/topics/${singleArticle.topic}`}><p>{capitaliseFirstLetter(singleArticle.topic)}</p></Link> 
                             <button id='show-comments'className='link' onClick={changeCommentVisibility}><p>{singleArticle.comment_count} comments</p></button>
-                            <Link key={`${article_id}-post-comment`} className='link' to={`/articles/${singleArticle.article_id}/post_comment`}><p>Post a comment</p></Link>
+                            <Link key={`${article_id}-post-comment`} className='link' to={`${link}`}><p>Post a comment</p></Link>
                         </div>
                         <div id='comments' style={{visibility:'visible'}}>
                             {comments.map((comment) => {
