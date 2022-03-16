@@ -1,16 +1,7 @@
 import { useState, useContext } from 'react';
-import { Navigate, useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { UserContext } from '../contexts/User';
 import { getSingleUser } from '../utils/api';
-import Nav from "./Nav";
-import Error from './Error';
-import Header from './Header';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Toastify from 'toastify-js'
-import { injectStyle } from "react-toastify/dist/inject-style";
-import { toHaveErrorMessage } from '@testing-library/jest-dom/dist/matchers';
-
 
 const Login = () => {
     const [username, setUsername] = useState('')
@@ -44,56 +35,40 @@ const Login = () => {
             setError(null);
         });
     }
-    
-    /*if (error) {
-        console.log(Object.keys(error));
-        console.log(error.response.status);
-        setUsername('');
-        setPassword('');
-        setError(null);
-        if(error.response.status === 404) {
-            console.log('error')
-            notify()
-        }  
-    } else {
-*/
     return (
         <div>
             <h1>Welcome to NC News!</h1>
             <p>Please choose an option to continue</p>
             <div className='login-form'>
-            <h2>Please log in below</h2>
-            <form onSubmit={handleSubmit}>
-                <label>Username:</label>
-                <input
-                  type='text'
-                  required
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                ></input>
-                <label>Password:</label>
-                <input
-                  type='password'
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                ></input>
-                <br></br>
-                <br></br>
-                <button>Login</button>
-            </form>
-            <p>In state: {username}</p>
-            <p>In state: {password}</p>
-            <h3>or</h3>
-            <Link className='link' key='home' to='/articles'>
-                <h2>Continue as guest</h2>
-            </Link>
-            </div>  
-            
+                <h2>Please log in below</h2>
+                <form onSubmit={handleSubmit}>
+                    <label>Username:</label>
+                    <input
+                      type='text'
+                      required
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                    ></input>
+                    <label>Password:</label>
+                    <input
+                      type='password'
+                      required
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    ></input>
+                    <br></br>
+                    <br></br>
+                    <button>Login</button>
+                </form>
+                <p>In state: {username}</p>
+                <p>In state: {password}</p>
+                <h3>or</h3>
+                <Link className='link' key='home' to='/articles'>
+                    <h2>Continue as guest</h2>
+                </Link>
+            </div>   
         </div>
-        
-        )
-    //}
+    )
 }
 
 export default Login;

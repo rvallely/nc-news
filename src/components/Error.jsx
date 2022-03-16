@@ -1,6 +1,6 @@
 import Nav from "./Nav"
 
-const Error = ({message, status}) => {
+const Error = ({ message, status }) => {
     return (
         <div>
             <Nav />
