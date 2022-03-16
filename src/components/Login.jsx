@@ -20,34 +20,43 @@ const Login = () => {
  
    const navigate = useNavigate(); 
 
-//    let errors = [];
-//    function notify() {
-//     toast.dark("User not found, please try again.");
-//    }
    const handleSubmit = (e) => {
         e.preventDefault();
         const user = { username, password };
         getSingleUser(user).then((user) => {
-       
             // if (true) check password is correct
                 // if (true) login
                 // if (false) alert('Password is incorrect')
-            // if (false) alert('Not a registered user')
+            
             // set user in context
             setLoggedInUser(user)
             setError(null);
-            console.log('The user is ', loggedInUser)
             // navigate to articles
             navigate('/articles');
             
         })
+        // if (false) alert('Not a registered user')
         .catch((err) => {
-            alert('Username is incorrect!')   
+            setError(err)
+            alert('User not found. Please try again.') 
             setUsername('');
             setPassword('');
+            setError(null);
         });
     }
-
+    
+    /*if (error) {
+        console.log(Object.keys(error));
+        console.log(error.response.status);
+        setUsername('');
+        setPassword('');
+        setError(null);
+        if(error.response.status === 404) {
+            console.log('error')
+            notify()
+        }  
+    } else {
+*/
     return (
         <div>
             <h1>Welcome to NC News!</h1>
@@ -80,7 +89,7 @@ const Login = () => {
         </div>
         
         )
-    
+    //}
 }
 
 export default Login;

@@ -146,9 +146,8 @@ export const deleteArticleContent = (article_id) => {
 export const getSingleUser = (user) => {
     const username = user.username;
     //icellusedkars
-    //console.log(username);
-    return newsAPI.get(`/users/${username}`).then((data) => {
-        //console.log('data ', data);
-        return data.data.user;
+    console.log(username);
+    return newsAPI.get(`/users/${username}`).then((response) => {
+        return response.data.user;
     });
 }
