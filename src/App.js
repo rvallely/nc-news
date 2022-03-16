@@ -4,7 +4,7 @@ import { UserContext } from './contexts/User';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import Articles from './components/Articles';
-import Comments from './components/Comments';
+
 import Date from './components/Date';
 import Header from './components/Header';
 import Login from './components/Login';
@@ -44,7 +44,7 @@ function App() {
           
 
           <Route path='/articles/:article_id' element={<SingleArticle />}></Route>
-          <Route path='/articles/:article_id/comments' element={<Comments />}></Route>
+          {/* <Route path='/articles/:article_id/comments' element={<Comments />}></Route> */}
 
           {/* <Route path='/topics/:topic_slug' element={<Articles />}></Route>
           */}
