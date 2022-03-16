@@ -94,6 +94,11 @@
   color: #f1356d;
   margin-bottom: 10px;
 }
+.login-form h3 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
 .login-form button {
   font-size: x-large;
   background: #f1356d;

@@ -84,8 +84,12 @@ const Login = () => {
             </form>
             <p>In state: {username}</p>
             <p>In state: {password}</p>
+            <h3>or</h3>
+            <Link className='link' key='home' to='/articles'>
+                <h2>Continue as guest</h2>
+            </Link>
             </div>  
-            <Link className='link' key='home' to='/articles'>Continue as guest</Link>
+            
         </div>
         
         )
