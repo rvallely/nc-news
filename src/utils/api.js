@@ -34,6 +34,7 @@ export const getArticles = (topic_slug, sort_by) => {
 
 export const getSingleArticle = (article_id) => {
     return newsAPI.get(`/articles/${article_id}`).then((data) => {
+        console.log(data.data.article)
         return data.data.article;
     });
 }
@@ -147,7 +148,7 @@ export const getSingleUser = (user) => {
     //icellusedkars
     console.log(username);
     return newsAPI.get(`/users/${username}`).then((data) => {
-        console.log(data.data);
+        console.log('data ', data);
         return data.data.user;
     });
 }

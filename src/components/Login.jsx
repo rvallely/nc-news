@@ -3,15 +3,21 @@ import { Navigate, useNavigate, Link } from 'react-router-dom';
 import { UserContext } from '../contexts/User';
 import { getSingleUser } from '../utils/api';
 import Nav from "./Nav";
+import Error from './Error';
 import Header from './Header';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [error, setError] = useState(null);
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
    // console.log('current user context is ', loggedInUser);
-   console.log('The user is ', loggedInUser);
+  // console.log('The user is ', loggedInUser);
    const navigate = useNavigate(); 
+
+   const notify = () => toast("Wow so easy!");
    
    const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,15 +35,24 @@ const Login = () => {
             
         })
         .catch((err) => {
-            console.log(err);
-            // setError({ err });
-            // setIsLoading(false);
+           // console.log(err.response.data)
+            setError(err);
+            //setIsLoading(false);
         })
-        //.then((res) => {
-        //     console.log(res);
-        // })
+       
        
     }
+
+    if (error) {
+        notify();
+        console.log(Object.keys(error));
+        console.log(error.response.status)
+        console.log(error.response.data.msg)
+    //    return( <Error message={error.response.data.msg} status={error.response.status} />)
+    
+      
+          
+    } else {
 
     return (
         <div>
@@ -71,6 +86,7 @@ const Login = () => {
         </div>
         
         )
+    }
 }
 
 export default Login;
