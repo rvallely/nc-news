@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link';
 import Date from '../General/Date';
 import Error from '../General/Error';
 import Header from '../General/Header';
@@ -73,7 +74,8 @@ const Articles = () => {
                                     <Link className='link' key={`${article.article_id}-author`} to={`/articles/user/${article.author}`}>
                                         <h4 id='article-author'>{article.author}</h4>
                                     </Link>
-                                    <Link className = 'link' key={`${article.article_id}-comments`} to={`/articles/${article.article_id}#show-comments`}>{article.comment_count} comments</Link> 
+                                    {/* <Link id='comments' className='link' key={`${article.article_id}-comments`} to={`/articles/${article.article_id}#comments`}>{article.comment_count} comments</Link>  */}
+                                    <HashLink className='link' to={`/articles/${article.article_id}#comments`}>{article.comment_count} comments</HashLink>
                                     <div id='article-created_at'>
                                        <p id='article-date'>{formatCreatedAt(article.created_at)[0]}</p>
                                        <p id='article-time'>{formatCreatedAt(article.created_at)[1]}</p>
