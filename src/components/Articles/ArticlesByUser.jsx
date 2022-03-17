@@ -1,21 +1,18 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { UserContext } from '../../contexts/User';
 import Date from '../General/Date';
 import Header from '../General/Header';
 import Nav from '../General/Nav';
 import UserDisplay from '../General/UserDisplay';
-import { deleteArticleContent, getArticlesByUser } from '../../utils/api';
+import { getArticlesByUser } from '../../utils/api';
 import formatCreatedAt from '../../utils/formatCreatedAt';
 
-const ArticlesByUser = (props) => {
-    const username = useParams();
+const ArticlesByUser = () => {
+    const { username } = useParams();
     const [ articlesByUser, setArticlesByUser ] = useState([]);
     const [ isPending, setIsPending ] = useState(false);
-    const [ isLoading, setIsLoading ] = useState(true)
-    const navigate = useNavigate();
-    console.log(username)
-    console.log(username)
+    const [ isLoading, setIsLoading ] = useState(true);
+
     useEffect(() => {
         getArticlesByUser(username).then((articlesFromAPI) => {
             setArticlesByUser(articlesFromAPI);
@@ -34,20 +31,9 @@ const ArticlesByUser = (props) => {
             <Nav />
             <div key={`${username}-articles`}>
                 <h2 key={`${username}`} >{username}'s articles</h2>
-                 
+                <ul className='article-list'>
                 {articlesByUser.map(function(article) {
                     if (article.title !== 'Article does not exist') {
-                        // return (
-                        //     <div className='user-article' key={article.id}>
-                        //         <Link className='link' key={article.article_id} to={`/articles/${article.article_id}`}>
-                        //         <h3 id='article-title' className='title'>{article.title}</h3>
-                        //         </Link>
-                        //         <h4 className='user-article-body' key={`${article.id}-body`} >{article.body}</h4>
-                        //         <p className='user-article-date' key={`${article.id}-date`}>{formatCreatedAt(article.created_at)[0]}</p>
-                        //         <p className='user-article-time' key={`${article.id}-time`}>{formatCreatedAt(article.created_at)[1]}</p>
-                        //         <p className='user-article-votes' key={`${article.id}-votes`}>{article.votes} &#128077;</p>
-                        //     </div>
-                        // )
                         return (
                             <li className='article-list-item' key={article.article_id}> 
                                 <Link className='link' key={article.article_id} to={`/articles/${article.article_id}`}>
@@ -64,6 +50,7 @@ const ArticlesByUser = (props) => {
                         );
                     }
                 })}
+                </ul>
             </div>
         </div>
     )

@@ -57,15 +57,16 @@ const Articles = () => {
             
                     <ul className='article-list'>
                         {articles.map((article) => {
+                            console.log('article', article.author)
                             return (
                                 <li className='article-list-item' key={article.article_id}> 
-                                    <Link className='link' key={article.article_id} to={`/articles/${article.article_id}`} username={article.author}>
+                                    <Link className='link' key={`${article.article_id}-title`} to={`/articles/${article.article_id}`} >
                                         <h3 id='article-title'>{article.title}</h3>
                                     </Link>
-                                    <Link className='link' key={article.article_id} to={`/articles/${article.author}`}>
+                                    <Link className='link' key={`${article.article_id}-author`} to={`/articles/user/${article.author}`}>
                                         <h4 id='article-author'>{article.author}</h4>
                                     </Link>
-                                    <Link className = 'link' to={`/articles/${article.article_id}#show-comments`}>{article.comment_count} comments</Link> 
+                                    <Link className = 'link' key={`${article.article_id}-comments`} to={`/articles/${article.article_id}#show-comments`}>{article.comment_count} comments</Link> 
                                     <div id='article-created_at'>
                                        <p id='article-date'>{formatCreatedAt(article.created_at)[0]}</p>
                                        <p id='article-time'>{formatCreatedAt(article.created_at)[1]}</p>
