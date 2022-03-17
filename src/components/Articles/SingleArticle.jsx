@@ -53,11 +53,6 @@ const SingleArticle = () => {
         if (error) {
             return (
                 <div>
-                    <div className='header-date'>
-                        <Header />  
-                        <Date />
-                    </div>
-                    <UserDisplay /> 
                     <Error message={error.err.response.data.msg} status={error.err.response.status} />
                 </div>
             )  
