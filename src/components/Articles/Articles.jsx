@@ -13,15 +13,24 @@ import { getArticles } from '../../utils/api';
 const Articles = () => {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [sortBy, setSortBy] = useState('');
+    // const [sortBy, setSortBy] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
     const [error, setError] = useState(null);
 
     const searchTopic = searchParams.get('topic')
+    const searchSort_by = searchParams.get('sort_by')
+    const searchOrder = searchParams.get('order')
+
+    let sort_by = '';
+    if (searchSort_by && !searchOrder) {
+        sort_by = `sort_by=${searchSort_by}`;
+    } 
+    if (searchSort_by && searchOrder) {
+        sort_by = `sort_by=${searchSort_by} order=${searchOrder}`; 
+    }
  
     useEffect(() => {
-
-        getArticles(searchTopic, sortBy).then((articlesFromAPI) => {
+        getArticles(searchTopic, sort_by).then((articlesFromAPI) => {
             setArticles(articlesFromAPI);
             setIsLoading(false);
             setError(null);
@@ -31,7 +40,7 @@ const Articles = () => {
             console.log('ERROR ERROR')
             setIsLoading(false);
         });
-    }, [sortBy, searchTopic]);
+    }, [sort_by, searchTopic]);
 
     if (isLoading) {
         return <p> loading ...</p>
@@ -53,8 +62,7 @@ const Articles = () => {
                     </div>
                     <UserDisplay /> 
                     <Nav />
-                    <SortBy setSortBy={setSortBy}/>
-            
+                    <SortBy />
                     <ul className='article-list'>
                         {articles.map((article) => {
                             return (

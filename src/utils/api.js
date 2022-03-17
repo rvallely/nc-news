@@ -12,6 +12,7 @@ export const getTopics = () => {
 
 export const getArticles = (topic_slug, sort_by) => {
     let path = '/articles';
+    console.log(sort_by, '<<< utils')
     if (topic_slug || sort_by) {
         path += '?';
         if (topic_slug) {

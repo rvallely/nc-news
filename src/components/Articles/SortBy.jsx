@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 
-const SortBy = (props) => {
+const SortBy = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const searchTopic = searchParams.get('topic')
     const [input, setInput] = useState('');
@@ -23,13 +23,11 @@ const SortBy = (props) => {
                   onChange={(e) => { 
                     setInput(e.target.value);
                         const formatQ = e.target.value.split(' ').join('&');
-
                         if (topic === undefined) {
                             navigate(`${location.pathname}?${formatQ}`);   
                         } else {
                             navigate(`${location.pathname}?topic=${topic}&${formatQ}`);   
                         }
-                        props.setSortBy(e.target.value);
                     }}> 
                     <option disabled>Sort by: Most Recent</option>
                     <option value='sort_by=created_at order=DESC'>Most Recent</option>
