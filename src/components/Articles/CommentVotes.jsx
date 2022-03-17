@@ -11,11 +11,13 @@ const CommentVotes = ({ comment_id, votes }) => {
         patchComment(comment_id).catch((err) => {
             setVoteChange((currChange) => currChange - 1)
         });
+        document.getElementById(`comment-${comment_id}-upvote-button`).disabled = true;
     }
+    
     if (loggedInUser.username === 'guest') {
         return <button onClick={() => alert('Please go to User area and log in to vote! :)')}>{votes}&#128077;</button>
     } else {
-        return <button onClick={() => addVote()}>{votes + voteChange}&#128077;</button>
+        return <button id={`comment-${comment_id}-upvote-button`} onClick={() => addVote()}>{votes + voteChange}&#128077;</button>
     }
 }
 

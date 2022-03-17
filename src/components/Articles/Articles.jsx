@@ -57,7 +57,6 @@ const Articles = () => {
             
                     <ul className='article-list'>
                         {articles.map((article) => {
-                            console.log('article', article.author)
                             return (
                                 <li className='article-list-item' key={article.article_id}> 
                                     <Link className='link' key={`${article.article_id}-title`} to={`/articles/${article.article_id}`} >

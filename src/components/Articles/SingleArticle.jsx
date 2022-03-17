@@ -21,7 +21,7 @@ const SingleArticle = () => {
     const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-    const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+    //const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
     useEffect(() => {
         getSingleArticle(article_id).then((articleFromAPI) => {   
