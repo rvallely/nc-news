@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import Date from '../General/Date';
 import Header from '../General/Header';
 import Nav from '../General/Nav';
+import SortBy from './SortBy';
 import UserDisplay from '../General/UserDisplay';
 import { getArticlesByUser } from '../../utils/api';
 import formatCreatedAt from '../../utils/formatCreatedAt';
@@ -10,15 +11,18 @@ import formatCreatedAt from '../../utils/formatCreatedAt';
 const ArticlesByUser = () => {
     const { username } = useParams();
     const [ articlesByUser, setArticlesByUser ] = useState([]);
-    const [ isPending, setIsPending ] = useState(false);
     const [ isLoading, setIsLoading ] = useState(true);
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const searchSort_by = searchParams.get('sort_by')
+    const searchOrder = searchParams.get('order')
 
     useEffect(() => {
-        getArticlesByUser(username).then((articlesFromAPI) => {
+        getArticlesByUser(username, searchSort_by, searchOrder).then((articlesFromAPI) => {
             setArticlesByUser(articlesFromAPI);
             setIsLoading(false);
         });
-    }, [username]);
+    }, [username, searchSort_by, searchOrder]);
 
     return  isLoading ? <p>loading ...</p> : 
     ( 
@@ -31,6 +35,7 @@ const ArticlesByUser = () => {
             <Nav />
             <div key={`${username}-articles`}>
                 <h2 key={`${username}`} >{username}'s articles</h2>
+                <SortBy />
                 <ul className='article-list'>
                 {articlesByUser.map(function(article) {
                     if (article.title !== 'Article does not exist') {

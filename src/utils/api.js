@@ -12,7 +12,6 @@ export const getTopics = () => {
 
 export const getArticles = (topic_slug, sort_by) => {
     let path = '/articles';
-    console.log(sort_by, '<<< utils')
     if (topic_slug || sort_by) {
         path += '?';
         if (topic_slug) {
@@ -101,23 +100,32 @@ export const patchComment = (comment_id) => {
     });
 }
 
-export const getArticlesByUser = (username) => {
+export const getArticlesByUser = (username, searchSort_by, searchOrder) => {
     return newsAPI.get('/articles').then((data) => {
-
         const userArticles = data.data.articles.filter((article) => article.author === username);
         userArticles.sort(function(a, b) {
-            if(a.created_at > b.created_at) {
-                return -1;
+            if(a[searchSort_by] > b[searchSort_by]) {
+                if (searchOrder === 'DESC') {
+                    return -1;
+                } 
+                else if (searchOrder === 'ASC') {
+                    return 1;
+                }
             }
-            if(a.created_at < b.created_at) {
-                return 1;
+            if(a[searchSort_by] < b[searchSort_by]) {
+                if (searchOrder === 'DESC') {
+                    return 1;
+                }
+                else if (searchOrder === 'ASC') {
+                    return -1;
+                }
             }
             else {
                 return 0;
             }
         });
         return userArticles;
-    });
+    }); 
 }
 
 export const deleteArticleContent = (article_id) => {
