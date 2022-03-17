@@ -36,6 +36,7 @@ function App() {
           <Route path='/user/comments' element={<UserComments />}></Route>
           <Route path='/user/articles' element={<UserArticles />}></Route>
           <Route path='/articles/:article_id/post_comment' element={<PostCommentForm />}></Route>
+          <Route path='/articles/:username' element={<Articles />}></Route>
           <Route path='/user/post_article' element={<PostArticleForm />}></Route>
           <Route path='*' element={<Redirect />}></Route>
         </Routes>
