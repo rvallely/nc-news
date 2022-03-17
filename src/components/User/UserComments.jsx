@@ -35,8 +35,8 @@ const UserComments = () => {
     
     return  isLoading ? <p>loading ...</p> : 
     ( 
-        <div id='user-comments' key={`${username}comments`}>
-            <div className='header-date'>
+        <div id='user-comments' key={`${username}_comments`}>
+            <div key='header-date' className='header-date'>
               <Header />  
               <Date />
             </div>

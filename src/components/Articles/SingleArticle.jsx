@@ -22,14 +22,10 @@ const SingleArticle = () => {
     const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-    //const { loggedInUser, setLoggedInUser } = useContext(UserContext);
     const [searchParams, setSearchParams] = useSearchParams();
+    const searchSort_by = searchParams.get('sort_by');
+    const searchOrder = searchParams.get('order');
 
-    const searchTopic = searchParams.get('topic')
-    const searchSort_by = searchParams.get('sort_by')
-    const searchOrder = searchParams.get('order')
-    console.log(searchSort_by)
-    console.log(searchOrder)
     useEffect(() => {
         getSingleArticle(article_id).then((articleFromAPI) => {   
             setSingleArticle(articleFromAPI);
@@ -41,6 +37,7 @@ const SingleArticle = () => {
             setError({ err });
             setIsLoading(false);
         })
+      
     }, [article_id, searchSort_by, searchOrder]);
 
     const changeCommentVisibility = () => {

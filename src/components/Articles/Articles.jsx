@@ -14,10 +14,8 @@ import { getArticles } from '../../utils/api';
 const Articles = () => {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    // const [sortBy, setSortBy] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
     const [error, setError] = useState(null);
-
     const searchTopic = searchParams.get('topic')
     const searchSort_by = searchParams.get('sort_by')
     const searchOrder = searchParams.get('order')
@@ -38,7 +36,6 @@ const Articles = () => {
         })
         .catch((err) => {
             setError(err);
-            console.log('ERROR ERROR')
             setIsLoading(false);
         });
     }, [sort_by, searchTopic]);
@@ -74,7 +71,6 @@ const Articles = () => {
                                     <Link className='link' key={`${article.article_id}-author`} to={`/articles/user/${article.author}`}>
                                         <h4 id='article-author'>{article.author}</h4>
                                     </Link>
-                                    {/* <Link id='comments' className='link' key={`${article.article_id}-comments`} to={`/articles/${article.article_id}#comments`}>{article.comment_count} comments</Link>  */}
                                     <HashLink className='link' to={`/articles/${article.article_id}#comments`}>{article.comment_count} comments</HashLink>
                                     <div id='article-created_at'>
                                        <p id='article-date'>{formatCreatedAt(article.created_at)[0]}</p>
