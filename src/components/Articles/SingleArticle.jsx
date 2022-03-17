@@ -6,8 +6,9 @@ import CommentVotes from './CommentVotes';
 import Date from '../General/Date';
 import Error from '../General/Error';
 import Header from '../General/Header';
-import PostCommentLink from './PostCommentLink';
 import Nav from '../General/Nav';
+import PostCommentLink from './PostCommentLink';
+import SortComments from './SortComments';
 import UserDisplay from '../General/UserDisplay';
 import capitaliseFirstLetter from '../../utils/capitaliseFirstLetter';
 import formatCreatedAt from '../../utils/formatCreatedAt';
@@ -100,6 +101,7 @@ const SingleArticle = () => {
                             </button>
                             <PostCommentLink singleArticle={singleArticle}/>
                         </div>
+                        <SortComments />
                         <div id='comments' style={{visibility:'visible'}}>
                             {comments.map((comment) => {
                                 return (

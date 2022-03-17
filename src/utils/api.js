@@ -53,7 +53,28 @@ export const getComments = (article_id) => {
             }
         });
         return comments;
-        
+        /* userArticles.sort(function(a, b) {
+            if(a[searchSort_by] > b[searchSort_by]) {
+                if (searchOrder === 'DESC') {
+                    return -1;
+                } 
+                else if (searchOrder === 'ASC') {
+                    return 1;
+                }
+            }
+            if(a[searchSort_by] < b[searchSort_by]) {
+                if (searchOrder === 'DESC') {
+                    return 1;
+                }
+                else if (searchOrder === 'ASC') {
+                    return -1;
+                }
+            }
+            else {
+                return 0;
+            }
+        });
+        return userArticles; */
     });
 }
 
