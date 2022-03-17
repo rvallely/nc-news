@@ -5,13 +5,13 @@ const SortBy = (props) => {
     const [searchParams, setSearchParams] = useSearchParams();
     const searchTopic = searchParams.get('topic')
     const [input, setInput] = useState('');
-    
+
     let navigate = useNavigate();
     const location = useLocation()
-
+    
     let topic = undefined;
     if (searchTopic) {
-       topic = searchTopic;
+        topic = searchTopic;
     }
 
     return (

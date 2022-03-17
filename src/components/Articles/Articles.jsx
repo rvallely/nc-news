@@ -6,6 +6,7 @@ import Header from '../General/Header';
 import Nav from '../General/Nav';
 import SortBy from './SortBy';
 import UserDisplay from '../General/UserDisplay';
+import { checkSortByValid } from '../../utils/checkValid';
 import formatCreatedAt from '../../utils/formatCreatedAt';
 import { getArticles } from '../../utils/api';
 
@@ -17,8 +18,9 @@ const Articles = () => {
     const [error, setError] = useState(null);
 
     const searchTopic = searchParams.get('topic')
-
+ 
     useEffect(() => {
+
         getArticles(searchTopic, sortBy).then((articlesFromAPI) => {
             setArticles(articlesFromAPI);
             setIsLoading(false);
@@ -26,6 +28,7 @@ const Articles = () => {
         })
         .catch((err) => {
             setError(err);
+            console.log('ERROR ERROR')
             setIsLoading(false);
         });
     }, [sortBy, searchTopic]);
