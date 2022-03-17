@@ -38,22 +38,10 @@ export const getSingleArticle = (article_id) => {
     });
 }
 
-export const getComments = (article_id) => {
+export const getComments = (article_id, searchSort_by, searchOrder) => {
     return newsAPI.get(`/articles/${article_id}/comments`).then((data) => {
         const comments = data.data.comments;
         comments.sort(function(a, b) {
-            if (a.created_at > b.created_at) {
-                return -1;
-            }
-            if (a.created_at < b.created_at) {
-                return 1;
-            }
-            else {
-                return 0;
-            }
-        });
-        return comments;
-        /* userArticles.sort(function(a, b) {
             if(a[searchSort_by] > b[searchSort_by]) {
                 if (searchOrder === 'DESC') {
                     return -1;
@@ -74,7 +62,7 @@ export const getComments = (article_id) => {
                 return 0;
             }
         });
-        return userArticles; */
+        return comments;
     });
 }
 

@@ -8,7 +8,7 @@ const SortComments = () => {
     
     let navigate = useNavigate();
     const location = useLocation()
-    console.log('location is ', location)
+    //console.log('location is ', location)
 
     let topic = undefined;
     if (searchTopic) {
@@ -25,9 +25,9 @@ const SortComments = () => {
                         setInput(e.target.value);
                             const formatQ = e.target.value.split(' ').join('&');
                             if (topic === undefined) {
-                                navigate(`${location.pathname}#comments?${formatQ}`);   
+                                navigate(`${location.pathname}?${formatQ}`);   
                             } else {
-                                navigate(`${location.pathname}#comments?topic=${topic}&${formatQ}`);   
+                                navigate(`${location.pathname}?topic=${topic}&${formatQ}`);   
                             }
                          }}> 
                         <option disabled>Sort by: Most Recent</option>

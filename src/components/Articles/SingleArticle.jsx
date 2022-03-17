@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext  }  from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useSearchParams } from 'react-router-dom';
 import { UserContext } from '../../contexts/User';
 import ArticleVotes from './ArticleVotes';
 import CommentVotes from './CommentVotes';
@@ -23,11 +23,17 @@ const SingleArticle = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     //const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+    const [searchParams, setSearchParams] = useSearchParams();
 
+    const searchTopic = searchParams.get('topic')
+    const searchSort_by = searchParams.get('sort_by')
+    const searchOrder = searchParams.get('order')
+    console.log(searchSort_by)
+    console.log(searchOrder)
     useEffect(() => {
         getSingleArticle(article_id).then((articleFromAPI) => {   
             setSingleArticle(articleFromAPI);
-            getComments(article_id).then((commentsFromAPI) => {
+            getComments(article_id, searchSort_by, searchOrder).then((commentsFromAPI) => {
                 setComments(commentsFromAPI);
                 setIsLoading(false);
             })
@@ -35,7 +41,7 @@ const SingleArticle = () => {
             setError({ err });
             setIsLoading(false);
         })
-    }, [article_id]);
+    }, [article_id, searchSort_by, searchOrder]);
 
     const changeCommentVisibility = () => {
         const comments = document.getElementById('comments');
