@@ -17,16 +17,6 @@ const Articles = () => {
     const [error, setError] = useState(null);
 
     const searchTopic = searchParams.get('topic')
-    const searchSort_by = searchParams.get('sort_by')
-    const searchOrder = searchParams.get('order')
-
-    let sort_by = '';
-    if (searchSort_by && !searchOrder) {
-        sort_by = `sort_by=${searchSort_by}`;
-    } 
-    if (searchSort_by && searchOrder) {
-        sort_by = `sort_by=${searchSort_by} order=${searchOrder}`; 
-    }
 
     useEffect(() => {
         getArticles(searchTopic, sortBy).then((articlesFromAPI) => {
@@ -35,10 +25,10 @@ const Articles = () => {
             setError(null);
         })
         .catch((err) => {
-            setError({ err });
+            setError(err);
             setIsLoading(false);
         });
-    }, [sortBy, searchSort_by, searchOrder, searchTopic]);
+    }, [sortBy, searchTopic]);
 
     if (isLoading) {
         return <p> loading ...</p>
@@ -47,12 +37,7 @@ const Articles = () => {
         if (error) {
             return (
                 <div>
-                     <div className='header-date'>
-                        <Header />  
-                        <Date />
-                    </div>
-                    <UserDisplay /> 
-                    <Error message={error.err.response.data.msg} status={error.err.response.status}/>
+                    <Error message={error.response.data.msg} status={error.response.status}/>
                 </div>
             )
         }

@@ -82,7 +82,6 @@ const PostArticleForm = () => {
                 </select>
                 <label>Article body:</label>
                 <textarea
-                  
                   value={body}
                   onChange={(e) => setBody(e.target.value)}>
                 </textarea>
