@@ -59,10 +59,12 @@ const Articles = () => {
                         {articles.map((article) => {
                             return (
                                 <li className='article-list-item' key={article.article_id}> 
-                                    <Link className='link' key={article.article_id} to={`/articles/${article.article_id}`}>
+                                    <Link className='link' key={article.article_id} to={`/articles/${article.article_id}`} username={article.author}>
                                         <h3 id='article-title'>{article.title}</h3>
                                     </Link>
-                                    <h4 id='article-author'>{article.author}</h4>
+                                    <Link className='link' key={article.article_id} to={`/articles/${article.author}`}>
+                                        <h4 id='article-author'>{article.author}</h4>
+                                    </Link>
                                     <Link className = 'link' to={`/articles/${article.article_id}#show-comments`}>{article.comment_count} comments</Link> 
                                     <div id='article-created_at'>
                                        <p id='article-date'>{formatCreatedAt(article.created_at)[0]}</p>

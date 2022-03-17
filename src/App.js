@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { UserContext } from './contexts/User';
 import Articles from './components/Articles/Articles';
+import ArticlesByUser from './components/Articles/ArticlesByUser';
 import Login from './components/General/Login';
 import PostArticleForm from './components/Articles/PostArticleForm';
 import PostCommentForm from './components/Articles/PostCommentForm';
@@ -36,7 +37,7 @@ function App() {
           <Route path='/user/comments' element={<UserComments />}></Route>
           <Route path='/user/articles' element={<UserArticles />}></Route>
           <Route path='/articles/:article_id/post_comment' element={<PostCommentForm />}></Route>
-          <Route path='/articles/:username' element={<Articles />}></Route>
+          <Route path='/articles/:username' element={<ArticlesByUser />}></Route>
           <Route path='/user/post_article' element={<PostArticleForm />}></Route>
           <Route path='*' element={<Redirect />}></Route>
         </Routes>
