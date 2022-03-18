@@ -98,7 +98,7 @@ const SingleArticle = () => {
                                     <ArticleVotes article_id={singleArticle.article_id} votes={singleArticle.votes}/>
                            
                                 <Link className='link' key={singleArticle.topic} to={`/topics/${singleArticle.topic}`}>
-                                    <p>{capitaliseFirstLetter(singleArticle.topic)}</p>
+                                    <p className='single-article-topic'>{capitaliseFirstLetter(singleArticle.topic)}</p>
                                 </Link> 
                                 <button id='show-comments'className='link' onClick={changeCommentVisibility}>
                                     <p>{singleArticle.comment_count} comments</p>

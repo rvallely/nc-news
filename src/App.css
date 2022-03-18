@@ -139,7 +139,6 @@
 .login-form button:hover {
   cursor: pointer;
   background: #f4b651;
-
 }
 
 .logout {
@@ -244,11 +243,58 @@
 }
 
 .single-article-votes {
-  color: pink;
+  border: none;
+  box-shadow: 1px 1px 5px #171717;
+  width: 16%;
+  transition: background 500ms ease;
+  color: #fff;
+  font-size: 120%;
+  border-radius: 5px;
+  padding: 12px 0;
+  font-size: 18px;
+  /* background-color: #5168f4; */
+  background-color: #6DCED2;
+  text-align: center;
+  /* margin-top: -10px; */
 }
 
+/* .single-article-topic {
+  
+} */
+
+/* .single-article-comments {
+
+} */
+
+.single-article-post-comment {
+  border: none;
+  box-shadow: 1px 1px 5px #171717;
+  width: 45%;
+  transition: background 500ms ease;
+  color: #fff;
+  border-radius: 5px;
+  padding: 12px 0;
+  font-size: 18px;
+  background: #5168f4;
+  text-align: center;
+  margin-top: -10px;
+}
+
+.login-fm button {
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  padding: 12px 0;
+  font-size: 20px;
+  background: #5168f4;
+  text-align: center;
+  transition: background 500ms ease;
+  color: #fff;
+  margin-top: -10px;
+} 
+
 .single-article-details {
-  background-color: #EFEFEF;
+  border: solid black 1px;
 }
 
 .form {
