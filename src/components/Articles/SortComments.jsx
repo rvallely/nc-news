@@ -16,10 +16,10 @@ const SortComments = () => {
     }
 
         return (
-            <div >            
+            <div className='sort-comments'>            
                 <form className='dropdown'  >
                     <select 
-                      id='sort-by' 
+                      className='sort-by' 
                       value={input}
                       onChange={(e) => { 
                         setInput(e.target.value);

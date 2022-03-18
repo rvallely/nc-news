@@ -217,6 +217,15 @@
   /* margin-bottom: -5%; */
 }
 
+.single-article-created_at-e {
+  display: inline-block;
+  /* border: 1px solid red; */
+  /* padding: 1rem 1rem; */
+  margin-right: 2%;
+  vertical-align: middle;
+  padding-bottom: 2%;
+}
+
 .single-article-author {
   margin-bottom: -5px;
   padding-left: 3%;
@@ -234,14 +243,6 @@
   text-align: left;
 }
 
-.single-article-created_at-e {
-  display: inline-block;
-  /* border: 1px solid red; */
-  /* padding: 1rem 1rem; */
-  margin-right: 2%;
-  vertical-align: middle;
-}
-
 .single-article-votes {
   border: none;
   box-shadow: 1px 1px 5px #171717;
@@ -255,6 +256,7 @@
   /* background-color: #5168f4; */
   background-color: #6DCED2;
   text-align: center;
+  margin-right: 39%;
   /* margin-top: -10px; */
 }
 
@@ -262,9 +264,14 @@
   
 } */
 
-/* .single-article-comments {
-
-} */
+.single-article-comments-link {
+  color: #32323b;
+  text-align: left;
+  padding-left: 3%;
+  /* border: solid black 1px; */
+  margin-bottom: 1%;
+  /* margin-top: 1%; */
+}
 
 .single-article-post-comment {
   border: none;
@@ -280,22 +287,45 @@
   margin-top: -10px;
 }
 
-.login-fm button {
-  border: none;
-  width: 100%;
-  border-radius: 5px;
-  padding: 12px 0;
-  font-size: 20px;
-  background: #5168f4;
-  text-align: center;
-  transition: background 500ms ease;
-  color: #fff;
-  margin-top: -10px;
-} 
-
 .single-article-details {
-  border: solid black 1px;
+  /* border: solid black 1px; */
+  padding-left: 3%;
+  padding-right: 3%;
+  text-align: left;
+  /*
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center; */
 }
+
+.sort-comments {
+  /* border: solid black 1px; */
+  padding-top: 3%;
+  padding-left: 3%;
+  text-align: left;
+}
+
+.sort-by {
+  font-size: 110%;
+  /* margin-top: 3%; */
+}
+
+.parent {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+.child {
+  display: inline-block;
+  border: 1px solid red;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+
+/* .single-article-comments-link {
+//
+} */
 
 .form {
   max-width: 400px;

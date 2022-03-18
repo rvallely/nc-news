@@ -96,15 +96,15 @@ const SingleArticle = () => {
                             <p className='single-article-body'>{singleArticle.body}</p>
                             <div className='single-article-details'>
                                     <ArticleVotes article_id={singleArticle.article_id} votes={singleArticle.votes}/>
-                           
-                                <Link className='link' key={singleArticle.topic} to={`/topics/${singleArticle.topic}`}>
-                                    <p className='single-article-topic'>{capitaliseFirstLetter(singleArticle.topic)}</p>
-                                </Link> 
-                                <button id='show-comments'className='link' onClick={changeCommentVisibility}>
-                                    <p>{singleArticle.comment_count} comments</p>
-                                </button>
+                        
                                 <PostCommentLink singleArticle={singleArticle}/>
                             </div>
+                            <Link className='link' key={singleArticle.topic} to={`/topics/${singleArticle.topic}`}>
+                                    <p className='single-article-topic'>More {singleArticle.topic} here</p>
+                                </Link>  
+                                {/* <button className='link' id='show-comments' onClick={changeCommentVisibility}> */}
+                                    <h2 id='show-comments' onClick={changeCommentVisibility}className='single-article-comments-link' >{singleArticle.comment_count} comments</h2>
+                                {/* </button>  */}
                         <SortComments />
                         <div id='comments' style={{visibility:'visible'}}>
                             {comments.map((comment) => {
