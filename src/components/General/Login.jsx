@@ -14,7 +14,9 @@ const Login = () => {
    const handleSubmit = (e) => {
         e.preventDefault();
         const user = { username, password };
-        getSingleUser(user).then((user) => {
+        console.log(username, password);
+        getSingleUser(username, password).then((user) => {
+           // console.log(user, '<<< get single u')
             // if (true) check password is correct
                 // if (true) login
                 // if (false) alert('Password is incorrect')
@@ -28,6 +30,7 @@ const Login = () => {
         })
         // if (false) alert('Not a registered user')
         .catch((err) => {
+            //console.log(err.response.data.msg)
             setError(err)
             alert('User not found. Please try again.') 
             setUsername('');
