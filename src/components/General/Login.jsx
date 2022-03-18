@@ -14,25 +14,19 @@ const Login = () => {
    const handleSubmit = (e) => {
         e.preventDefault();
         const user = { username, password };
-        console.log(username, password);
         getSingleUser(username, password).then((user) => {
-           // console.log(user, '<<< get single u')
-            // if (true) check password is correct
-                // if (true) login
-                // if (false) alert('Password is incorrect')
-            
-            // set user in context
             setLoggedInUser(user)
             setError(null);
-            // navigate to articles
             navigate('/articles');
             
         })
-        // if (false) alert('Not a registered user')
         .catch((err) => {
-            //console.log(err.response.data.msg)
-            setError(err)
-            alert('User not found. Please try again.') 
+            setError(err);
+            if (err.response.data.msg === 'Not Found: user not on database') {
+                alert('User not found. Please try again.') 
+            } else if (err.response.data.msg === 'Bad Request: incorrect password.') {
+                alert('Incorrect password. Please try again.')
+            }
             setUsername('');
             setPassword('');
             setError(null);
