@@ -23,8 +23,13 @@ const SingleArticle = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams();
-    const searchSort_by = searchParams.get('sort_by');
-    const searchOrder = searchParams.get('order');
+    let searchSort_by = searchParams.get('sort_by');
+    let searchOrder = searchParams.get('order');
+    
+    if (searchSort_by === null && searchOrder === null) {
+        searchSort_by = 'created_at';
+        searchOrder = 'DESC';
+    }
 
     useEffect(() => {
         getSingleArticle(article_id).then((articleFromAPI) => {   

@@ -5,7 +5,6 @@ const SortComments = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const searchTopic = searchParams.get('topic')
     const [input, setInput] = useState('');
-    
     let navigate = useNavigate();
     const location = useLocation()
     //console.log('location is ', location)
