@@ -85,7 +85,7 @@ const SingleArticle = () => {
                         <UserDisplay /> 
                         <Nav /> 
                         <div id = 'single-article'>
-                            <h2>{singleArticle.title}</h2>
+                            <h2 className='single-article-title'>{singleArticle.title}</h2>
                             <p className='single-article-body'>{singleArticle.body}</p>
                             <div className='single-article-details'>
                             <p>{singleArticle.author}</p>

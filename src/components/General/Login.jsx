@@ -39,34 +39,35 @@ const Login = () => {
         });
     }
     return (
-        <div>
-            <h1>Welcome to NC News!</h1>
-            <p>Please choose an option to continue</p>
+        <div className='login-container'>
             <div className='login-form'>
-                <h2>Please log in below</h2>
+                <h2>NC News</h2>
+                <h2>Log in</h2>
                 <form onSubmit={handleSubmit}>
-                    <label>Username:</label>
-                    <input
-                      type='text'
-                      required
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
-                    ></input>
-                    <label>Password:</label>
-                    <input
-                      type='password'
-                      required
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                    ></input>
+                    <div className='login-form-input-box'>
+                        <input
+                          type='text'
+                          placeholder='Username'
+                          required
+                          value={username}
+                          onChange={(e) => setUsername(e.target.value)}
+                        ></input>
+                    </div>
+                    <div className='login-form-input-box'>
+                        <input
+                          type='password'
+                          placeholder='Password'
+                          required
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
+                        ></input>
+                    </div>
                     <br></br>
                     <br></br>
                     <button>Login</button>
                 </form>
-                <p>In state: {username}</p>
-                <p>In state: {password}</p>
-                <h3>or</h3>
-                <Link className='link' key='home' to='/articles'>
+                <h2>or</h2>
+                <Link style={{'text-decoration': 'underline', 'color': '#fff'}} className='link' key='home' to='/articles'>
                     <h2>Continue as guest</h2>
                 </Link>
             </div>   
