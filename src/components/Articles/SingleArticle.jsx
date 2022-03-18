@@ -77,33 +77,34 @@ const SingleArticle = () => {
                 )
             } else {
                 return (
-                    <div id ='single-article'>
+                    <div>
                         <div className='header-date'>
                             <Header />  
                             <Date />
                         </div>
                         <UserDisplay /> 
                         <Nav /> 
-                        <div id = 'single-article'>
+                        <div className='single-article'>
                             <h2 className='single-article-title'>{singleArticle.title}</h2>
+                            <Link className='link' to={`/articles/user/${singleArticle.author}`}>
+                                    <h4 className='single-article-author'>{singleArticle.author}</h4>
+                            </Link>
+                            <div className='single-article-created_at'>
+                                    <p className='single-article-created_at-e'>{formatCreatedAt(singleArticle.created_at)[0]}</p>
+                                    <p className='single-article-created_at-e'>{formatCreatedAt(singleArticle.created_at)[1]}</p>
+                            </div>
                             <p className='single-article-body'>{singleArticle.body}</p>
                             <div className='single-article-details'>
-                            <p>{singleArticle.author}</p>
-                            <div id='votes'>
-                                <ArticleVotes article_id={singleArticle.article_id} votes={singleArticle.votes}/>
-                            </div> 
-                            <div id='article_created_at'>
-                                <p id='article-date'>{formatCreatedAt(singleArticle.created_at)[0]}</p>
-                                <p id='article-time'>{formatCreatedAt(singleArticle.created_at)[1]}</p>
+                                    <ArticleVotes article_id={singleArticle.article_id} votes={singleArticle.votes}/>
+                           
+                                <Link className='link' key={singleArticle.topic} to={`/topics/${singleArticle.topic}`}>
+                                    <p>{capitaliseFirstLetter(singleArticle.topic)}</p>
+                                </Link> 
+                                <button id='show-comments'className='link' onClick={changeCommentVisibility}>
+                                    <p>{singleArticle.comment_count} comments</p>
+                                </button>
+                                <PostCommentLink singleArticle={singleArticle}/>
                             </div>
-                            <Link className='link' key ={singleArticle.topic} to={`/topics/${singleArticle.topic}`}>
-                                <p>{capitaliseFirstLetter(singleArticle.topic)}</p>
-                            </Link> 
-                            <button id='show-comments'className='link' onClick={changeCommentVisibility}>
-                                <p>{singleArticle.comment_count} comments</p>
-                            </button>
-                            <PostCommentLink singleArticle={singleArticle}/>
-                        </div>
                         <SortComments />
                         <div id='comments' style={{visibility:'visible'}}>
                             {comments.map((comment) => {

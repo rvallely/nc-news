@@ -17,7 +17,7 @@ import UserFeedback from './components/User/UserFeedback';
 function App() {
 
   const [loggedInUser, setLoggedInUser] = useState({
-      username: 'guest',
+      username: 'Log in',
       name: '',
       avatar_url:
         'https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png'

@@ -15,9 +15,9 @@ const ArticleVotes = ({ article_id, votes }) => {
     }
 
     if (loggedInUser.username === 'guest') {
-        return <button onClick={() => alert('Please go to User area and log in to vote :)')}>{votes}&#128077;</button>
+        return <button className='single-article-votes' onClick={() => alert('Please go to User area and log in to vote :)')}>{votes}&#128077;</button>
     } else {
-        return <button id='upvote-button' onClick={() => addVote()}>{votes + voteChange}&#128077;</button>
+        return <button className='single-article-votes' id='upvote-button' onClick={() => addVote()}>{votes + voteChange}&#128077;</button>
     }
 }
 

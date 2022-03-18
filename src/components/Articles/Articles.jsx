@@ -69,7 +69,7 @@ const Articles = () => {
                                         <h3 id='article-title'>{article.title}</h3>
                                     </Link>
                                     <Link className='link' key={`${article.article_id}-author`} to={`/articles/user/${article.author}`}>
-                                        <h4 id='article-author'>{article.author}</h4>
+                                        <h4>{article.author}</h4>
                                     </Link>
                                     <HashLink className='link' to={`/articles/${article.article_id}#comments`}>{article.comment_count} comments</HashLink>
                                     <div id='article-created_at'>

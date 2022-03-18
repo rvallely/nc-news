@@ -4,7 +4,6 @@ import { UserContext } from '../../contexts/User';
 
 const UserDisplay = () => {
     const user = useContext(UserContext);
-
     return (
         <Link className='link' key='user' to='/user'>
             <div className = 'header-date' id='user-display'>

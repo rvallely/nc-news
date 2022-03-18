@@ -144,9 +144,9 @@ export const deleteArticleContent = (article_id) => {
 }
 
 export const getSingleUser = (username, password) => {
-    console.log(username, password);
+    //console.log(username, password);
     return newsAPI.post('/users/login', { username: username, password: password }).then((response) => {
-        console.log(response)
+        //console.log(response)
         return response.data.user;
     });
 }

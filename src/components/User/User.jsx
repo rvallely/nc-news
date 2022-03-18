@@ -11,7 +11,7 @@ import UserDisplay from '../General/UserDisplay';
 const User = () => {
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
 
-    if (loggedInUser.username === 'guest') {
+    if (loggedInUser.username === 'Log in') {
         return (
             <div>
                 <div className='header-date'>
@@ -20,7 +20,7 @@ const User = () => {
                 </div>
                 <UserDisplay /> 
                 <Nav />
-                <p>Please log in to view your user area      </p>
+                <p>Please log in to view your user area</p>
                 <Link className='link' key='redirect' to='/'><h3>Login</h3></Link>
             </div>
         )

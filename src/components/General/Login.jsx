@@ -61,7 +61,7 @@ const Login = () => {
                     <button>Login</button>
                 </form>
                 <h2>or</h2>
-                <Link style={{'text-decoration': 'underline', 'color': '#fff'}} className='link' key='home' to='/articles'>
+                <Link style={{'textDecoration': 'underline', 'color': '#fff'}} className='link' key='home' to='/articles'>
                     <h2>Continue as a guest</h2>
                 </Link>
             </div>   
