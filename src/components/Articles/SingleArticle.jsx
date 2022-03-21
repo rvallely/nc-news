@@ -106,21 +106,23 @@ const SingleArticle = () => {
                             </div>
                             <div className='single-article-details-2'>
                                 <h2 id='show-comments' onClick={changeCommentVisibility}className='single-article-comments-link' >{singleArticle.comment_count} comments</h2>
-                                <Link className='link' key={singleArticle.topic} to={`/topics/${singleArticle.topic}`}>
+                                <Link className='link' key={singleArticle.topic} to={`/articles?topic=${singleArticle.topic}`}>
                                     <p className='single-article-topic'>More {singleArticle.topic} here</p>
                                 </Link>  
                             </div>
                         <SortComments />
-                        <div className='single-article-comments-container' style={{visibility:'visible'}}>
+                        <div id='comments' className='single-article-comments-container' style={{visibility:'visible'}}>
                             {comments.map((comment) => {
                                 return (
                                     <div className='single-article-comment' key={comment.comment_id}>
-                                        <h4 id=''>{comment.author}</h4>
-                                        <p id=''>{comment.body}</p>
-                                        <div id='comment_created-at'>
-                                            <p id='comment-date'>{formatCreatedAt(comment.created_at)[0]}</p>
-                                            <p id='comment-time'>{formatCreatedAt(comment.created_at)[1]}</p>
-                                        </div>
+                                    <Link className='link' to={`/articles/user/${comment.author}`}>
+                                        <h4 className='single-article-comment-author'>{comment.author}</h4>
+                                    </Link>
+                                    <div className='single-article-comment-created_at'>
+                                            <p className='single-article-comment-created_at-e'>{formatCreatedAt(comment.created_at)[0]}</p>
+                                            <p className='single-article-comment-created_at-e'>{formatCreatedAt(comment.created_at)[1]}</p>
+                                    </div>
+                                        <p className='single-article-comment-body'>{comment.body}</p>
                                         <CommentVotes comment_id={comment.comment_id} votes={comment.votes}/>
                                     </div >
                                 )
