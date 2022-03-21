@@ -63,22 +63,26 @@ const Articles = () => {
                     <SortBy />
                     <ul className='article-list'>
                         {articles.map((article) => {
+                            if (article.title !== 'Article does not exist') {
                             return (
                                 <li className='article-list-item' key={article.article_id}> 
                                     <Link className='link' key={`${article.article_id}-title`} to={`/articles/${article.article_id}`} >
-                                        <h3 id='article-title'>{article.title}</h3>
+                                        <h3 className='article-list-title'>{article.title}</h3>
                                     </Link>
-                                    <Link className='link' key={`${article.article_id}-author`} to={`/articles/user/${article.author}`}>
-                                        <h4>{article.author}</h4>
-                                    </Link>
-                                    <HashLink className='link' to={`/articles/${article.article_id}#comments`}>{article.comment_count} comments</HashLink>
-                                    <div id='article-created_at'>
-                                       <p id='article-date'>{formatCreatedAt(article.created_at)[0]}</p>
-                                       <p id='article-time'>{formatCreatedAt(article.created_at)[1]}</p>
+                                    <div className='article-list-created_at'>
+                                       <p className='article-list-created_at-e'>{formatCreatedAt(article.created_at)[0]}</p>
+                                       <p className='article-list-created_at-e'>{formatCreatedAt(article.created_at)[1]}</p>
                                     </div>
-                                    <p id='article-votes'>{article.votes} &#128077;</p> 
+                                    <Link className='link' key={`${article.article_id}-author`} to={`/articles/user/${article.author}`}>
+                                        <h4 className='article-list-author'>{article.author}</h4>
+                                    </Link>
+                                    <HashLink className='link' to={`/articles/${article.article_id}#comments`}>
+                                        <p className='article-list-comment-link'>{article.comment_count} comments</p>
+                                    </HashLink>
+                                    <p className='article-list-votes'>{article.votes} &#128077;</p> 
                                 </li>
                             );
+                            }
                         })}
                     </ul>
                 </div>
