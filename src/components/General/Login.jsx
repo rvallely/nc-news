@@ -58,7 +58,7 @@ const Login = () => {
                     </div>
                     <br></br>
                     <br></br>
-                    <button className='login-form-button'>Login</button>
+                    <button className='login-form-button'>Log in</button>
                 </form>
                 <h2>or</h2>
                 <Link style={{'textDecoration': 'underline', 'color': '#fff'}} className='link' key='home' to='/articles'>

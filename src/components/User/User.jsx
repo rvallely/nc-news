@@ -20,8 +20,8 @@ const User = () => {
                 </div>
                 <UserDisplay /> 
                 <Nav />
-                <p>Please log in to view your user area</p>
-                <Link className='link' key='redirect' to='/'><h3 id='login-form-button' className='login-form-button'>Login</h3></Link>
+                <p>Please log in to view your user area.</p>
+                <Link className='link' key='redirect' to='/'><h3 id='login-form-button' className='login-form-button'>Log in</h3></Link>
             </div>
         )
     } else {

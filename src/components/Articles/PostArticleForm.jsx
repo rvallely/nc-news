@@ -48,7 +48,7 @@ const PostArticleForm = () => {
     if (error) {
         return <Error message={error.response.data.msg} status={error.response.status}/>
     }
-    if (username === 'guest') {
+    if (username === 'Log in') {
         return <Error message={'Please log in to post an article'} status={400}/>
     } else {
         return (
@@ -61,28 +61,28 @@ const PostArticleForm = () => {
             <Nav />
             <h2>Post your article below:</h2>
             <form onSubmit={handleSubmit}>
-                <label>Title:</label>
                 <input
-                  id='form-article-title'
                   required
+                  placeholder='Title'
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}>
                 </input>
-                <label>Topic:</label>
                 <select
+                  id='topic'
                   required
                   value={topic}
                   onChange={(e) => setTopic(e.target.value)}
                   >
+                      <option value='' selected disabled>Select a topic</option>
                     {allTopics.map((topic) => {
                         return (
                             <option value={topic.slug}>{capitaliseFirstLetter(topic.slug)}</option>
                         )
                     })}
                 </select>
-                <label>Article body:</label>
                 <textarea
                   value={body}
+                  placeholder='Write your article here...'
                   onChange={(e) => setBody(e.target.value)}>
                 </textarea>
                 <br></br>
