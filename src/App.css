@@ -123,7 +123,7 @@
   text-align: left;
 }
 
-.login-form button {
+.login-form-button {
   border: none;
   width: 100%;
   border-radius: 5px;
@@ -135,6 +135,11 @@
   color: #fff;
   margin-top: -10px;
 } 
+
+/* #login-form-button {
+  margin-left: 3%;
+  margin-right: 3%;
+} */
 
 .login-form button:hover {
   cursor: pointer;
@@ -340,18 +345,6 @@
   /* margin-top: 3%; */
 }
 
-.parent {
-  border: 1px solid black;
-  margin: 1rem;
-  padding: 2rem 2rem;
-  text-align: center;
-}
-.child {
-  display: inline-block;
-  border: 1px solid red;
-  padding: 1rem 1rem;
-  vertical-align: middle;
-}
 
 
 
@@ -361,54 +354,69 @@
   text-align: center;
 }
 .form label {
-  text-align: center;
+  padding-left: 6%;
+  text-align: left;
   display: block;
+  color: #454447;
 }
 .form h2 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 10px;
+  font-size: 22px;
+  color: #454447;
+  margin-bottom: 5px;
+  text-align: left;
+  padding-left: 6%;
 }
+
 .form textarea {
   font-size: large;
   font-family: inherit;
   width: 90%;
   height: 300px;
-  align-items: center;
-  padding: 6px 10px;
+  align-items: left;
   margin: 10px 0; 
   border: 1px solid #ddd;
   box-sizing: border-box;
+  padding: 3%;
 }
 .form button {
+  border: none;
   font-size: x-large;
-  background: #f1356d;
+  background: #5168f4;
   color: #fff;
-  border: 0;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  box-shadow: 1px 1px 5px #171717;
+  text-align: center;
+  padding-left: 4%;
+  padding-right: 4%;
+  transition: background 500ms ease;
 }
+
+
+/* border: none;
+width: 100%;
+border-radius: 5px;
+padding: 12px 0;
+font-size: 20px;
+background: #5168f4;
+text-align: center;
+transition: background 500ms ease;
+color: #fff;
+margin-top: -10px; */
 
 .form input, .form select {
   width: 90%;
-  align-items: center;
-  padding: 6px 10px;
-  margin: 10px 0;
+  align-items: left;
+  padding-left: 6%;
   border: 1px solid #ddd;
   box-sizing: border-box; 
+  padding-left: 6%;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
-/* #form-article-title {
-  font-size: large;
-  font-family: inherit;
-  width: 90%;
-  height: 50px;
-  align-items: center;
-  padding: 6px 10px;
-  margin: 10px 0; 
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-} */
+
+
 
 .user-comment {
   border: solid;

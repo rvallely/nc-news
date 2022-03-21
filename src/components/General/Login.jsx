@@ -36,7 +36,7 @@ const Login = () => {
         <div className='login-container'>
             <div className='login-form'>
                 <h2>NC News</h2>
-                <h2>Log in</h2>
+                <h2>Please log in</h2>
                 <form onSubmit={handleSubmit}>
                     <div className='login-form-input-box'>
                         <input
@@ -58,7 +58,7 @@ const Login = () => {
                     </div>
                     <br></br>
                     <br></br>
-                    <button>Login</button>
+                    <button className='login-form-button'>Login</button>
                 </form>
                 <h2>or</h2>
                 <Link style={{'textDecoration': 'underline', 'color': '#fff'}} className='link' key='home' to='/articles'>

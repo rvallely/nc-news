@@ -35,10 +35,9 @@ const PostCommentForm = () => {
             <Nav />
             <h2>Post your comment below:</h2>
             <form onSubmit={handleSubmit}>
-                <label>Logged in as: {username}</label>
-                <label>Comment body:</label>
                 <textarea
                   required
+                  placeholder='Write your comment here...'
                   value={body}
                   onChange={(e) => setBody(e.target.value)}>
                 </textarea>

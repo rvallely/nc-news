@@ -21,7 +21,7 @@ const User = () => {
                 <UserDisplay /> 
                 <Nav />
                 <p>Please log in to view your user area</p>
-                <Link className='link' key='redirect' to='/'><h3>Login</h3></Link>
+                <Link className='link' key='redirect' to='/'><h3 id='login-form-button' className='login-form-button'>Login</h3></Link>
             </div>
         )
     } else {
