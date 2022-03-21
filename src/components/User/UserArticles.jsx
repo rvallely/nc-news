@@ -53,28 +53,32 @@ const UserArticles = () => {
             <Nav />
             <SortBy />
             <div key={`${username}-articles`}>
-                <h2 key={`${username}`} >{username}'s articles</h2>
-
+                <h2 className='article-list-user-title' key={`${username}`} >{username}'s articles</h2>
+                <ul className='article-list'>
                 {userArticles.map(function(userArticle) {
                     if (userArticle.title !== 'Article does not exist') {
                         return (
-                            <div className='user-article' key={userArticle.article_id}>
+                            <div className='article-list-item' key={userArticle.article_id}>
                                 <Link className='link' key={`${userArticle.article_id}-id`} to={`/articles/${userArticle.article_id}`}>
-                                    <h3 id='article-title' key={userArticle.title} className='title'>{userArticle.title}</h3>
+                                    <h3 className='article-list-title' key={userArticle.title}>{userArticle.title}</h3>
                                 </Link>
+                                <div className='article-list-created_at'>
+                                <p className='article-list-created_at-e' key={`${userArticle.id}-date`}>{formatCreatedAt(userArticle.created_at)[0]}</p>
+                                <p className='article-list-created_at-e' key={`${userArticle.id}-time`}>{formatCreatedAt(userArticle.created_at)[1]}</p>
+                                </div>
                                 <Link className = 'link'  key={userArticle.id} to={`/articles/${userArticle.article_id}`}>
-                                    {userArticle.comment_count} comments
+                                    <p className='article-list-comment-link'>{userArticle.comment_count} comments</p>
                                 </Link>
-                                <p className='user-article-date' key={`${userArticle.id}-date`}>{formatCreatedAt(userArticle.created_at)[0]}</p>
-                                <p className='user-article-time' key={`${userArticle.id}-time`}>{formatCreatedAt(userArticle.created_at)[1]}</p>
-                                <p className='user-article-votes' key={`${userArticle.id}-votes`}>{userArticle.votes} &#128077;</p>
+                                <p className='article-list-votes' key={`${userArticle.id}-votes`}>{userArticle.votes} &#128077;</p>
                                 <button 
+                                  className='article-list-delete'
                                   key={`${username}-delete-article`}
                                   onClick={() => confirmRemoval(userArticle)}>&#128465;</button> 
                             </div>
                         )
                     }
                 })}
+                </ul>
             </div>
         </div>
     )

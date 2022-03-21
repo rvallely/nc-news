@@ -34,7 +34,7 @@ const ArticlesByUser = () => {
         <UserDisplay /> 
             <Nav />
             <div key={`${username}-articles`}>
-                <h2 key={`${username}`} >{username}'s articles</h2>
+                <h2 className='article-list-user-title' key={`${username}`} >{username}'s articles</h2>
                 <SortBy />
                 <ul className='article-list'>
                 {articlesByUser.map(function(article) {
@@ -42,15 +42,17 @@ const ArticlesByUser = () => {
                         return (
                             <li className='article-list-item' key={article.article_id}> 
                                 <Link className='link' key={article.article_id} to={`/articles/${article.article_id}`}>
-                                    <h3 id='article-title'>{article.title}</h3>
+                                    <h3 className='article-list-title'>{article.title}</h3>
                                 </Link>
-                                <h4 id='article-author'>{article.author}</h4>
-                                <Link className = 'link' to={`/articles/${article.article_id}#show-comments`}>{article.comment_count} comments</Link> 
-                                <div id='article-created_at'>
-                                   <p id='article-date'>{formatCreatedAt(article.created_at)[0]}</p>
-                                   <p id='article-time'>{formatCreatedAt(article.created_at)[1]}</p>
+                                <div className='article-list-created_at'>
+                                   <p className='article-list-created_at-e'>{formatCreatedAt(article.created_at)[0]}</p>
+                                   <p className='article-list-created_at-e'>{formatCreatedAt(article.created_at)[1]}</p>
                                 </div>
-                                <p id='article-votes'>{article.votes} &#128077;</p> 
+                                <h4 className='article-list-author' id='article-author'>{article.author}</h4>
+                                <Link className = 'link' to={`/articles/${article.article_id}#show-comments`}>
+                                    <p className='article-list-comment-link'>{article.comment_count} comments</p>
+                                </Link>
+                                <p className='article-list-votes'>{article.votes} &#128077;</p> 
                             </li>
                         );
                     }
