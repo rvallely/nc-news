@@ -14,6 +14,10 @@
   display:flex;
 }
 
+/* body {
+  background-image: url('https://wallpaperaccess.com/full/6563644.jpg');
+} */
+
 .Header {
   border:solid;
   border-width: 0px;
@@ -21,6 +25,9 @@
   text-align:left;
   margin-left: 15px;
   color: #EB0C15;
+  font-size: 40px;
+  /* text-shadow: 1px; */
+  /* text-shadow: 0 0 3px #FF0000, 0 0 60px #fff; */
 }
 
 .Header-link {
@@ -42,15 +49,17 @@
 }
 
 .Nav {
-  border:solid;
-  border-width: 0cm;
-  background-color: #EFEFEF;
+  box-shadow: 1px 1px 5px #171717;
+  background-color: #F1F2F2;
   text-align:left;
+  width: 100%;
+  padding-left: 0%;
+  padding-right: 1%;
 }
 
 .Nav-item {
   list-style-type: none;
-  font-size: smaller;
+  font-size: medium;
   margin-left: 7px;
   text-decoration: none;
   vertical-align: middle;
@@ -58,6 +67,7 @@
 }
 
 .article-list {
+  background-color: #fff;
   border:solid;
   border-width: 1px;
   border-color:black;
@@ -84,10 +94,6 @@
 
 .link:hover {
   text-decoration:underline;
-}
-
-.body {
-  background: url('https://wallpaperaccess.com/full/6563644.jpg');
 }
 
 .login-container {
@@ -136,11 +142,6 @@
   margin-top: -10px;
 } 
 
-/* #login-form-button {
-  margin-left: 3%;
-  margin-right: 3%;
-} */
-
 .login-form button:hover {
   cursor: pointer;
   background: #f4b651;
@@ -188,6 +189,12 @@
   top:20px;
   margin-top:7px; */
   padding: 0px;
+}
+
+.user-login-msg {
+  font-size: larger;
+  padding-bottom: 3%;
+  padding-top: 3%;
 }
 
 .single-article-title {
@@ -402,18 +409,6 @@
   padding-right: 4%;
   transition: background 500ms ease;
 }
-
-
-/* border: none;
-width: 100%;
-border-radius: 5px;
-padding: 12px 0;
-font-size: 20px;
-background: #5168f4;
-text-align: center;
-transition: background 500ms ease;
-color: #fff;
-margin-top: -10px; */
 
 .form input, .form select {
   width: 90%;

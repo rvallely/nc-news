@@ -44,7 +44,6 @@ function App() {
       </div>
       </UserContext.Provider>
     </BrowserRouter>
-    
   );
 }
 

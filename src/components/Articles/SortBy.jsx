@@ -55,7 +55,7 @@ const SortBy = () => {
                                 navigate(`${location.pathname}?topic=${topic}&${formatQ}`);   
                             }
                         }}> 
-                        <option disabled>Sort by: Most Recent</option>
+                        <option value='' selected disabled>Sort by: Most Recent</option>
                         <option value='sort_by=created_at order=DESC'>Most Recent</option>
                         <option value='sort_by=comment_count order=DESC'>Most Comments</option>
                         <option value='sort_by=votes order=DESC'>Most Votes</option>
