@@ -15,7 +15,7 @@ const SortComments = () => {
     }
 
         return (
-            <div className='sort-comments'>            
+            <div className='single-article-sort-comments'>            
                 <form className='dropdown'  >
                     <select 
                       className='sort-by' 

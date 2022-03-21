@@ -104,17 +104,17 @@ const SingleArticle = () => {
                         
                                 <PostCommentLink singleArticle={singleArticle}/>
                             </div>
-                            <Link className='link' key={singleArticle.topic} to={`/topics/${singleArticle.topic}`}>
+                            <div className='single-article-details-2'>
+                                <h2 id='show-comments' onClick={changeCommentVisibility}className='single-article-comments-link' >{singleArticle.comment_count} comments</h2>
+                                <Link className='link' key={singleArticle.topic} to={`/topics/${singleArticle.topic}`}>
                                     <p className='single-article-topic'>More {singleArticle.topic} here</p>
                                 </Link>  
-                                {/* <button className='link' id='show-comments' onClick={changeCommentVisibility}> */}
-                                    <h2 id='show-comments' onClick={changeCommentVisibility}className='single-article-comments-link' >{singleArticle.comment_count} comments</h2>
-                                {/* </button>  */}
+                            </div>
                         <SortComments />
-                        <div id='comments' style={{visibility:'visible'}}>
+                        <div className='single-article-comments-container' style={{visibility:'visible'}}>
                             {comments.map((comment) => {
                                 return (
-                                    <div id='single-comment' key={comment.comment_id}>
+                                    <div className='single-article-comment' key={comment.comment_id}>
                                         <h4 id=''>{comment.author}</h4>
                                         <p id=''>{comment.body}</p>
                                         <div id='comment_created-at'>
