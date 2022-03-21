@@ -33,19 +33,28 @@ const User = () => {
                 </div>
                 <UserDisplay /> 
                 <Nav />
-                <h3>Welcome back {loggedInUser.username}!</h3>
-                <img 
+                <h3 className='user-area-welcome-msg'>Welcome back {loggedInUser.username}!</h3>
+                {/* <img 
+                  className='user-area-avatar'
                   src={loggedInUser.avatar_url} 
                   alt={loggedInUser.username}>
-                </img>
+                </img> */}
+                <div className='user-area-links-container'>
                 <Link className='link' key={`${loggedInUser.username}_comments`} to='/user/comments'>
-                    <h3>My Comments</h3>
+                    <div className='user-area-link'>
+                        <h3 className='user-area-link-txt'>My Comments</h3>
+                        <h1 className='user-area-link-emo'>&#128483;</h1>
+                    </div>
                 </Link>
                 <Link className='link' key={`${loggedInUser.username}_articles`} to='/user/articles'>
-                    <h3>My Articles</h3>
+                    <div className='user-area-link'>
+                        <h3 className='user-area-link-txt'>My Articles</h3>
+                        <h1 className='user-area-link-emo'>&#128221;</h1>
+                    </div>
                 </Link>
+                </div>
                 <Link className='link' key={`${loggedInUser.username}_post_article`} to='/user/post_article'>
-                    <h3>Post an article</h3>
+                    <h3 className='user-area-button'>Post an article</h3>
                 </Link>
                 <Logout />
             </div>

@@ -12,7 +12,6 @@
   display:flex;
 }
 
-
 .Header {
   border:solid;
   border-width: 0px;
@@ -21,8 +20,6 @@
   margin-left: 15px;
   color: #EB0C15;
   font-size: 40px;
-  /* text-shadow: 1px; */
-  /* text-shadow: 0 0 3px #FF0000, 0 0 60px #fff; */
 }
 
 .Header-link {
@@ -77,6 +74,7 @@
 
 .article-list-title {
   font-size: x-large;
+  font-weight: 500;
   margin-top: 3%;
   margin-bottom: 1%;
   text-decoration: underline;
@@ -183,16 +181,51 @@
   background: #f4b651;
 }
 
-.logout {
-  font-size: x-large;
-  background: #f1356d;
-  color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-} 
+.user-area-links-container {
+  text-align: center;
+}
 
+.user-area-link {
+  border:solid black 1px;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 40%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.user-area-link-txt {
+  text-decoration: underline;
+}
+
+.user-area-link-emo {
+  font-size: xxx-large;
+}
+
+.user-welcome-msg {
+  font-size: larger;
+  padding-bottom: 3%;
+  padding-top: 3%;
+}
+
+.user-area-button {
+  border: none;
+  box-shadow: 1px 1px 5px #171717;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  transition: background 500ms ease;
+  color: #fff;
+  border-radius: 5px;
+  padding: 12px 0;
+  font-size: 18px;
+  background: #5168f4;
+  text-align: center;
+}
+
+#user-area-logout {
+  background: #454447;
+} 
 
 
 #drop-down-placeholder {
@@ -227,11 +260,6 @@
   padding: 0px;
 }
 
-.user-login-msg {
-  font-size: larger;
-  padding-bottom: 3%;
-  padding-top: 3%;
-}
 
 .single-article-title {
   padding-left: 3%;

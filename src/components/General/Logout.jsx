@@ -11,7 +11,10 @@ const Logout = () => {
         });
     };
     return (
-        <button onClick={logUserOut} className='logout'>
+        <button 
+          className='user-area-button'
+          id='user-area-logout'
+          onClick={logUserOut}>
             Log out 
         </button>
     );
