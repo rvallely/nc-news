@@ -19,7 +19,7 @@ const SortBy = () => {
             <div >            
                 <form className='dropdown'  >
                     <select 
-                      id='sort-by' 
+                      className='sort-by' 
                       value={input}
                       onChange={(e) => { 
                         setInput(e.target.value);

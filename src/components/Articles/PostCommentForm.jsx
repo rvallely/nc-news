@@ -24,29 +24,28 @@ const PostCommentForm = () => {
             navigate(`/articles/${article_id}`);
         });
     }
-
-    return (
-        <div className='form'>
-            <div className='header-date'>
-                    <Header />  
-                    <Date />
-                </div>
-            <UserDisplay />
-            <Nav />
-            <h2>Post your comment below:</h2>
-            <form onSubmit={handleSubmit}>
-                <textarea
-                  required
-                  placeholder='Write your comment here...'
-                  value={body}
-                  onChange={(e) => setBody(e.target.value)}>
-                </textarea>
-                <br></br>
-                { !isPending && <button>Post</button>}
-                { isPending && <button disabled>Posting comment ...</button>}
-            </form>
-        </div>
-    )
+        return (
+            <div className='form'>
+                <div className='header-date'>
+                        <Header />  
+                        <Date />
+                    </div>
+                <UserDisplay />
+                <Nav />
+                <h2>Post your comment below:</h2>
+                <form onSubmit={handleSubmit}>
+                    <textarea
+                      required
+                      placeholder='Write your comment here...'
+                      value={body}
+                      onChange={(e) => setBody(e.target.value)}>
+                    </textarea>
+                    <br></br>
+                    { !isPending && <button>Post</button>}
+                    { isPending && <button disabled>Posting comment ...</button>}
+                </form>
+            </div>
+        )
 }
 
 export default PostCommentForm;

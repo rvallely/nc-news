@@ -34,11 +34,6 @@ const User = () => {
                 <UserDisplay /> 
                 <Nav />
                 <h3 className='user-area-welcome-msg'>Welcome back {loggedInUser.username}!</h3>
-                {/* <img 
-                  className='user-area-avatar'
-                  src={loggedInUser.avatar_url} 
-                  alt={loggedInUser.username}>
-                </img> */}
                 <div className='user-area-links-container'>
                 <Link className='link' key={`${loggedInUser.username}_comments`} to='/user/comments'>
                     <div className='user-area-link'>

@@ -100,8 +100,7 @@ const SingleArticle = () => {
                             </div>
                             <p className='single-article-body'>{singleArticle.body}</p>
                             <div className='single-article-details'>
-                                    <ArticleVotes article_id={singleArticle.article_id} votes={singleArticle.votes}/>
-                        
+                                <ArticleVotes article_id={singleArticle.article_id} votes={singleArticle.votes}/>
                                 <PostCommentLink singleArticle={singleArticle}/>
                             </div>
                             <div className='single-article-details-2'>

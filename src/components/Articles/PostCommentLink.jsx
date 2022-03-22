@@ -5,7 +5,7 @@ import { UserContext } from '../../contexts/User';
 const PostCommentLink = ({ singleArticle }) => {
     const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
-    if (loggedInUser.username === 'guest') {
+    if (loggedInUser.username === 'Log in') {
         return <button className='single-article-post-comment' onClick={() => alert('Please go to User area and log in to post a comment. :)')}>Post a comment</button>
     } else {
         return ( 
