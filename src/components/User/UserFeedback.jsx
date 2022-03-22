@@ -1,7 +1,7 @@
-import Date from "../General/Date";
-import Header from "../General/Header";
-import Nav from "../General/Nav";
-import UserDisplay from "../General/UserDisplay";
+import Date from '../General/Date';
+import Header from '../General/Header';
+import Nav from '../General/Nav';
+import UserDisplay from '../General/UserDisplay';
 
 const UserFeedback = () => {
     return (
@@ -12,7 +12,7 @@ const UserFeedback = () => {
             </div>
             <UserDisplay /> 
             <Nav />
-            <p>Successfully deleted comment!</p>
+            <p>Successfully deleted!</p>
         </div>
     )
 }

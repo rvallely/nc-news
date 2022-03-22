@@ -33,7 +33,7 @@ const UserArticles = () => {
         setIsPending(true);
         deleteArticleContent(id).then((data) => {
             setIsPending(false);
-            navigate('/user_feedback', {msg: 'article deleted'});
+            navigate('/user_feedback', { msg: 'article deleted'});
         });
     }
 
