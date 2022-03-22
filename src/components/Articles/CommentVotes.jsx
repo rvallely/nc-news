@@ -15,7 +15,7 @@ const CommentVotes = ({ comment_id, votes }) => {
     }
     
     if (loggedInUser.username === 'Log in') {
-        return <button id={`comment-${comment_id}-upvote-button`} className='single-article-comment-votes' onClick={() => alert('Please go to User area and log in to vote! :)')}>{votes}&#128077;</button>
+        return <button id={`comment-${comment_id}-upvote-button`} className='single-article-comment-votes' onClick={() => alert('Please go to User area and log in to vote. :)')}>{votes}&#128077;</button>
     } else {
         return <button id={`comment-${comment_id}-upvote-button`} className='single-article-comment-votes' onClick={() => addVote()}>{votes + voteChange}&#128077;</button>
     }

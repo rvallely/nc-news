@@ -57,8 +57,8 @@ const Articles = () => {
                     <div className='header-date'>
                       <Header />  
                       <Date />
+                      <UserDisplay /> 
                     </div>
-                    <UserDisplay /> 
                     <Nav />
                     <SortBy />
                     <ul className='article-list'>

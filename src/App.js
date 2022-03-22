@@ -21,12 +21,6 @@ function App() {
       name: '',
       avatar_url:
         'https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png'
-    
-      // username: 'jessjelly', 
-      // name: 'jess', 
-      // avatar_url:
-      // 'https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png'
-    
   });
 
   return (
