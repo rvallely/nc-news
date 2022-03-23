@@ -8,7 +8,11 @@ NC News is a news and social platform, with the aim of creating a hub for users 
     
   It was a good opportunity to consolidate what I had learned during the front-end section of the Northcoders bootcamp, especially in terms of making asychronous calls to my server.
 
-*** LINK TO THE DEPLOYED VERSION **
+*** LINK TO THE DEPLOYED VERSION **  
+  
+  To log in to NC News the username is any user of the available users and the password is the username with '_pass' added to the end.  
+    
+![users](https://user-images.githubusercontent.com/68432429/159716402-d7e05a17-d778-4b03-90dd-9ab1afad6608.png)
 
 ## Backend
 
@@ -44,7 +48,7 @@ As a user I should be able to:
 9. see an appropriate error if I go to a non existent path or a path for a non existent article or topic
 10. not be able to post a comment if I haven't filled in all of the form boxes
 11. be able to use the site on my mobile or laptop without sacrificing functionality
-12. vote on a comment and immdeiately see the change
+12. vote on a comment and immediately see the change
 13. view a list of all articles written by any specific user
 14. post a new article to an existing topic
 15. delete my own articles
@@ -56,13 +60,13 @@ As a user I should be able to:
 
 I learned that there is a basic visual language of user interfaces online. Looking at large news organisations and social media platforms there are similar visual rules with the location and appearance of a site or an application including layout, features, buttons and how it is indicated to a user that a feature is interactive or not. 
 
-There's a sense when on most sites, that you know where to go and what certain symbols mean. I tried to follow these rules to make NC News as easy and inviting to interact with for a user, by keeping it in a format they were used to.
+There's a sense, when on most sites, that you know where to go and what certain symbols mean. I tried to follow these rules to make NC News as easy and inviting to interact with for a user, by keeping it in a format they were used to.
 
 There seems to be a move to simplicity, maybe because people spend such a lot of time on smaller smart phone screens now. Login forms have placeholders rather than labels and are less crowded. I noticed buttons on YouTube and Facebook fill in when pressed. 
 
 My wireframe was really useful, as were the user stories, as they structured tasks in a way that wasn't overwhelming. Having a general idea of how the app was going to look allowed me to work to that plan and not have to design at the same time as making requests to my server and building components. I found it easier to do one type of job at a time.
 
-When I did go back into the backend of my project to add a couple more endpoints for extra features on the app, I found it harder to quickly switch between backend, frontend, and design, and more prone to errors. In the future I will try to work through tasks in order of type so I can be more deeply connected to what I'm working on.
+When I did go back into the backend of my project to add a couple more endpoints for extra features on the app, I found it harder to quickly switch between backend, frontend and design and more prone to errors. In the future I will try to work through tasks in order of type so I can be more deeply connected to what I'm working on.
 
 ## Challenges 
 
@@ -75,7 +79,8 @@ My main challenge was styling as I didn't have much experience in the area. In p
 . add the functionality to sign up new users  
 . allow users to be able to post articles on any topic  
 . have a top users feature from a most commented on or upvoted article of the day  
-. have a way for users to report content that violated basic safeguarding rules
+. have a way for users to report content that violated basic safeguarding rules  
+. hash passwords on the database
     
 ## Technology
 
