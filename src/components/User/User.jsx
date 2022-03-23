@@ -21,7 +21,10 @@ const User = () => {
                 <UserDisplay /> 
                 <Nav />
                 <p className='user-login-msg'>Please log in to view your user area.</p>
+                <br></br>
                 <Link className='link' key='redirect' to='/'><h3 id='login-form-button' className='login-form-button'>Log in</h3></Link>
+                <p>or</p><br></br>
+                <Link className='link' key='redirect' to='/signup'><h3 id='signup-button' className='login-form-button'>Signup</h3></Link>
             </div>
         )
     } else {

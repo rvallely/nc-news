@@ -36,6 +36,9 @@ const Login = () => {
         <div className='login-container'>
             <div className='login-form'>
                 <h2>NC News</h2>
+                <Link style={{'textDecoration': 'underline', 'color': '#fff'}} className='link' key='home' to='/signup'>
+                    <p>sign up</p>
+                </Link>
                 <h2>Please log in</h2>
                 <form onSubmit={handleSubmit}>
                     <div className='login-form-input-box'>

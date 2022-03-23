@@ -207,6 +207,13 @@
   margin-top: -10px;
 } 
 
+#signup-button {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: #E1E425;
+}
+
 .login-form button:hover {
   cursor: pointer;
   background: #f4b651;
