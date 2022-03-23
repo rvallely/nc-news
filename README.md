@@ -20,7 +20,8 @@ To parse the data and make it more readable, you may want to download a JSON for
 
 ## Planning
 
-I began by wireframing my application and drawing a component tree.  
+I began by wireframing my application and drawing a component tree.   
+ 
 ![nc_news_plan](https://user-images.githubusercontent.com/68432429/159609661-78fd3113-022b-4788-81ea-68c1cb6ccae3.png)
 
 ## User Stories
