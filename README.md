@@ -10,7 +10,7 @@ NC News is a news and social platform, with the aim of creating a hub for users 
 
 *** LINK TO THE DEPLOYED VERSION **  
   
-  To log in to NC News the username is any user of the available users and the password is the username with '_pass' added to the end.  
+  To log in to NC News the username is any user of the available users (listed below)  and the password is the username with '_pass' added to the end.  
     
 ![users](https://user-images.githubusercontent.com/68432429/159716402-d7e05a17-d778-4b03-90dd-9ab1afad6608.png)
 
