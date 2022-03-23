@@ -6,25 +6,65 @@ NC News is a news and social platform, with the aim of creating a hub for users 
   
   I chose to build a news and social app, because I am interested in the news and how we communicate information. I have consumed a selection of news and social media over the last few years, so I had some prior experience in the area.  
     
-    It was a good opportunity to consolidate what I had learned during the front-end section of the Northcoders bootcamp. 
+    It was a good opportunity to consolidate what I had learned during the front-end section of the Northcoders bootcamp, especially in terms of making asychronous calls to my server.
 
 The backend repo for this application is: https://github.com/rvallely/ncNewsApp .  
   
-  There is also a link to the hosted API there.
-## Process and Aims
+The hosted API of this back-end project: https://rosie-nc-news-app.herokuapp.com/api.
+
+Using the endpoints and the 'queries' and 'params' listed for each endpoint on the hosted API, you can change the URL and access data in the database.
+
+To parse the data and make it more readable, you may want to download a JSON formatting extension for your browser such as: https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa.
+
+## Planning
 
 I began by wireframing my application and drawing a component tree.  
   
   ![NC News component tree and wireframe](https://ibb.co/hVfsXQz)
 
+## User Stories
+
+As a user I should be able to:  
+  
+  1. view a list of all the articles
+2. view a page for each topic with a list of related articles
+3. view an individual article
+4. view an article's comments
+5. vote on an article and immediately see the change
+6. post a new comment to an existing article
+7. sort articles by:  
+. date created  
+. comment count  
+. votes
+8. delete my own comments
+9. see an appropriate error if I go to a non existent path or a path for a non existent article or topic
+10. not be able to post a comment if I haven't filled in all of the form boxes
+11. be able to use the site on my mobile or laptop without sacrificing functionality
+12. vote on a comment and immdeiately see the change
+13. view a list of all articles written by any specific user
+14. post a new article to an existing topic
+15. delete my own articles
+16. sort comments by most recent and most votes
+16. login with a correct username and password
+17. only be able to vote once per page load on any vote button
 
 ## What I Learned
 
+I learned that there is a basic visual language of user interfaces online. Looking at large news organisations and social media platforms there are similar visual rules with the location and appearance of an app or a site including layout, features and buttons for example. And also with how it is indicated to a user that a feature is interactive or not. 
+
+There's a sense when on most sites, that you know where to go and what certain symbols mean. I tried to follow these rules to make NC News as easy and inviting to interact with for a user, by keeping it in a format they were used to.
+
+There seems to be a move to simplicity, maybe because people spend such a lot of time on smaller smart phone screens now. Login forms have placeholders rather than labels and are less crowded. I noticed buttons on YouTube and Facebook fill in when pressed. 
+
+My wireframe was really useful, as were the user stories, as they structured and ordered tasks in a way that wasn't overwhelming. Having a general idea of how the app was going to look allowed me to work to that plan and not have to design at the same time as making requests to my server and building components. I found it easier to do one type of job at a time.
+
+When I did go back into the backend of my projects to add a couple more endpoints for extra features on the app, I found it harder to quickly switch between backend, frontend, and design, and more prone to errors. In the future I would prefer to work through tasks in order of type so I can be more deeply connected to what I'm working on.
+
 ## Challenges 
 
-Styling in a way that worked for many different screens sizes. Galaxy Folds were sent to test us!
+My main challenge was styling as I didn't have much experience in the area. In particular, I found it challenging to style in a way that worked for many different screen sizes. Galaxy Folds were sent to test us!
 
-## Future Steps  
+## Future Features  
   
   In the future I'd like to:  
     
@@ -32,8 +72,7 @@ Styling in a way that worked for many different screens sizes. Galaxy Folds were
     . allow users to be able to post articles on any topic
     . have a top users feature from a most commented on or upvoted article of the day
     . have a way for users to report content that violated basic safeguarding rules
-
-
+    
 ## Technology
 
 This project was written in JavaScript and React.js.  
