@@ -230,7 +230,13 @@
   text-align: right;
 }
 
+#signup-form {
+  padding-top: 0%;
+}
 
+#signup-form-msg {
+  font-size: larger;
+}
 .user-area-links-container {
   text-align: center;
 }

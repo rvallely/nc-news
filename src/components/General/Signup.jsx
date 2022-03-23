@@ -32,40 +32,49 @@ const Signup = () => {
             setError(null);
         });
     }
-    return ( <p>sign up here</p>
-        // <div className='login-container'>
-        //     <div className='login-form'>
-        //         <h2>NC News</h2>
-        //         <h2>Please log in</h2>
-        //         <form onSubmit={handleSubmit}>
-        //             <div className='login-form-input-box'>
-        //                 <input
-        //                   type='text'
-        //                   placeholder='Username'
-        //                   required
-        //                   value={username}
-        //                   onChange={(e) => setUsername(e.target.value)}
-        //                 ></input>
-        //             </div>
-        //             <div className='login-form-input-box'>
-        //                 <input
-        //                   type='password'
-        //                   placeholder='Password'
-        //                   required
-        //                   value={password}
-        //                   onChange={(e) => setPassword(e.target.value)}
-        //                 ></input>
-        //             </div>
-        //             <br></br>
-        //             <br></br>
-        //             <button className='login-form-button'>Log in</button>
-        //         </form>
-        //         <h2>or</h2>
-        //         <Link style={{'textDecoration': 'underline', 'color': '#fff'}} className='link' key='home' to='/articles'>
-        //             <h2>Continue as a guest</h2>
-        //         </Link>
-        //     </div>   
-        // </div>
+    return (
+        <div className='login-container'>
+            <div className='login-form'>
+                <h2 id='signup-form'>NC News</h2>
+                <h2 id='signup-form-msg'>Sign up here:</h2>
+                <form onSubmit={handleSubmit}>
+                    <div className='login-form-input-box'>
+                        <input
+                          type='text'
+                          placeholder='Username'
+                          required
+                          value={username}
+                          onChange={(e) => setUsername(e.target.value)}
+                        ></input>
+                    </div>
+                    <div className='login-form-input-box'>
+                        <input
+                          type='password'
+                          placeholder='Password'
+                          required
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
+                        ></input>
+                    </div>
+                    <div className='login-form-input-box'>
+                        <input
+                          type='password'
+                          placeholder='Confirm password'
+                          required
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
+                        ></input>
+                    </div>
+                    <br></br>
+                    <br></br>
+                    <button className='login-form-button'>Sign up</button>
+                </form>
+                <h2>or</h2>
+                <Link style={{'textDecoration': 'underline', 'color': '#fff'}} className='link' key='home' to='/'>
+                    <h2>Back to Login</h2>
+                </Link>
+            </div>   
+        </div>
     )
 }
 
