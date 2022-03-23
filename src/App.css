@@ -225,6 +225,12 @@
   margin-right: 25%;
 }
 
+.login-form p {
+  color: #fff;
+  text-align: right;
+}
+
+
 .user-area-links-container {
   text-align: center;
 }
