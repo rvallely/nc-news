@@ -279,7 +279,8 @@
   padding: 10px 0;
   text-indent: 15px;
   font-size: 0.85em;
-  color: #999A9E;
+  /* color: #999A9E; */
+  color: #fff;
 }
 
 .signup-form-button {

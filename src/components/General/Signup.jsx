@@ -21,14 +21,18 @@ const Signup = () => {
         // check passwords match
         if (password !== confirmPassword) {
             alert('Passwords must match.')
-            console.log(e);
             window.location.reload(true);
-        } else {
+        } 
+        else if (username.length > 29) {
+            alert('Username must not exceed 30 characters.')
+            window.location.reload(true);
+        } 
+        else {
             console.log('matching')
-            // postNewUser(user).then(() => {
-            //     alert('Sign up successful, please log in.');
-            //     navigate('/');
-            // })
+            postNewUser(user).then(() => {
+                alert('Sign up successful, please log in.');
+                navigate('/');
+            });
         }
         // check user doesn't exist
         // if user doesn't exist {
