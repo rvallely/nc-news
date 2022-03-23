@@ -2,11 +2,13 @@
 
 ## Introduction 
 
-NC News is a news and social platform, with the aim of creating a hub for users to connect while posting short news articles and viewpoints on the things that interest them. The app aims to be smaller in scale than national news sites and is more focussed on connecting users, than on the content they may be connecting over. It is more analogous to a friendly Discord server, where the users help craft their own experience by interacting with the site and making it their own. NC News has more detail than tweets on Twitter, but is more personal than BBC News.  
+NC News is a news and social platform, with the aim of creating a hub for users to connect while posting short news articles and viewpoints on the things that interest them. The app aims to be smaller in scale than national news sites and is more focussed on connecting users, than on the content they may be connecting over. It is analogous to a friendly Discord server, where the users help craft their own experience by interacting with the site and making it their own. NC News has more detail than tweets on Twitter and is more personal than BBC News.  
   
   I chose to build a news and social app, because I am interested in the news and how we communicate information. I have consumed a selection of news and social media over the last few years, so I had some prior experience in the area.  
     
-    It was a good opportunity to consolidate what I had learned during the front-end section of the Northcoders bootcamp, especially in terms of making asychronous calls to my server.
+  It was a good opportunity to consolidate what I had learned during the front-end section of the Northcoders bootcamp, especially in terms of making asychronous calls to my server.
+
+## Backend
 
 The backend repo for this application is: https://github.com/rvallely/ncNewsApp .  
   
@@ -50,15 +52,15 @@ As a user I should be able to:
 
 ## What I Learned
 
-I learned that there is a basic visual language of user interfaces online. Looking at large news organisations and social media platforms there are similar visual rules with the location and appearance of an app or a site including layout, features and buttons for example. And also with how it is indicated to a user that a feature is interactive or not. 
+I learned that there is a basic visual language of user interfaces online. Looking at large news organisations and social media platforms there are similar visual rules with the location and appearance of a site or an application including layout, features, buttons and how it is indicated to a user that a feature is interactive or not. 
 
 There's a sense when on most sites, that you know where to go and what certain symbols mean. I tried to follow these rules to make NC News as easy and inviting to interact with for a user, by keeping it in a format they were used to.
 
 There seems to be a move to simplicity, maybe because people spend such a lot of time on smaller smart phone screens now. Login forms have placeholders rather than labels and are less crowded. I noticed buttons on YouTube and Facebook fill in when pressed. 
 
-My wireframe was really useful, as were the user stories, as they structured and ordered tasks in a way that wasn't overwhelming. Having a general idea of how the app was going to look allowed me to work to that plan and not have to design at the same time as making requests to my server and building components. I found it easier to do one type of job at a time.
+My wireframe was really useful, as were the user stories, as they structured tasks in a way that wasn't overwhelming. Having a general idea of how the app was going to look allowed me to work to that plan and not have to design at the same time as making requests to my server and building components. I found it easier to do one type of job at a time.
 
-When I did go back into the backend of my projects to add a couple more endpoints for extra features on the app, I found it harder to quickly switch between backend, frontend, and design, and more prone to errors. In the future I would prefer to work through tasks in order of type so I can be more deeply connected to what I'm working on.
+When I did go back into the backend of my project to add a couple more endpoints for extra features on the app, I found it harder to quickly switch between backend, frontend, and design, and more prone to errors. In the future I will try to work through tasks in order of type so I can be more deeply connected to what I'm working on.
 
 ## Challenges 
 
@@ -68,10 +70,10 @@ My main challenge was styling as I didn't have much experience in the area. In p
   
   In the future I'd like to:  
     
-    . add the functionality to sign up new users
-    . allow users to be able to post articles on any topic
-    . have a top users feature from a most commented on or upvoted article of the day
-    . have a way for users to report content that violated basic safeguarding rules
+. add the functionality to sign up new users
+. allow users to be able to post articles on any topic
+. have a top users feature from a most commented on or upvoted article of the day
+. have a way for users to report content that violated basic safeguarding rules
     
 ## Technology
 
