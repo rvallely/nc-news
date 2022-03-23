@@ -14,7 +14,9 @@ NC News is a news and social platform, with the aim of creating a hub for users 
     
 ![users](https://user-images.githubusercontent.com/68432429/159716402-d7e05a17-d778-4b03-90dd-9ab1afad6608.png)
 
-For example, username: tickle122, password: tickle122_pass.
+eg.  
+
+`username: tickle122  password: tickle122_pass`
 
 ## Backend
 
