@@ -249,8 +249,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 250px;
+  width: 60%;
   padding: 40px 60px;
+  margin-top: 3%;
   box-shadow:1px 1px 20px #171717;
 }
 
@@ -267,6 +268,18 @@
   color: #fff;
   padding: 10px 0;
   text-indent: 15px;
+}
+
+#signup-form-dropdown {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background: #1d1e22;
+  padding: 10px 0;
+  text-indent: 15px;
+  font-size: 0.85em;
+  color: #999A9E;
 }
 
 .signup-form-button {

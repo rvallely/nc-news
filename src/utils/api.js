@@ -144,11 +144,15 @@ export const deleteArticleContent = (article_id) => {
 }
 
 export const getSingleUser = (username, password) => {
-    //console.log(username, password);
     return newsAPI.post('/users/login', { username: username, password: password }).then((response) => {
-        //console.log(response)
         return response.data.user;
     });
+}
+
+export const postNewUser = (user) => {
+    // return newsAPI.post('/users/signup', user).then((data) => {
+    //     return data.data.postedUser;
+    // });
 }
 
 export const postArticle = (newArticle) => {

@@ -1,13 +1,14 @@
 import { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { UserContext } from '../../contexts/User';
-import { getSingleUser } from '../../utils/api';
+import { postNewUser } from '../../utils/api';
 
 const Signup = () => {
-    const [fullName, setFullName] = useState('')
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
+    const [fullName, setFullName] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [avatar_url, setAvatar_url] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState(null);
     const { loggedInUser, setLoggedInUser } = useContext(UserContext)
  
@@ -15,7 +16,7 @@ const Signup = () => {
 
    const handleSubmit = (e) => {
         e.preventDefault();
-        const user = { username, password, confirmPassword };
+        const user = { fullName, username, avatar_url, password};
         console.log(user);
         // check passwords match
         if (password !== confirmPassword) {
@@ -24,6 +25,10 @@ const Signup = () => {
             window.location.reload(true);
         } else {
             console.log('matching')
+            // postNewUser(user).then(() => {
+            //     alert('Sign up successful, please log in.');
+            //     navigate('/');
+            // })
         }
         // check user doesn't exist
         // if user doesn't exist {
@@ -74,6 +79,18 @@ const Signup = () => {
                           onChange={(e) => setUsername(e.target.value)}
                         ></input>
                     </div>
+                    <select 
+                      className='signup-form-input-box'
+                      id='signup-form-dropdown'
+                      value={avatar_url}
+                      onChange={(e) => { 
+                        setAvatar_url(e.target.value);
+                        }}> 
+                        <option value='' disabled>Avatar image URL</option>
+                        <option value='https://media.wired.co.uk/photos/60c8730fa81eb7f50b44037e/3:2/w_3329,h_2219,c_limit/1521-WIRED-Cat.jpeg'>Cat</option>
+                        <option value='https://www.helpguide.org/wp-content/uploads/king-charles-spaniel-resting-head-768.jpg'>Dog</option>
+                        <option value='https://www.rainforest-alliance.org/wp-content/uploads/2021/06/three-toed-sloth-teaser-1.jpg.optimal.jpg'>Sloth</option>
+                    </select>
                     <div className='signup-form-input-box'>
                         <input
                           type='password'
