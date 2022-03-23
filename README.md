@@ -15,9 +15,9 @@ The backend repo for this application is: https://github.com/rvallely/ncNewsApp 
 
 I began by wireframing my application and drawing a component tree.  
   
-  ![NC News component tree and wireframe](https://ibb.co/hVfsXQz)
+  ![NC News component tree and wireframe](https://myoctocat.com/assets/images/base-octocat.svg)
 
-  
+
 ## What I Learned
 
 ## Challenges 
