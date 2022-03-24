@@ -16,7 +16,9 @@ NC News is a news and social platform, with the aim of creating a hub for users 
 
 eg.  
 
-`username: tickle122  password: tickle122_pass`
+`username: tickle122  password: tickle122_pass`  
+
+Or you can sign up for a new account. Passwords are hashed for using bcrypt for security.
 
 ## Backend
 
@@ -59,6 +61,7 @@ As a user I should be able to:
 16. sort comments by most recent and most votes
 16. login with a correct username and password
 17. only be able to vote once per page load on any vote button
+18. sign up as a new user
 
 ## What I Learned
 
@@ -80,11 +83,10 @@ My main challenge was styling as I didn't have much experience in the area. In p
   
   In the future I'd like to:  
     
-. add the functionality to sign up new users  
 . allow users to be able to post articles on any topic  
 . have a top users feature from a most commented on or upvoted article of the day  
 . have a way for users to report content that violated basic safeguarding rules  
-. hash passwords on the database
+. allow users to change their profile picture and update their password
     
 ## Technology
 
