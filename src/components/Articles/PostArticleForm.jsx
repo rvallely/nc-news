@@ -73,10 +73,10 @@ const PostArticleForm = () => {
                   value={topic}
                   onChange={(e) => setTopic(e.target.value)}
                   >
-                      <option value='' selected disabled>Select a topic</option>
+                      <option value='' disabled>Select a topic</option>
                     {allTopics.map((topic) => {
                         return (
-                            <option value={topic.slug}>{capitaliseFirstLetter(topic.slug)}</option>
+                            <option value={topic.slug} key={`topic-${topic.slug}`}>{capitaliseFirstLetter(topic.slug)}</option>
                         )
                     })}
                 </select>

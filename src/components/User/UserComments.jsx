@@ -49,9 +49,9 @@ const UserComments = () => {
                         return (
                             <div className='article-list-item' key={userComment.id}>
                                 <Link className='link' key={userComment.article_id} to={`/articles/${userComment.article_id}`}>
-                                    <h3  className='article-list-title' key={`${userComment.id}-go-to-article`}>Go to article</h3>
+                                    <h3  className='article-list-title' key={`title-${userComment.id}-go-to-article`}>Go to article</h3>
                                 </Link>
-                                <div className='article-list-created_at'>
+                                <div className='article-list-created_at' key={`${userComment.id}-created_at`}>
                                     <p className='article-list-created_at-e' key={`${userComment.id}-date`}>{formatCreatedAt(userComment.created_at)[0]}</p>
                                     <p className='article-list-created_at-e' key={`${userComment.id}-time`}>{formatCreatedAt(userComment.created_at)[1]}</p>
                                 </div>
