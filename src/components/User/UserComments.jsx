@@ -12,7 +12,6 @@ const UserComments = () => {
     const user = useContext(UserContext);
     const username = user.loggedInUser.username;
     const [ userComments, setUserComments ] = useState([]);
-    const [ titles, setTitles ] = useState([])
     const [ isPending, setIsPending ] = useState(false);
     const [ isLoading, setIsLoading ] = useState(true)
     const navigate = useNavigate();
