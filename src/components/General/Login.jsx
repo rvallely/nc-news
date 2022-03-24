@@ -35,7 +35,7 @@ const Login = () => {
     return (
         <div className='login-container'>
             <div className='login-form'>
-            <Link style={{'textDecoration': 'underline', 'color': '#fff'}} className='link' key='home' to='/signup'>
+            <Link style={{'textDecoration': 'underline', 'color': '#fff'}} className='link' key='to home' to='/signup'>
                     <p className='sign-up-link'>sign up</p>
                 </Link>
                 <h2 id='login-form-header'>NC News</h2>

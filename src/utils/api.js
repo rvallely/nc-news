@@ -151,7 +151,6 @@ export const getSingleUser = (username, password) => {
 
 export const postNewUser = (user) => {
     return newsAPI.post('/users', user).then((data) => {
-        console.log(data);
         return data.data.postedUser;
     });
 }

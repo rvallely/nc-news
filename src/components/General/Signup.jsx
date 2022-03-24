@@ -10,15 +10,12 @@ const Signup = () => {
     const [avatar_url, setAvatar_url] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState(null);
-    const { loggedInUser, setLoggedInUser } = useContext(UserContext)
  
    const navigate = useNavigate(); 
 
    const handleSubmit = (e) => {
         e.preventDefault();
         const user = { fullName, username, avatar_url, password};
-        console.log(user);
-        // check passwords match
         if (password !== confirmPassword) {
             alert('Passwords must match.')
             window.location.reload(true);
@@ -28,36 +25,11 @@ const Signup = () => {
             window.location.reload(true);
         } 
         else {
-            console.log('matching')
             postNewUser(user).then(() => {
                 alert('Sign up successful, please log in.');
                 navigate('/');
             });
         }
-        // check user doesn't exist
-        // if user doesn't exist {
-            // postNewUser
-        // if user does exist
-            // if err.msg user exists
-            // then alert('this user already exists');
-       // }
-        // getSingleUser(username, password).then((user) => {
-        //     setLoggedInUser(user)
-        //     setError(null);
-        //     navigate('/articles');
-            
-        // })
-        // .catch((err) => {
-        //     setError(err);
-        //     if (err.response.data.msg === 'Not Found: user not on database') {
-        //         alert('User not found. Please try again.') 
-        //     } else if (err.response.data.msg === 'Bad Request: incorrect password.') {
-        //         alert('Incorrect password. Please try again.')
-        //     }
-        //     setUsername('');
-        //     setPassword('');
-        //     setError(null);
-        // });
     }
     return (
         <div className='signup-container'>
