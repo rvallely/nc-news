@@ -16,8 +16,8 @@ const SortBy = () => {
 
     if (location.pathname !== '/articles') {
         return (
-            <div >            
-                <form className='dropdown'  >
+            <div>            
+                <form className='dropdown'>
                     <select 
                       className='sort-by' 
                       value={input}
@@ -44,7 +44,7 @@ const SortBy = () => {
             <div >            
                 <form className='dropdown'  >
                     <select 
-                      id='sort-by' 
+                      className='sort-by' 
                       value={input}
                       onChange={(e) => { 
                         setInput(e.target.value);
