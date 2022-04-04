@@ -146,8 +146,13 @@
 }
 
 .article-list-delete {
+  font-size: xx-large;
   margin-top: 2%;
   margin-bottom: 3%;
+}
+
+.article-list-delete:hover {
+  cursor: pointer;
 }
 
 .link {
