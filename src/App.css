@@ -411,6 +411,10 @@
   margin-right: 39%;
 }
 
+.single-article-votes:hover {
+  cursor: pointer;
+}
+
 .single-article-post-comment {
   border: none;
   box-shadow: 1px 1px 5px #171717;
@@ -423,6 +427,10 @@
   background: #5168f4;
   text-align: center;
   margin-top: -10px;
+}
+
+.single-article-post-comment:hover {
+  cursor: pointer;
 }
 
 .single-article-details-2 {
