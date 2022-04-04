@@ -206,6 +206,7 @@
   transition: background 500ms ease;
   color: #fff;
   margin-top: -15px;
+  text-decoration: none;
 } 
 
 #signup-button {
@@ -445,6 +446,10 @@
   display: inline-block;
   text-decoration: underline;
   margin-right: 15%;
+}
+
+.single-article-comments-link:hover {
+  cursor: pointer;
 }
 
 .single-article-topic {
