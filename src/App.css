@@ -348,6 +348,10 @@
   background: #454447;
 } 
 
+#user-area-logout:hover {
+  cursor: pointer;
+}
+
 
 #drop-down-placeholder {
   font-weight: bolder;
