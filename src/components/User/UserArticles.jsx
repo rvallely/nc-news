@@ -73,7 +73,8 @@ const UserArticles = () => {
                                 <button 
                                   className='article-list-delete'
                                   key={`${username}-delete-article`}
-                                  onClick={() => confirmRemoval(userArticle)}>&#128465;</button> 
+                                  onClick={() => confirmRemoval(userArticle)}>&#128465;
+                                </button> 
                             </div>
                         )
                     }

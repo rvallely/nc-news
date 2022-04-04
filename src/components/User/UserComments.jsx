@@ -31,6 +31,12 @@ const UserComments = () => {
             navigate('/user_feedback', {msg: 'comment deleted'});
         });
     }
+
+    const confirmRemoval = (comment_id) => {
+        if (window.confirm('Are you sure you want to delete this comment?')) {
+            removeComment(comment_id);
+        } 
+    }
     
     return  isLoading ? <p>loading ...</p> : 
     ( 
@@ -59,7 +65,7 @@ const UserComments = () => {
                                 <button 
                                  className='article-list-delete'
                                  key={`${username}-delete-comment`}
-                                 onClick={() => removeComment(userComment.comment_id)}>&#128465;
+                                 onClick={() => confirmRemoval(userComment.comment_id)}>&#128465;
                                 </button>
                         </div>
                        )
