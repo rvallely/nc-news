@@ -41,7 +41,7 @@ const PostCommentForm = () => {
                       onChange={(e) => setBody(e.target.value)}>
                     </textarea>
                     <br></br>
-                    { !isPending && <button>Post</button>}
+                    { !isPending && <button >Post</button>}
                     { isPending && <button disabled>Posting comment ...</button>}
                 </form>
             </div>

@@ -5,7 +5,8 @@
   height: 100%;
   width: 100%; 
   overflow: hidden;
-  
+  /* background-image: url("https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"); */
+  background-color: #CDE6F5;
 }
 
 .header-date {
@@ -79,16 +80,24 @@
 
 .article-list {
   list-style-type: none;
-  padding-left: 0;
-  padding-right: 0;  
+  padding-left: 3%;
+  padding-right: 3%;  
   margin-top: 2%;
+  vertical-align: top;
+  /* margin-right: 10%;
+  margin-left: 10%; */
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
 }
 
 .article-list-item {
-  border: solid #454447 1px;
-  text-align: center;
-  padding-left: 3%;
-  padding-right: 3%;
+  border-radius: 5px;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  margin-top: 6%;
+  text-align: center; 
+  background-color: #fff;
 }
 
 .article-list-title {
@@ -572,7 +581,7 @@
   background: #5168f4;
   color: #fff;
   padding: 8px;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
   box-shadow: 1px 1px 5px #171717;
   text-align: center;
