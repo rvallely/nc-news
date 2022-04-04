@@ -8,7 +8,7 @@ NC News is a news and social platform, with the aim of creating a hub for users 
     
   It was a good opportunity to consolidate what I had learned during the front-end section of the Northcoders bootcamp, especially in terms of making asychronous calls to my server.
 
-*** LINK TO THE DEPLOYED VERSION **  
+The deployed app: https://nc-news-rvallely.netlify.app/ 
   
   To log in to NC News the username is any user of the available users (listed below)  and the password is the username with '_pass' added to the end.  
     
@@ -22,7 +22,7 @@ Or you can sign up for a new account. Passwords are hashed for using bcrypt for 
 
 ## Backend
 
-The backend repo for this application is: https://github.com/rvallely/ncNewsApp .  
+The backend repo for this application: https://github.com/rvallely/ncNewsApp .  
   
 The hosted API of this back-end project: https://rosie-nc-news-app.herokuapp.com/api.
 
