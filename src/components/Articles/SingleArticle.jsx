@@ -109,6 +109,7 @@ const SingleArticle = () => {
                                     <p className='single-article-topic'>More {singleArticle.topic} here</p>
                                 </Link>  
                             </div>
+                        </div>
                         <div id='comments' className='single-article-comments-container' style={{visibility:'visible'}}>
                         <SortComments />
                             {comments.map((comment) => {
@@ -128,7 +129,6 @@ const SingleArticle = () => {
                             })}
                         </div>    
                     </div>
-                </div>
                 )
             }
         }
