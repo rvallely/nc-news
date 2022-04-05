@@ -48,8 +48,8 @@ const UserArticles = () => {
             <div className='header-date'>
               <Header />  
               <Date />
+              <UserDisplay /> 
         </div>
-        <UserDisplay /> 
             <Nav />
             <SortBy />
             <div key={`${username}-articles`}>

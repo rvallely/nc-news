@@ -30,8 +30,8 @@ const ArticlesByUser = () => {
             <div className='header-date'>
               <Header />  
               <Date />
+              <UserDisplay /> 
         </div>
-        <UserDisplay /> 
             <Nav />
             <div key={`${username}-articles`}>
                 <h2 className='article-list-user-title' key={`${username}`} >{username}'s articles</h2>

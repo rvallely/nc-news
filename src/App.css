@@ -316,6 +316,7 @@
   width: 40%;
   display: inline-block;
   vertical-align: middle;
+  background-color: #fff;;
 }
 
 .user-area-link-txt {
@@ -326,10 +327,11 @@
   font-size: xxx-large;
 }
 
-.user-welcome-msg {
+.user-area-welcome-msg {
   font-size: larger;
   padding-bottom: 3%;
   padding-top: 3%;
+  text-align: center;
 }
 
 .user-area-button {
@@ -498,6 +500,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
+  border: dashed turquoise 1px;
 }
 
 .single-article-comment {
