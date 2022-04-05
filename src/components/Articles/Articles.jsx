@@ -65,7 +65,7 @@ const Articles = () => {
                         {articles.map((article) => {
                             if (article.title !== 'Article does not exist') {
                             return (
-                                <li className='article-list-item' key={article.article_id}> 
+                                <div className='article-list-item' key={article.article_id}> 
                                     <Link className='link' key={`${article.article_id}-title`} to={`/articles/${article.article_id}`} >
                                         <h3 className='article-list-title'>{article.title}</h3>
                                     </Link>
@@ -80,7 +80,7 @@ const Articles = () => {
                                         <p className='article-list-comment-link'>{article.comment_count} comments</p>
                                     </HashLink>
                                     <p className='article-list-votes'>{article.votes} &#128077;</p> 
-                                </li>
+                                </div>
                             );
                             }
                         })}

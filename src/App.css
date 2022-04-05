@@ -5,7 +5,6 @@
   height: 100%;
   width: 100%; 
   overflow: hidden;
-  /* background-image: url("https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"); */
   background-color: #CDE6F5;
 }
 
@@ -80,15 +79,12 @@
 
 .article-list {
   list-style-type: none;
-  padding-left: 3%;
-  padding-right: 3%;  
   margin-top: 2%;
   vertical-align: top;
-  /* margin-right: 10%;
-  margin-left: 10%; */
   margin-left: auto;
   margin-right: auto;
-  width: 400px;
+  padding: 0;
+  width: 360px;
 }
 
 .article-list-item {
