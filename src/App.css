@@ -5,7 +5,8 @@
   height: 100%;
   width: 100%; 
   overflow: hidden;
-  background-color: #CDE6F5;
+  background-image: url('../memphis-white-teal-black-pattern.png');
+  background-size: 60px;
 }
 
 .header-date {
@@ -360,6 +361,11 @@
 
 #drop-down-placeholder {
   font-weight: bolder;
+}
+
+.single-article {
+  border: none;
+  background-color: #fff;
 }
 
 .single-article-title {
