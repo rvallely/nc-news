@@ -1,5 +1,4 @@
-.App {
-  text-align: center;
+.App { 
   line-height: 1.5;
   font-family: MarkPro,sans-serif;
   height: 100%;
@@ -11,51 +10,41 @@
 
 .header-date {
   display:flex;
-  padding: 2%;
-  padding-right: 2%;
+  background-color: #C0394B;
 }
 
 .Header {
-  /* margin-top:15px;
-  margin-right: 0px;
-  text-align:left;
-  padding-left: 3%;
-  margin-right: 5%;
-  color: #EB0C15;
-  font-size: 38px; */
-  /* background-image: url('../NC_transp.jpg'); */
-  border: solid black 1px;
-  margin-top: -10%;
-  height: 300px;
   object-fit: cover;
+  width: 80%;
+  padding: 3%;
 }
 
-.Header-link {
-  text-decoration: none;
+.Header-link { 
   flex: 1;
 }
 
 .Date {
-  margin-top:7px;
-  top: 3%;
+  margin-top: 6px;
+  font-size: small;
+  padding-right: 1%;
+  color: #fff;
+  /* border: solid 1px yellow; */
 }
 
 #user-username {
   position: absolute;
-  right: 3.5%;
-  top: 30px;
-  font-size: medium;
+  right: 2%;
   text-decoration: underline;
+  margin-top: 20px;
 }
 
 #user-avatar-url {
-  height: 5%;
-  border-radius: 30%;
-  object-fit: cover;
+  height: 30px;
+  border-radius: 20%;
+  padding: 2px;
   position: absolute;
   right: 3.5%;
-  top: 68px;
-  padding-right: 0%;
+  margin-top: 40px;
 }
 
 .Nav {
@@ -66,8 +55,8 @@
   width: 100%;
   padding-left: 0%;
   padding-right: 1%;
-  margin-bottom: 2%;
-  margin-top: 20px;
+  margin-bottom: 3%;
+  margin-top: 0px;
 }
 
 .Nav-item {
@@ -80,12 +69,13 @@
 }
 
 .article-list-user-title {
-  color: #EB0C15;
+  color: #C0394B;
+  text-align: center;
 }
 
 .article-list {
   list-style-type: none;
-  margin-top: 2%;
+  margin-top: 12%;
   vertical-align: top;
   margin-left: auto;
   margin-right: auto;
@@ -128,7 +118,7 @@
 
 .article-list-author {
   text-decoration: underline;
-  color: #EB0C15;
+  color: #C0394B;
   margin-top: 2%;
   margin-bottom: 2%;
 }
@@ -316,6 +306,7 @@
 
 .user-area-links-container {
   text-align: center;
+  /* border: solid 1px black; */
 }
 
 .user-area-link {
@@ -356,8 +347,13 @@
   text-align: center;
 }
 
+.user-area-txt {
+  text-align: center;
+}
+
 #user-area-logout {
   background: #454447;
+  margin-bottom: 170%;
 } 
 
 #user-area-logout:hover {
@@ -367,6 +363,10 @@
 
 #drop-down-placeholder {
   font-weight: bolder;
+}
+
+#signup-button {
+  margin-bottom: 170%;
 }
 
 .single-article {
@@ -393,7 +393,7 @@
   padding-left: 3%;
   padding-right: 3%; 
   text-align: left;
-  color: #EB0C15;
+  color: #C0394B;
 }
 
 .single-article-created_at {
@@ -504,7 +504,7 @@
 
 .single-article-comment-author {
   margin-top: 3%;
-  color: #EB0C15;
+  color: #C0394B;
   text-decoration: underline;
   display: inline-block;
   margin-bottom: -5px;
@@ -542,7 +542,11 @@
 
 .sort-by {
   font-size: 110%;
-  margin-bottom: 2%;
+  position: absolute;
+  left: 50%;
+  margin-bottom: 3%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
 }
 
 .sort-by:hover {

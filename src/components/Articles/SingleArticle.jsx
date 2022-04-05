@@ -73,8 +73,8 @@ const SingleArticle = () => {
                         <div className='header-date'>
                             <Header />  
                             <Date />
+                            <UserDisplay /> 
                         </div>
-                        <UserDisplay /> 
                         <Nav /> 
                         <h2>{singleArticle.title}</h2>
                         <p className='single-article-body'>{singleArticle.body}</p>
@@ -86,8 +86,8 @@ const SingleArticle = () => {
                         <div className='header-date'>
                             <Header />  
                             <Date />
+                            <UserDisplay /> 
                         </div>
-                        <UserDisplay /> 
                         <Nav /> 
                         <div className='single-article'>
                             <h2 className='single-article-title'>{singleArticle.title}</h2>

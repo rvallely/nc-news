@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link} from 'react-router-dom';
-import logo from '../../imgs/NC_transp.jpg';
+import logo from '../../imgs/NC.png';
 
 const Header = () => {
         return ( 
