@@ -3,11 +3,10 @@ import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 
 const SortComments = () => {
     const [searchParams, setSearchParams] = useSearchParams();
-    const searchTopic = searchParams.get('topic')
+    const searchTopic = searchParams.get('topic');
     const [input, setInput] = useState('');
     let navigate = useNavigate();
-    const location = useLocation()
-    //console.log('location is ', location)
+    const location = useLocation();
 
     let topic = undefined;
     if (searchTopic) {
@@ -16,9 +15,10 @@ const SortComments = () => {
 
         return (
             <div className='single-article-sort-comments'>            
-                <form className='dropdown'  >
+                <form className='dropdown'>
                     <select 
                       className='sort-by' 
+                      id='sort-by-comments'
                       value={input}
                       onChange={(e) => { 
                         setInput(e.target.value);

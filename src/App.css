@@ -472,6 +472,8 @@
   display: inline-block;
   text-decoration: underline;
   margin-right: 15%;
+  /* border: green 1px solid; */
+  /* padding-bottom: 3%; */
 }
 
 .single-article-comments-link:hover {
@@ -552,6 +554,14 @@
 .sort-by:hover {
   cursor: pointer;
 }
+
+/* #sort-by-comments { */
+  /* border: dashed blue 1px; */
+  /* left: 20%; */
+  /* margin-top: 1%;
+  transform: translate(-177%, -150%);
+  margin-right: 15%; */
+/* } */
 
 .form {
   margin: 0 auto;
