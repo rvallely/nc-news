@@ -5,8 +5,8 @@
   height: 100%;
   width: 100%; 
   overflow: hidden;
-  background-image: url('../memphis-white-teal-black-pattern.png');
-  background-size: 60px;
+  background-image: url('./imgs/memphis-white-teal-black-pattern.png');
+  background-size: 50px;
 }
 
 .header-date {
@@ -16,13 +16,18 @@
 }
 
 .Header {
-  margin-top:15px;
+  /* margin-top:15px;
   margin-right: 0px;
   text-align:left;
   padding-left: 3%;
   margin-right: 5%;
   color: #EB0C15;
-  font-size: 38px;
+  font-size: 38px; */
+  /* background-image: url('../NC_transp.jpg'); */
+  border: solid black 1px;
+  margin-top: -10%;
+  height: 300px;
+  object-fit: cover;
 }
 
 .Header-link {
@@ -89,6 +94,7 @@
 }
 
 .article-list-item {
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
   border-radius: 5px;
   padding-bottom: 1%;
   padding-top: 1%;
@@ -364,13 +370,18 @@
 }
 
 .single-article {
-  border: none;
+  border-radius: 5px;
   background-color: #fff;
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .single-article-title {
   padding-left: 3%;
   padding-right: 3%; 
+  padding-top: 3%;
   color:#171717;
   text-align: left;
   margin-bottom: -10px;
