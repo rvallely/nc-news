@@ -14,8 +14,7 @@ const SortComments = () => {
     }
 
         return (
-            <div className='single-article-sort-comments'>            
-                <form className='dropdown'>
+                <form className='single-article-sort-comments'>
                     <select 
                       className='sort-by' 
                       id='sort-by-comments'
@@ -35,7 +34,6 @@ const SortComments = () => {
                         <option value='sort_by=created_at order=ASC'>Least Recent</option>
                     </select>
                 </form>
-            </div>
         )  
 }
 

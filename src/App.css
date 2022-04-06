@@ -486,12 +486,6 @@
   padding-right: 3%;
 }
 
-.single-article-sort-comments {
-  padding-top: 3%;
-  padding-left: 3%;
-  text-align: left;
-}
-
 .single-article-comments-container {
   border-radius: 5px;
   background-color: #fff;
@@ -500,7 +494,6 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
-  border: dashed turquoise 1px;
 }
 
 .single-article-comment {
@@ -562,12 +555,9 @@
 }
 
 #sort-by-comments { 
-  border: dashed blue 1px;
-  transform: translate(0%, -150%);
-  /* left: 20%; */
-  /* margin-top: 1%;
-  transform: translate(-177%, -150%);
-  /*margin-right: 15%; */
+  transform: translate(6%, 0%);
+  width: 40%;
+  margin-top: 10px;
 }
 
 .form {

@@ -111,7 +111,7 @@ const SingleArticle = () => {
                             </div>
                         </div>
                         <div id='comments' className='single-article-comments-container' style={{visibility:'visible'}}>
-                        <SortComments />
+                            <SortComments />
                             {comments.map((comment) => {
                                 return (
                                     <div className='single-article-comment' key={comment.comment_id}>
