@@ -75,7 +75,6 @@
 .article-list-user-title {
   color: #C0394B;
   text-align: center;
-  /* border: dashed green 1px; */
   margin-bottom: 3%;
   margin-top: 3%;
 }
@@ -553,6 +552,7 @@
   position: absolute;
   left: 50%;
   margin-bottom: 3%;
+  margin-top: 3%;
   transform: translate(-50%, -50%);
   border-radius: 5px;
   /* border: dashed purple 1px; */
@@ -585,17 +585,6 @@
   padding-left: 6%;
 }
 
-.form input, select {
-  border: 1px solid #ddd;
-  margin: 10px 0; 
-  box-sizing: border-box;
-  font-size: large;
-  font-family: inherit;
-  text-align: left;
-  padding: 1%;
-  font-size: large;
-}
-
 .form textarea {
   font-size: large;
   font-family: inherit;
@@ -604,10 +593,10 @@
   margin: 10px 0; 
   border: 1px solid #ddd;
   box-sizing: border-box;
-  padding: 3%;
   border-radius: 5px;
   margin-left: 5%;
   margin-right: 5%;
+  padding: 2%;
 }
 
 .form button {
@@ -623,19 +612,27 @@
   padding-right: 4%;
   transition: background 500ms ease;
   width: 30%;
-  margin-left: 35%;
   text-align: center;
 }
 
 .form input, .form select {
   width: 90%;
-  align-items: left;
-  padding-left: 6%;
   border: 1px solid #ddd;
   box-sizing: border-box; 
-  padding-left: 6%;
   margin-bottom: 5px;
   margin-top: 5px;
+  border-radius: 5px;
+  font-size: large;
+  font-family: inherit;
+  text-align: left;
+  padding-left: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.form h2 {
+  text-align: center;
+  padding: 0;
 }
 
 .user-comment {

@@ -10,8 +10,8 @@ const Redirect = () => {
             <div className='header-date'>
                 <Header />  
                 <Date />
+                <UserDisplay /> 
             </div>
-            <UserDisplay /> 
             <Nav />
             <h2>404: Not Found</h2>
             <h3 className= 'redirect-msg' >Whoops, looks like that page doesn't exist &#128579;</h3>

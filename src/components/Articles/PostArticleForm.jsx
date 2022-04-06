@@ -56,8 +56,8 @@ const PostArticleForm = () => {
             <div className='header-date'>
                     <Header />  
                     <Date />
+                    <UserDisplay />
                 </div>
-            <UserDisplay />
             <Nav />
             <h2>Post your article below:</h2>
             <form onSubmit={handleSubmit}>
