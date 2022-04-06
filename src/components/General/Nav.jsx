@@ -11,17 +11,30 @@ const Nav = () => {
         });
     }, []);
 
+    const underline = (id) => {
+        // console.log('clicked ', id);
+        const selected = document.getElementById(id);
+        const navElements = document.getElementsByClassName('Nav-item');
+        for (let item in navElements) {
+            if (navElements[item].id !== undefined && navElements[item].id !== selected.id) {
+                let deselectedE = document.getElementById(navElements[item].id);
+                deselectedE.style.textDecoration = 'none';
+            }  
+        }
+        selected.style.textDecoration = 'underline';
+    }
+
     return (
         <nav className='Nav'>
-            <Link className='Nav-item' key='home' to='/articles'>Home</Link>
+            <Link onClick={() => underline('home')} className='Nav-item' id='home' key='home' to='/articles'>Home |</Link>
                 {topics.map((topic) => {
                     return (
-                        <Link className='Nav-item' key ={topic.slug} to={`/articles?topic=${topic.slug}`}>
-                            {capitaliseFirstLetter(topic.slug)}
+                        <Link onClick={() => underline(topic.slug)} className='Nav-item' id={topic.slug} key ={topic.slug} to={`/articles?topic=${topic.slug}`}>
+                            {`${capitaliseFirstLetter(topic.slug)} |`}
                         </Link>
                     )
                 })}
-            <Link className='Nav-item' key='user' to='/user'>User</Link>
+            <Link onClick={() => underline('Nav-item-user')} className='Nav-item' id='Nav-item-user' key='user' to='/user'>User</Link>
         </nav>
     )
 }

@@ -10,6 +10,7 @@ import UserDisplay from '../General/UserDisplay';
 import { checkSortByValid } from '../../utils/checkValid';
 import formatCreatedAt from '../../utils/formatCreatedAt';
 import { getArticles } from '../../utils/api';
+import { underline } from '../../utils/underlineNav';
 
 const Articles = () => {
     const [articles, setArticles] = useState([]);
@@ -30,6 +31,7 @@ const Articles = () => {
  
     useEffect(() => {
         getArticles(searchTopic, sort_by).then((articlesFromAPI) => {
+            // underline(searchTopic);
             setArticles(articlesFromAPI);
             setIsLoading(false);
             setError(null);
