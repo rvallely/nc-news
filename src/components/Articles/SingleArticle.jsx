@@ -82,7 +82,7 @@ const SingleArticle = () => {
                 )
             } else {
                 return (
-                    <div>
+                    <div className='container'>
                         <div className='header-date'>
                             <Header />  
                             <Date />

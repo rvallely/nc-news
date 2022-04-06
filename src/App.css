@@ -6,7 +6,12 @@
   overflow: hidden;
   background-image: url('./imgs/memphis-white-teal-black-pattern.png');
   background-size: 50px;
+  padding-bottom: 60%;
 }
+
+/* .container {
+  border: red dashed 1px;
+} */
 
 .header-date {
   display:flex;
