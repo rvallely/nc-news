@@ -30,7 +30,7 @@
   font-size: small;
   padding-right: 1%;
   color: #fff;
-  border: solid 1px yellow;
+  /* border: solid 1px yellow; */
 }
 
 #user-username {
@@ -47,7 +47,7 @@
   position: absolute;
   right: 3.5%;
   margin-top: 40px;
-  border: dashed gray 1px;
+  /* border: dashed gray 1px; */
   /* padding-bottom: 7%; */
 }
 
