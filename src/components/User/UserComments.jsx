@@ -44,8 +44,8 @@ const UserComments = () => {
             <div key='header-date' className='header-date'>
               <Header />  
               <Date />
+              <UserDisplay /> 
             </div>
-            <UserDisplay /> 
             <Nav />
             <div key={`${username}-comments`}>
                 <h2 className='article-list-user-title' key={`${username}title`} >{username}'s comments</h2>

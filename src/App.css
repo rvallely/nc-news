@@ -6,7 +6,8 @@
   overflow: hidden;
   background-image: url('./imgs/memphis-white-teal-black-pattern.png');
   background-size: 50px;
-  padding-bottom: 60%;
+  padding-bottom: 70%;
+  text-align: center;
 }
 
 .header-date {
@@ -29,7 +30,7 @@
   font-size: small;
   padding-right: 1%;
   color: #fff;
-  /* border: solid 1px yellow; */
+  border: solid 1px yellow;
 }
 
 #user-username {
@@ -46,6 +47,8 @@
   position: absolute;
   right: 3.5%;
   margin-top: 40px;
+  border: dashed gray 1px;
+  /* padding-bottom: 7%; */
 }
 
 .Nav {
@@ -57,7 +60,7 @@
   padding-left: 0%;
   padding-right: 1%;
   margin-bottom: 3%;
-  margin-top: 0px;
+  /* margin-top: 10px; */
 }
 
 .Nav-item {
@@ -72,6 +75,9 @@
 .article-list-user-title {
   color: #C0394B;
   text-align: center;
+  /* border: dashed green 1px; */
+  margin-bottom: 3%;
+  margin-top: 3%;
 }
 
 .article-list {
@@ -549,6 +555,7 @@
   margin-bottom: 3%;
   transform: translate(-50%, -50%);
   border-radius: 5px;
+  /* border: dashed purple 1px; */
 }
 
 .sort-by:hover {

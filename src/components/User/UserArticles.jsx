@@ -51,9 +51,9 @@ const UserArticles = () => {
               <UserDisplay /> 
         </div>
             <Nav />
-            <SortBy />
             <div key={`${username}-articles`}>
                 <h2 className='article-list-user-title' key={`${username}`} >{username}'s articles</h2>
+                <SortBy />
                 <ul className='article-list'>
                 {userArticles.map(function(userArticle) {
                     if (userArticle.title !== 'Article does not exist') {
