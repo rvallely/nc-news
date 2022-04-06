@@ -29,8 +29,8 @@ const PostCommentForm = () => {
                 <div className='header-date'>
                         <Header />  
                         <Date />
+                        <UserDisplay />
                     </div>
-                <UserDisplay />
                 <Nav />
                 <h2>Post your comment below:</h2>
                 <form onSubmit={handleSubmit}>

@@ -9,10 +9,6 @@
   padding-bottom: 60%;
 }
 
-/* .container {
-  border: red dashed 1px;
-} */
-
 .header-date {
   display:flex;
   background-color: #C0394B;
@@ -598,12 +594,15 @@
   font-family: inherit;
   width: 90%;
   height: 300px;
-  align-items: left;
   margin: 10px 0; 
   border: 1px solid #ddd;
   box-sizing: border-box;
   padding: 3%;
+  border-radius: 5px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
+
 .form button {
   border: none;
   font-size: x-large;
@@ -613,10 +612,12 @@
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 1px 1px 5px #171717;
-  text-align: center;
   padding-left: 4%;
   padding-right: 4%;
   transition: background 500ms ease;
+  width: 30%;
+  margin-left: 35%;
+  text-align: center;
 }
 
 .form input, .form select {
