@@ -9,8 +9,8 @@ const Error = ({ message, status }) => {
             <div className='header-date'>
                       <Header />  
                       <Date />
-                    </div>
-                    <UserDisplay /> 
+                      <UserDisplay /> 
+            </div>
             <Nav />
             <p>Status {status}</p>
             <p>{message}</p>

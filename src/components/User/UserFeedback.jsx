@@ -9,8 +9,8 @@ const UserFeedback = () => {
             <div className='header-date'>
                 <Header />  
                 <Date />
+                <UserDisplay /> 
             </div>
-            <UserDisplay /> 
             <Nav />
             <p>Successfully deleted!</p>
         </div>

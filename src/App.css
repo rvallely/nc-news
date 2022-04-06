@@ -6,7 +6,7 @@
   overflow: hidden;
   background-image: url('./imgs/memphis-white-teal-black-pattern.png');
   background-size: 50px;
-  padding-bottom: 70%;
+  padding-bottom: 300%;
   text-align: center;
 }
 
@@ -17,7 +17,7 @@
 
 .Header {
   object-fit: cover;
-  width: 80%;
+  width: 75%;
   padding: 3%;
 }
 

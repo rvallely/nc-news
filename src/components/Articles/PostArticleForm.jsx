@@ -57,7 +57,7 @@ const PostArticleForm = () => {
                     <Header />  
                     <Date />
                     <UserDisplay />
-                </div>
+            </div>
             <Nav />
             <h2>Post your article below:</h2>
             <form onSubmit={handleSubmit}>
