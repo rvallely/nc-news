@@ -19,7 +19,7 @@ const User = () => {
                     <Date />
                     <UserDisplay /> 
                 </div>
-                <Nav />
+                <Nav underline='user'/>
                 <div className='user-area'>
                     <p className='user-area-txt'>Please log in to view your user area.</p>
                     <br></br>
@@ -37,7 +37,7 @@ const User = () => {
                     <Date />
                     <UserDisplay /> 
                 </div>
-                <Nav />
+                <Nav underline='user'/>
                 <div className='user-area'>
                     <h3 className='user-area-welcome-msg'>Welcome back {loggedInUser.username}!</h3>
                     <div className='user-area-links-container'>

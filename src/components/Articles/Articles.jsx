@@ -10,7 +10,6 @@ import UserDisplay from '../General/UserDisplay';
 import { checkSortByValid } from '../../utils/checkValid';
 import formatCreatedAt from '../../utils/formatCreatedAt';
 import { getArticles } from '../../utils/api';
-import { underline } from '../../utils/underlineNav';
 
 const Articles = () => {
     const [articles, setArticles] = useState([]);
@@ -28,10 +27,8 @@ const Articles = () => {
     if (searchSort_by && searchOrder) {
         sort_by = `sort_by=${searchSort_by} order=${searchOrder}`; 
     }
- 
     useEffect(() => {
         getArticles(searchTopic, sort_by).then((articlesFromAPI) => {
-            // underline(searchTopic);
             setArticles(articlesFromAPI);
             setIsLoading(false);
             setError(null);
@@ -61,7 +58,7 @@ const Articles = () => {
                       <Date />
                       <UserDisplay /> 
                     </div>
-                    <Nav />
+                    <Nav underline={searchTopic}/>
                     <SortBy />
                     <ul className='article-list'>
                         {articles.map((article) => {
