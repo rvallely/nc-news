@@ -17,15 +17,15 @@ const Nav = ({ underline }) => {
 
     return (
         <nav className='Nav'>
-            <Link className={underline === 'home' ? 'active': 'Nav-item'} id='home' key='home' exact to='/articles'>Home |</Link>
+            <Link className={underline === 'home' ? 'Nav-item-active': 'Nav-item'} id='home' key='home' exact to='/articles'>Home |</Link>
                 {topics.map((topic) => {
                     return (
-                        <Link className={underline === topic.slug ? 'active': 'Nav-item'} id={topic.slug} key ={topic.slug} to={`/articles?topic=${topic.slug}`}>
+                        <Link className={underline === topic.slug ? 'Nav-item-active': 'Nav-item'} id={topic.slug} key ={topic.slug} to={`/articles?topic=${topic.slug}`}>
                             {`${capitaliseFirstLetter(topic.slug)} |`}
                         </Link>
                     )
                 })}
-            <Link className={underline === 'user' ? 'active': 'Nav-item'} id='Nav-item-user' key='user' to='/user'>User</Link>
+            <Link className={underline === 'user' ? 'Nav-item-active': 'Nav-item'} id='Nav-item-user' key='user' to='/user'>User Area</Link>
         </nav>
     )
   
