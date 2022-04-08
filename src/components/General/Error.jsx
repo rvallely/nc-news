@@ -12,8 +12,10 @@ const Error = ({ message, status }) => {
                       <UserDisplay /> 
             </div>
             <Nav />
-            <p>Status {status}</p>
-            <p>{message}</p>
+            <div className='error-msg'>
+                <p>Status {status}</p>
+                <p>{message}</p>
+            </div>
         </div>
 
     )
